@@ -1,181 +1,151 @@
 # AI 开源趋势日报 2026-06-16
 
-> 数据来源: GitHub Trending + GitHub Search API | 生成时间: 2026-06-16 01:39 UTC
+> 数据来源: GitHub Trending + GitHub Search API | 生成时间: 2026-06-16 05:03 UTC
 
 ---
 
 <think>
-Let me analyze the data carefully to generate a comprehensive AI open-source trends report.
+Let me analyze the data provided and create a structured AI open-source trends daily report.
 
-## Step 1: Filtering
+First, let me filter the Trending list for AI-related projects:
+- Panniantong/Agent-Reach - AI agent tool ✅
+- trycua/cua - Computer-Use Agents ✅
+- rohitg00/ai-engineering-from-scratch - AI learning ✅
+- NVIDIA/SkillSpector - Security scanner for AI agent skills ✅
+- shiyu-coder/Kronos - Foundation model for financial markets ✅
 
-### Trending List (18 repos) - AI relevance check:
+Non-AI projects to exclude:
+- iptv-org/iptv - IPTV ❌
+- teslamate-org/teslamate - Tesla logger ❌
+- meshery/meshery - Cloud native manager ❌
+- chatwoot/chatwoot - Customer support ❌
+- krahets/hello-algo - Algorithm tutorial (general, not specifically AI) ❌
+- freeCodeCamp/freeCodeCamp - General coding education ❌
+- jwasham/coding-interview-university - Interview prep ❌
+- music-assistant/server - Media library ❌
+- Free-TV/IPTV - IPTV ❌
+- Introduction-to-Autonomous-Robots - Robotics textbook (some AI but mainly robotics textbook) - borderline
+- Raphire/Win11Debloat - Windows optimization ❌
+- mikeroyal/Self-Hosting-Guide - Has AI/LLM mention but mainly general self-hosting - borderline
+- itsfatduck/optimizerDuck - Windows optimization ❌
 
-1. **iptv-org/iptv** - ❌ Not AI (IPTV channels collection)
-2. **teslamate-org/teslamate** - ❌ Not AI (Tesla data logger)
-3. **Panniantong/Agent-Reach** - ✅ AI (AI agent tool for reading/searching platforms)
-4. **meshery/meshery** - ❌ Not AI (Cloud native manager)
-5. **chatwoot/chatwoot** - ❌ Not AI (Customer support tool)
-6. **krahets/hello-algo** - ❌ Not directly AI (Algorithm tutorial, though popular in dev)
-7. **freeCodeCamp/freeCodeCamp** - ❌ Not AI (Learning platform)
-8. **trycua/cua** - ✅ AI (Computer-Use Agents infrastructure)
-9. **jwasham/coding-interview-university** - ❌ Not AI (CS study plan)
-10. **rohitg00/ai-engineering-from-scratch** - ✅ AI (AI engineering tutorial)
-11. **music-assistant/server** - ❌ Not AI (Music library manager)
-12. **Free-TV/IPTV** - ❌ Not AI (Free TV channels)
-13. **Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots** - ⚠️ Robotics/AI educational
-14. **Raphire/Win11Debloat** - ❌ Not AI (Windows optimization)
-15. **mikeroyal/Self-Hosting-Guide** - ⚠️ Includes LLMs section, partially AI-related
-16. **itsfatduck/optimizerDuck** - ❌ Not AI (Windows optimization)
-17. **NVIDIA/SkillSpector** - ✅ AI (Security scanner for AI agent skills)
-18. **shiyu-coder/Kronos** - ✅ AI (Foundation Model for Financial Markets)
+Now for AI topic search results - most of these are AI-related since they're from AI topic searches.
 
-### AI Search Results - All are AI-related since they were filtered by AI topics
+Let me categorize:
 
-Let me categorize them now.
+**AI 基础工具 (AI Infrastructure/Frameworks)**:
+- trycua/cua (Trending)
+- 0xPlaygrounds/rig - LLM in Rust
+- ollama/ollama - LLM serving
+- vllm-project/vllm - LLM inference
+- langchain-ai/langchain - LLM framework
+- langchain4j/langchain4j - Java LLM
+- huggingface/transformers - ML framework
+- pytorch/pytorch - ML framework
+- tensorflow/tensorflow - ML framework
+- scikit-learn/scikit-learn - ML
+- keras-team/keras - DL
+- run-llama/llama_index - RAG/agent platform
+- autogen related (AutoGPT)
+- acon96/home-llm
+- Picovoice/picollm
+- safishamsi/graphify
 
-## Step 2: Classification
+**AI 智能体/工作流 (AI Agents/Workflows)**:
+- Panniantong/Agent-Reach (Trending, also topic)
+- NVIDIA/SkillSpector (Trending)
+- trycua/cua (Trending)
+- rohitg00/ai-engineering-from-scratch (Trending)
+- Significant-Gravitas/AutoGPT
+- browser-use/browser-use
+- OpenHands/OpenHands
+- shareAI-lab/learn-claude-code
+- HKUDS/nanobot
+- CopilotKit/CopilotKit
+- Gitlawb/openclaude
+- Eigenwise/atomic-agents
+- starpig1129/DATAGEN
+- zhayujie/CowAgent
+- iOfficeAI/AionUi
+- juliusbrussee/caveman
+- googleworkspace/cli
+- jackwener/OpenCLI
+- hugohe3/ppt-master
+- santifer/career-ops
 
-### 🔧 AI 基础工具 (Frameworks, SDKs, inference engines, dev tools, CLI)
-- **Panniantong/Agent-Reach** - CLI for AI agents
-- **trycua/cua** - Infrastructure for Computer-Use Agents
-- **0xPlaygrounds/rig** - LLM applications framework in Rust
-- **CopilotKit/CopilotKit** - Frontend stack for agents
-- **googleworkspace/cli** - CLI with AI agent skills
-- **jackwener/OpenCLI** - CLI for AI agents
-- **langchain-ai/langchain** - Agent engineering platform
-- **firecrawl/firecrawl** - API for web scraping (AI-related)
-- **vllm-project/vllm** - LLM inference engine
-- **acon96/home-llm** - Home Assistant LLM integration
-- **gluonfield/enchanted** - iOS/macOS LLM chat app
-- **affaan-m/ECC** - Agent harness performance optimization
-- **JuliusBrussee/caveman** - Claude Code skill for token optimization
-- **NVIDIA/SkillSpector** - Security scanner for AI agent skills
-- **rohitg00/ai-engineering-from-scratch** - AI engineering tutorial
-- **neuml/txtai** - All-in-one AI framework
-- **Eigenwise/atomic-agents** - Building AI agents
-- **ollama/ollama** - Local LLM runner
-- **OpenHands/OpenHands** - AI-driven development
-- **Picovoice/picollm** - On-device LLM inference
-- **scrapegraph-ai** - AI scraper
-- **skyzh/tiny-llm** - LLM inference course
-- **HuggingFace/transformers** - ML framework
+**AI 应用 (AI Applications)**:
+- shiyu-coder/Kronos (Trending)
+- PaddlePaddle/PaddleOCR
+- gluonfield/enchanted
+- CherryHQ/cherry-studio
+- jeecgboot/JeecgBoot
+- siyuan-note/siyuan
+- ZhuLinsen/daily_stock_analysis
+- TauricResearch/TradingAgents
+- mikeroyal/Self-Hosting-Guide
+- Introduction-to-Autonomous-Robots
+- netdata/netdata
+- OpenBB-finance/OpenBB
+- ultralytics/ultralytics
+- ultralytics/yolov5
+- tesseract-ocr/tesseract
 
-### 🤖 AI 智能体/工作流 (Agent frameworks, automation, multi-agent)
-- **NousResearch/hermes-agent** - Agent that grows with you
-- **shareAI-lab/learn-claude-code** - Claude Code-like agent harness
-- **santifer/career-ops** - AI-powered job search
-- **zhayujie/CowAgent** - Open-source super AI assistant
-- **HKUDS/nanobot** - Lightweight AI agent
-- **Gitlawb/openclaude** - Open Claude
-- **iOfficeAI/AionUi** - Cowork app for various CLI agents
-- **datawhalechina/hello-agents** - Agent tutorial
-- **safishamsi/graphify** - AI coding assistant
-- **thedotmack/claude-mem** - Persistent context for agents
-- **TauricResearch/TradingAgents** - Multi-agent trading framework
-- **mem0ai/mem0** - Memory layer for AI agents
-- **Significant-Gravitas/AutoGPT** - AutoGPT
-- **browser-use/browser-use** - Browser automation for agents
-- **starpig1129/DATAGEN** - Multi-agent research assistant
-- **flowiseai/Flowise** - Build AI agents visually
-- **langgenius/dify** - Agentic workflow platform
-- **CherryHQ/cherry-studio** - AI productivity with agents
+**大模型/训练 (LLMs/Training)**:
+- shiyu-coder/Kronos (Trending) - foundation model
+- ollama/ollama
+- vllm-project/vllm
+- NousResearch/hermes-agent
+- scraph graph ai
+- opencompass
+- skyzh/tiny-llm
+- Picovoice/picollm
+- llm-jp/awesome-japanese-llm
+- firecrawl/firecrawl
 
-### 📦 AI 应用 (Specific applications, vertical solutions)
-- **ZhuLinsen/daily_stock_analysis** - LLM stock analysis
-- **hugohe3/ppt-master** - AI PowerPoint generator
-- **shiyu-coder/Kronos** - Foundation model for financial markets (trending today)
-- **shiyu-coder/Kronos** - This is both application and model
-- **Introduction-to-Autonomous-Robots** - Educational
-- **Mintplex-Labs/anything-llm** - Local-first agent experience
-- **OpenBB-finance/OpenBB** - Financial data platform
-- **open-webui/open-webui** - AI interface
-- **PaddlePaddle/PaddleOCR** - OCR for AI
-- **ms/AI-For-Beginners** - AI education
+**RAG/知识库 (RAG/Knowledge Base)**:
+- langgenius/dify
+- open-webui/open-webui
+- Shubhamsaboo/awesome-llm-apps
+- infiniflow/ragflow
+- thedotmack/claude-mem
+- Mintplex-Labs/anything-llm
+- datawhalechina/hello-agents
+- pathwaycom/llm-app
+- mem0ai/mem0
+- FlowiseAI/Flowise
+- meilisearch/meilisearch
+- milvus-io/milvus
+- qdrant/qdrant
+- NirDiamant/RAG_Techniques
+- topoteretes/cognee
+- weaviate/weaviate
+- neuml/txtai
+- StarTrail-org/LEANN
+- lancedb/lancedb
+- alibaba/zvec
+- oceanbase/oceanbase
+- safishamsi/graphify
+- chrisliu298/awesome-llm-unlearning (unlearning)
+- thinkwee/AwesomeOPD (distillation)
+- testtimescaling/testtimescaling.github.io (test-time scaling)
+- zchoi/Awesome-Embodied-Robotics-and-Agent
+- microsoft/AI-For-Beginners
+- Developer-Y/cs-video-courses
+- JuliaLang/julia (general programming, not AI specific despite topic)
+- samchon/nestia (NestJS helper)
 
-### 🧠 大模型/训练 (Model weights, training frameworks, fine-tuning)
-- **shiyu-coder/Kronos** - Foundation model for financial markets
-- **huggingface/transformers** - ML model framework
-- **pytorch/pytorch** - Deep learning framework
-- **tensorflow/tensorflow** - ML framework
-- **scikit-learn/scikit-learn** - ML library
-- **keras-team/keras** - Deep learning
-- **ultralytics/ultralytics** - YOLO
-- **ultralytics/yolov5** - YOLOv5
-- **vllm-project/vllm** - Inference engine (also tools)
-- **llm-jp/awesome-japanese-llm** - Japanese LLM list
-- **o
-- **starpig1129/DATAGEN** - Multi-agent research (application)
-- **skyzh/tiny-llm** - LLM inference course (tools)
-- **ollama/ollama** - LLM runner (tools)
-- **astronomer cosmos vllm etc.**
+Now let me write the report. I need to use Chinese, be professional and concise, and include all required sections.
 
-### 🔍 RAG/知识库 (Vector DB, RAG, knowledge management)
-- **Mintplex-Labs/anything-llm** - Local-first agent
-- **pathwaycom/llm-app** - RAG cloud templates
-- **meilisearch/meilisearch** - Search engine
-- **run-llama/llama_index** - Document agent platform
-- **milvus-io/milvus** - Vector database
-- **qdrant/qdrant** - Vector database
-- **NirDiamant/RAG_Techniques** - RAG techniques
-- **topoteretes/cognee** - AI memory platform
-- **weaviate/weaviate** - Vector database
-- **neuml/txtai** - AI framework with semantic search
-- **langchain4j/langchain4j** - LLM applications on JVM
-- **StarTrail-org/LEANN** - RAG on Everything
-- **lancedb/lancedb** - Embedded retrieval
-- **alibaba/zvec** - Vector database
-- **oceanbase/oceanbase** - Distributed database with AI
-- **langgenius/dify** - Agentic workflow (also RAG)
-- **infiniflow/ragflow** - RAG engine
-- **siyuan-note/siyuan** - Knowledge management
+For today's highlights, the most notable things are:
+1. Panniantong/Agent-Reach got 1100 stars - AI agent tooling for social media
+2. NVIDIA/SkillSpector - 1079 stars - Security for AI agent skills
+3. rohitg00/ai-engineering-from-scratch - 562 stars - AI engineering learning
+4. shiyu-coder/Kronos - 396 stars - Foundation model for financial markets
+5. trycua/cua - 70 stars - Computer-use agents infrastructure
 
-Let me now think about the structure for the report.
+Key trend: AI Agent ecosystem is booming - tools for agents, security for agents, learning to build agents. This aligns with the broader industry trend toward agentic AI.
 
-For trending, I should focus on those that are AI-related. Let me identify the truly trending ones:
-- **Panniantong/Agent-Reach** - +1100 today, very hot
-- **NVIDIA/SkillSpector** - +1079 today, hot
-- **rohitg00/ai-engineering-from-scratch** - +562 today
-- **shiyu-coder/Kronos** - +396 today
-- **trycua/cua** - +70 today
-- **Introduction-to-Autonomous-Robots** - +489 today (educational)
-
-Let me also note that Introduction-to-Autonomous-Robots is robotics/AI educational, I'll mention but it might be borderline.
-
-The star counts in the trending list show "+ X today" which is daily stars. This is a key metric.
-
-For the AI search results, those are the topic-tagged repos with total stars.
-
-Now let me think about trends:
-1. **Agent infrastructure is exploding** - Agent-Reach, SkillSpector, CUA, ECC, learn-claude-code, hermes-agent - all about agents
-2. **Security concerns for agents** - NVIDIA/SkillSpector is interesting - security for AI agent skills
-3. **Financial AI** - Kronos (foundation model for financial markets), TradingAgents, daily_stock_analysis - finance is a hot vertical
-4. **Agent harness performance** - ECC, caveman, claude-mem - performance/context for agents
-5. **Vector DB consolidation** - Multiple vector DBs in trending
-
-Now let me write the report.
-
-Actually, looking at the star numbers, I notice these are very high - some seem unrealistic. For example, hermes-agent has 194,492 stars. This seems like a future/fictional projection. But I should work with the data as given since this is hypothetical data for 2026-06-16.
-
-Let me structure the report well. The numbers in "today" in the trending list are daily new stars. The topic search results show total stars.
-
-Let me draft the report now.
-
-Key trending AI items:
-1. **Panniantong/Agent-Reach** - +1100 today - "Give your AI agent eyes"
-2. **NVIDIA/SkillSpector** - +1079 today - "Security scanner for AI agent skills"
-3. **rohitg00/ai-engineering-from-scratch** - +562 today
-4. **Introduction-to-Autonomous-Robots** - +489 today
-5. **shiyu-coder/Kronos** - +396 today - "Foundation Model for Financial Markets"
-6. **trycua/cua** - +70 today - "Computer-Use Agents infrastructure"
-
-I'll structure the report by:
-1. 今日速览 (3-5 sentences overview)
-2. 各维度热门项目 (By category)
-3. 趋势信号分析 (Trend signals)
-4. 社区关注热点 (Hot spots)
-
-Let me write this in a clean professional format.
+Let me write the report now.
 </think>
 # 📊 AI 开源趋势日报 · 2026-06-16
 
@@ -183,103 +153,99 @@ Let me write this in a clean professional format.
 
 ## 1. 今日速览
 
-今日 GitHub AI 生态呈现**"Agent 基础设施军备竞赛"**特征：Agent 工具（Agent-Reach 单日 +1100⭐）、Agent 安全审计（NVIDIA SkillSpector 单日 +1079⭐）、Agent 编程教学（ai-engineering-from-scratch +562⭐）三大方向同时登顶 Trending，反映社区焦点已从"能不能跑 Agent"转向**"Agent 如何更安全、更广域、更工程化"**。同时，**金融垂域基础模型**（Kronos）首次进入 Trending，叠加 TradingAgents、daily_stock_analysis、OpenBB 等存量项目，标志 **LLM × Finance** 正成为继 Coding 之后的第二大垂直落地场景。向量数据库与 RAG 框架的总体热度虽趋稳，但 LEANN（97% 存储节省）、zvec（阿里）等本地化/轻量化方向成为新增长点。
+今日 GitHub Trending 中 AI 相关项目占据近三分之一席位，**AI Agent 生态呈爆发态势**：Panniantong/Agent-Reach（+1100 stars）和 NVIDIA/SkillSpector（+1079 stars）双双突破千星，前者为 Agent 提供跨平台数据获取能力，后者是首个面向 Agent Skill 的安全扫描器，标志 Agent 工具链正从「能跑」走向「可信任」。此外，金融领域基础模型 **Kronos**（+396 stars）和开源桌面操控 Agent 框架 **CUA**（+70 stars）首次登榜，显示 AI 在垂直行业（金融、桌面自动化）的落地加速。社区关注点已从单一模型转向 **Agent 基础设施、安全与工程化** 的全栈建设。
 
 ---
 
 ## 2. 各维度热门项目
 
-### 🔧 AI 基础工具（框架/SDK/推理/CLI）
+### 🔧 AI 基础工具（框架、SDK、推理引擎、CLI）
 
-| 项目 | Stars | 亮点 |
-|---|---|---|
-| [ollama/ollama](https://github.com/ollama/ollama) | ⭐174,262 | 本地 LLM 一键运行，已支持 Kimi-K2.6、GLM-5.1、DeepSeek、Qwen 等主流模型，是本地 Agent 部署的事实底座 |
-| [vllm-project/vllm](https://github.com/vllm-project/vllm) | ⭐82,977 | 高吞吐 LLM 推理引擎，Agent 后端首选 |
-| [huggingface/transformers](https://github.com/huggingface/transformers) | ⭐161,613 | 多模态模型定义与训练的事实标准 |
-| [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | ⭐30,243 · **今日 +1100🔥** | 一个 CLI 让 Agent 读写 Twitter/Reddit/YouTube/B站/小红书，**零 API 费用**，登顶今日 Trending |
-| [trycua/cua](https://github.com/trycua/cua) | ⭐70 今日增量 | 首个开源的 **Computer-Use Agent 全栈基础设施**（macOS/Linux/Windows 沙箱+SDK+Benchmark） |
-| [googleworkspace/cli](https://github.com/googleworkspace/cli) | ⭐27,084 | Google Workspace 官方 CLI，内置 AI Agent Skills，可直接驱动 Agent 操控办公套件 |
-| [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) | ⭐35,159 | 前端生成式 UI 协议 AG-UI 的提出者，Agent ↔ 前端交互层标准 |
-| [acon96/home-llm](https://github.com/acon96/home-llm) | ⭐1,360 | 本地 LLM 驱动 Home Assistant 智能家居，边缘 AI 落地代表 |
+| 项目 | Stars | 说明 |
+|------|-------|------|
+| [ollama/ollama](https://github.com/ollama/ollama) | ⭐174,267 | 本地 LLM 部署的事实标准，已支持 Kimi-K2.6、GLM-5.1、MiniMax、DeepSeek、Qwen 等主流模型 |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | ⭐82,998 | 高吞吐 LLM 推理引擎，Agent 与 RAG 系统的关键底座 |
+| [huggingface/transformers](https://github.com/huggingface/transformers) | ⭐161,619 | 跨模态模型定义与训练框架，生态最广 |
+| [0xPlaygrounds/rig](https://github.com/0xPlaygrounds/rig) | ⭐7,626 | Rust 编写的模块化 LLM 应用框架，适合高性能后端 |
+| [trycua/cua](https://github.com/trycua/cua) | ⭐+70 today | Computer-Use Agent 沙箱与基准，跨 macOS/Linux/Windows |
+| [langchain4j/langchain4j](https://github.com/langchain4j/langchain4j) | ⭐12,338 | JVM 生态 LangChain，深度集成 Spring Boot/Quarkus |
+| [Picovoice/picollm](https://github.com/Picovoice/picollm) | ⭐313 | 端侧 LLM 推理，支持 X-Bit 量化 |
+| [skyzh/tiny-llm](https://github.com/skyzh/tiny-llm) | ⭐4,281 | 在 Apple Silicon 上从零搭建 mini vLLM + Qwen 的课程 |
 
 ### 🤖 AI 智能体 / 工作流
 
-| 项目 | Stars | 亮点 |
-|---|---|---|
-| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | ⭐194,492 | 主题搜索 AI-Agent 分类 **榜首**，"The agent that grows with you" |
-| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | ⭐184,960 | 自主 Agent 开山鼻祖，仍是社区基础设施 |
-| [OpenHands/OpenHands](https://github.com/OpenHands/OpenHands) | ⭐77,241 | AI-Driven Development 标杆 |
-| [shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | ⭐66,684 | "Bash is all you need" — 从 0 到 1 手写 Claude Code 类 Agent Harness，教学向爆款 |
-| [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) | **今日 +1079🔥** | **首个面向 AI Agent Skills 的安全扫描器**，检测 Skill 中的漏洞与恶意模式，安全合规成 Agent 时代新刚需 |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | ⭐216,183 | Claude Code/Codex/Cursor 通用 Agent Harness 性能优化系统，**Skills + Instincts + Memory + Security** 一体化 |
-| [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | ⭐82,561 | 跨会话持久化 Agent 记忆，兼容 Claude Code/Hermes/Codex 等 8+ CLI |
-| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | ⭐86,459 | 多 Agent 金融交易框架，财顾 + 研究员 + 交易员多角色协作 |
-| [FlowiseAI/Flowise](https://github.com/FlowiseAI/Flowise) | ⭐53,617 | 可视化拖拽构建 AI Agent，低代码代表 |
+| 项目 | Stars | 说明 |
+|------|-------|------|
+| [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | ⭐+1100 today · 30,681 总 | 零 API 费用让 Agent 读取 Twitter/Reddit/B站/小红书，今日爆款 |
+| [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) | ⭐+1079 today | 首个 AI Agent Skill 安全扫描器，检测漏洞与恶意模式 |
+| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | ⭐184,965 | Agent 愿景级经典项目，持续演进 |
+| [OpenHands/OpenHands](https://github.com/OpenHands/OpenHands) | ⭐77,267 | AI 驱动软件开发 Agent，Devin 开源对标 |
+| [browser-use/browser-use](https://github.com/browser-use/browser-use) | ⭐99,032 | 让 Agent 操控浏览器的核心库 |
+| [Eigenwise/atomic-agents](https://github.com/Eigenwise/atomic-agents) | ⭐5,986 | 「原子化」构建 AI Agent，强调可组合性 |
+| [shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | ⭐66,751 | 从零实现 Claude Code 类 Agent Harness |
+| [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | ⭐44,241 | 轻量级开源 Agent，无缝对接现有工具链 |
+| [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | ⭐+562 today | AI 工程入门到实战，社区学习曲线首选 |
 
 ### 📦 AI 应用（垂直场景）
 
-| 项目 | Stars | 亮点 |
-|---|---|---|
-| [shiyu-coder/Kronos](https://github.com/shiyu-coder/Kronos) | **今日 +396🔥** | **首个面向金融市场的开源基础模型**（"Language of Financial Markets"），垂直 FM 新范式 |
-| [ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis) | ⭐42,650 | LLM 驱动的 A/H/美股智能分析系统，多数据源+多渠道推送 |
-| [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) | ⭐27,872 | 文档→原生可编辑 PPT（非图片），含语音旁白，是 Agent 文档处理代表 |
-| [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) | ⭐47,383 | 统一接入多家前沿 LLM 的桌面生产力 App，300+ 助手 |
-| [open-webui/open-webui](https://github.com/open-webui/open-webui) | ⭐141,673 | 最流行的本地 LLM Chat 前端，支持 Ollama/OpenAI API |
-| [OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB) | ⭐69,223 | 金融数据平台，明确服务"分析师、量化与 AI Agent" |
-| [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | ⭐82,328 | PDF/图像→结构化数据，对接 LLM 的"文档入口" |
+| 项目 | Stars | 说明 |
+|------|-------|------|
+| [shiyu-coder/Kronos](https://github.com/shiyu-coder/Kronos) | ⭐+396 today | 首个面向金融市场的 Foundation Model，K 线序列建模 |
+| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | ⭐86,494 | 多 Agent 量化交易框架，金融 + Agent 典型交叉 |
+| [ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis) | ⭐42,671 | A/H/美股 LLM 智能分析与多渠道推送 |
+| [gluonfield/enchanted](https://github.com/gluonfield/enchanted) | ⭐5,964 | iOS/macOS 端私有 LLM 聊天应用（Ollama 集成） |
+| [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | ⭐82,339 | 文档/图像转结构化数据，100+ 语言，连接 LLM 的关键预处理 |
+| [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) | ⭐47,391 | 桌面端 AI 生产力套件，300+ 助手 |
+| [OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB) | ⭐69,230 | 金融数据平台，专为分析师与 AI Agent 设计 |
+| [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) | ⭐27,952 | 文档一键生成可编辑 PPT（含语音旁白） |
 
 ### 🧠 大模型 / 训练
 
-| 项目 | Stars | 亮点 |
-|---|---|---|
-| [pytorch/pytorch](https://github.com/pytorch/pytorch) | ⭐100,800 | 深度学习基础设施，AI 训练生态底座 |
-| [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) | ⭐195,680 | 经典 ML 框架，topic:ml 分类第一 |
-| [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics) | ⭐58,444 | YOLO 最新版，视觉模型工程化标杆 |
-| [0xPlaygrounds/rig](https://github.com/0xPlaygrounds/rig) | ⭐7,626 | Rust 编写的模块化 LLM 应用框架，**高性能 Agent 后端新选择** |
-| [Eigenwise/atomic-agents](https://github.com/Eigenwise/atomic-agents) | ⭐5,986 | "原子化"构建 AI Agent，强调可组合性 |
-| [skyzh/tiny-llm](https://github.com/skyzh/tiny-llm) | ⭐4,280 | Apple Silicon 上手写 vLLM + Qwen 的教学课，**端侧推理学习资源稀缺品** |
-| [starpig1129/DATAGEN](https://github.com/starpig1129/DATAGEN) | ⭐1,751 | 多 Agent 驱动的科研假设生成→数据分析→报告写作流水线 |
+| 项目 | Stars | 说明 |
+|------|-------|------|
+| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | ⭐194,627 | 自演化 Agent，能力随使用持续提升 |
+| [open-compass/opencompass](https://github.com/open-compass/opencompass) | ⭐7,089 | 权威 LLM 评测平台，覆盖 100+ 数据集与主流模型 |
+| [skyzh/tiny-llm](https://github.com/skyzh/tiny-llm) | ⭐4,281 | Apple Silicon 上的 LLM 推理工程实践课 |
+| [llm-jp/awesome-japanese-llm](https://github.com/llm-jp/awesome-japanese-llm) | ⭐1,409 | 日语 LLM 资源汇总 |
+| [thinkwee/AwesomeOPD](https://github.com/thinkwee/AwesomeOPD) | ⭐642 | On-Policy Distillation 论文与实现精选 |
+| [chrisliu298/awesome-llm-unlearning](https://github.com/chrisliu298/awesome-llm-unlearning) | ⭐598 | LLM 机器遗忘（Unlearning）专题资源 |
+| [testtimescaling/testtimescaling.github.io](https://github.com/testtimescaling/testtimescaling.github.io) | ⭐105 | Test-Time Scaling 综述站点 |
+| [samchon/nestia](https://github.com/samchon/nestia) | ⭐2,160 | NestJS + AI Chatbot 辅助开发框架 |
 
 ### 🔍 RAG / 知识库
 
-| 项目 | Stars | 亮点 |
-|---|---|---|
-| [langgenius/dify](https://github.com/langgenius/dify) | ⭐145,356 | Agentic workflow 生产级平台，RAG 分类第一 |
-| [run-llama/llama_index](https://github.com/run-llama/llama_index) | ⭐50,151 | 文档 Agent 与 OCR 平台，RAG 工程化标杆 |
-| [infiniflow/ragflow](https://github.com/infiniflow/ragflow) | ⭐82,834 | RAG + Agent 融合的检索增强引擎 |
-| [milvus-io/milvus](https://github.com/milvus-io/milvus) | ⭐44,794 | 云原生向量数据库，ANN 搜索首选 |
-| [qdrant/qdrant](https://github.com/qdrant/qdrant) | ⭐32,342 | Rust 编写的高性能向量数据库 |
-| [weaviate/weaviate](https://github.com/weaviate/weaviate) | ⭐16,328 | 向量+对象混合检索的云原生 DB |
-| [StarTrail-org/LEANN](https://github.com/StarTrail-org/LEANN) | ⭐11,955 | **RAG on Everything**，97% 存储节省，本地 RAG 利器 |
-| [alibaba/zvec](https://github.com/alibaba/zvec) | ⭐10,188 | 阿里开源的进程内轻量级向量数据库，嵌入式 AI 场景 |
-| [topoteretes/cognee](https://github.com/topoteretes/cognee) | ⭐17,840 | 为 Agent 提供持久化长期记忆的知识图谱引擎 |
-| [mem0ai/mem0](https://github.com/mem0ai/mem0) | ⭐58,637 | Agent 通用记忆层，跨会话上下文 |
-| [NirDiamant/RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) | ⭐27,969 | 高级 RAG 技术教程合集 |
-| [langchain4j/langchain4j](https://github.com/langchain4j/langchain4j) | ⭐12,338 | JVM 生态 LangChain，**企业 Java 团队 RAG/MCP 集成首选** |
+| 项目 | Stars | 说明 |
+|------|-------|------|
+| [langgenius/dify](https://github.com/langgenius/dify) | ⭐145,382 | Agentic Workflow 生产级平台 |
+| [open-webui/open-webui](https://github.com/open-webui/open-webui) | ⭐141,706 | 兼容 Ollama / OpenAI API 的本地 AI 界面 |
+| [infiniflow/ragflow](https://github.com/infiniflow/ragflow) | ⭐82,862 | RAG + Agent 双引擎，业界领先的上下文层 |
+| [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | ⭐82,595 | 跨会话持久化记忆层，Agent 上下文中枢 |
+| [mem0ai/mem0](https://github.com/mem0ai/mem0) | ⭐58,662 | 通用 AI Agent 记忆层，可插拔 |
+| [run-llama/llama_index](https://github.com/run-llama/llama_index) | ⭐50,159 | 文档 Agent 与 OCR 一体化平台 |
+| [milvus-io/milvus](https://github.com/milvus-io/milvus) | ⭐44,798 | 云原生向量数据库，亿级 ANN 检索 |
+| [qdrant/qdrant](https://github.com/qdrant/qdrant) | ⭐32,352 | Rust 编写的高性能向量搜索引擎 |
+| [topoteretes/cognee](https://github.com/topoteretes/cognee) | ⭐17,843 | 自托管知识图谱 + 长期记忆引擎 |
+| [StarTrail-org/LEANN](https://github.com/StarTrail-org/LEANN) | ⭐11,964 | 个人设备 RAG，存储节省 97% |
+| [alibaba/zvec](https://github.com/alibaba/zvec) | ⭐10,205 | 阿里开源进程内向量数据库，嵌入式友好 |
+| [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | ⭐139,417 | Agent 工程平台，事实标准 |
 
 ---
 
 ## 3. 趋势信号分析
 
-今日热榜释放出三个清晰信号。
+今日榜单最显著的特征是 **AI Agent 基础设施的「安全—连接—学习」三位一体爆发**。`Panniantong/Agent-Reach` 单日 1100 stars 表明，社区对 Agent 触达真实世界数据（社交媒体、视频平台）的需求极度迫切——API 成本与封禁风险让「零费用 CLI 抓取」成为刚需；`NVIDIA/SkillSpector` 同期获得 1079 stars，NVIDIA 亲自下场为 Agent Skill 提供安全审查工具，标志着 Agent 生态从「功能可用」进入「生产可信」阶段，与近年 Agent 供应链投毒事件频发的行业背景直接呼应。
 
-**第一，Agent 基础设施进入"军备竞赛"深水区。** Agent-Reach（+1100）、SkillSpector（+1079）、CUA（+70）、ai-engineering-from-scratch（+562）四箭齐发，**覆盖了 Agent 的"能力扩展（多平台读写）→ 安全审计（Skill 漏洞扫描）→ 操作系统控制（Computer-Use）→ 工程化教学"全链路**。这意味着 Agent 已从"demo 阶段"切入"生产阶段"，社区对**可控性、可审计性、可扩展性**的需求集中爆发。**NVIDIA 入局 Agent 安全** 是一个标志性事件——大厂开始为 Agent 生态供给"水电煤"级工具。
-
-**第二，金融成为 LLM 落地的第二战场。** Kronos（金融市场基础模型，今日 +396）首次登顶，叠加 TradingAgents（多 Agent 交易）、daily_stock_analysis（个人投顾）、OpenBB（数据底座）形成完整栈。这与近期 **Bloomberg GPT 类企业方案** 遇冷、**开源垂直 FM** 崛起互为印证：通用大模型难以满足金融时序+合规的双重要求，领域基础模型成为突破口。
-
-**第三，本地化与轻量化是 RAG/Vector 下一站。** 在大向量库（Milvus/Qdrant/Weaviate）格局已定后，**LEANN（97% 存储节省）、zvec（嵌入式）、cognee（图谱记忆）** 集中爆发，说明社区关注点正从"能不能存"转向"**能不能在端侧/低成本跑起来**"，这与端侧 LLM（Picovoice picollm、tiny-llm、Apple Silicon vLLM）的趋势形成共振。
+新方向上，**金融垂直基础模型**（Kronos，+396 stars）与**桌面操控 Agent 框架**（trycua/cua）首次登榜，反映 LLM 正从通用对话向「行业 Foundation Model」分化，同时 Computer-Use 成为继 Browser-Use 之后的下一个 Agent 落地热点。此外，RAG 维度中 `thedotmack/claude-mem`（82k stars）凭借「跨 Agent 持久化记忆」概念迅速跻身 RAG 第一梯队，说明社区共识正从「文档检索」转向「Agent 记忆与上下文工程」。
 
 ---
 
 ## 4. 社区关注热点
 
-- 🔥 **[Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)** — 单日 +1100⭐，打通 5 大中文社交平台的 Agent "眼睛"，零 API 费用设计是 Agent 普惠化关键拼图。
-- 🔥 **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)** — 大厂首个 Agent Skills 安全扫描器，Agent 进入企业生产环境的"准入证"。
-- 🚀 **[shiyu-coder/Kronos](https://github.com/shiyu-coder/Kronos)** — 首个开源金融基础模型，垂直 FM 范式从"自然语言"延伸到"金融语言"，值得架构师关注。
-- 🛠 **[trycua/cua](https://github.com/trycua/cua)** — 全栈 Computer-Use Agent 基础设施（沙箱+SDK+Benchmark），与 Claude/Gemini Computer Use 直接对标。
-- 🧠 **[0xPlaygrounds/rig](https://github.com/0xPlaygrounds/rig)** + **[StarTrail-org/LEANN](https://github.com/StarTrail-org/LEANN)** — Rust 高性能 Agent 框架 + 97% 存储节省的本地 RAG，代表"**轻量级、端侧、可控**"的下一波技术栈方向。
-
-> **总结一句话**：今天的 GitHub AI 圈，Agent 是主战场，金融是新高地，本地化是下一站。
+- 🔥 **[Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)** — 单日 +1100 stars，Agent 获取社交/视频数据的零成本入口，是构建真实场景 Agent 的必备工具。
+- 🛡️ **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)** — Agent 时代的「杀毒软件」，随着 Agent Skill 市场扩张，安全审查将成为强制环节，值得集成到 CI/CD。
+- 📈 **[shiyu-coder/Kronos](https://github.com/shiyu-coder/Kronos)** — 首个金融 K 线 Foundation Model，标志垂直行业大模型从「微调」走向「预训练原生」，量化/投研方向值得关注。
+- 🖥️ **[trycua/cua](https://github.com/trycua/cua)** — Computer-Use Agent 的开源沙箱与基准，对标 OpenAI Operator/Anthropic Computer Use，是 GUI Agent 落地的关键底座。
+- 🧠 **[thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)** — Agent 持久化记忆层已形成独立赛道，mem0、cognee、claude-mem 共同推动「上下文工程」成为 Agent 开发核心技能。
 
 ---
 *本日报由 [Big Model Radar](https://github.com/96loveslife/big_model_radar) 自动生成。*
