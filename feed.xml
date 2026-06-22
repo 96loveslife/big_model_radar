@@ -6,7 +6,7 @@
     <description>AI 开源生态每日简报 · Daily AI ecosystem digest</description>
     <language>zh-CN</language>
     <atom:link href="https://96loveslife.github.io/big_model_radar/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 22 Jun 2026 05:10:29 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 06:27:30 +0000</lastBuildDate>
     <item>
       <title>AI CLI 工具社区动态日报 2026-06-22</title>
       <link>https://96loveslife.github.io/big_model_radar/#2026-06-22/ai-cli</link>
@@ -41,6 +41,13 @@
       <guid isPermaLink="true">https://96loveslife.github.io/big_model_radar/#2026-06-22/ai-hn</guid>
       <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
       <description>Hacker News AI 社区动态日报 2026-06-22</description>
+    </item>
+    <item>
+      <title>AI 工具生态周报 2026-06-22</title>
+      <link>https://96loveslife.github.io/big_model_radar/#2026-06-22/ai-weekly</link>
+      <guid isPermaLink="true">https://96loveslife.github.io/big_model_radar/#2026-06-22/ai-weekly</guid>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+      <description>AI 工具生态周报 2026-06-22</description>
     </item>
     <item>
       <title>AI CLI 工具社区动态日报 2026-06-21</title>
@@ -209,13 +216,6 @@
       <guid isPermaLink="true">https://96loveslife.github.io/big_model_radar/#2026-06-17/ai-trending</guid>
       <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
       <description>AI 开源趋势日报 2026-06-17</description>
-    </item>
-    <item>
-      <title>Hacker News AI 社区动态日报 2026-06-17</title>
-      <link>https://96loveslife.github.io/big_model_radar/#2026-06-17/ai-hn</link>
-      <guid isPermaLink="true">https://96loveslife.github.io/big_model_radar/#2026-06-17/ai-hn</guid>
-      <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Hacker News AI 社区动态日报 2026-06-17</description>
     </item>
   </channel>
 </rss>
