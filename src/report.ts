@@ -5,6 +5,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { resolveLocalDir } from "./publisher.ts";
 
 const DEFAULT_OPENAI_BASE_URL = "https://api.openai.com/v1";
 const DEFAULT_MODEL = "gpt-4.1-mini";
@@ -151,7 +152,10 @@ export async function callLlm(prompt: string, maxTokens = 4096): Promise<string>
 // ---------------------------------------------------------------------------
 
 export function saveFile(content: string, ...segments: string[]): string {
-  const filepath = path.join("digests", ...segments);
+  // local 模式下走 DIGEST_LOCAL_DIR（默认 "digests"，与 github 模式产物结构一致，
+  // 这样本地生成结果可直接 `git add digests/` 推送到 GitHub）
+  const baseDir = process.env["DIGEST_TARGET"] === "local" ? resolveLocalDir() : "digests";
+  const filepath = path.join(baseDir, ...segments);
   fs.mkdirSync(path.dirname(filepath), { recursive: true });
   fs.writeFileSync(filepath, content, "utf-8");
   return filepath;

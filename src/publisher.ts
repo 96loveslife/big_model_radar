@@ -43,7 +43,8 @@ class LocalPublisher implements Publisher {
   async publish(item: PublishItem): Promise<PublishedRef> {
     // 文件已在调用方通过 saveFile 落盘（保持 saveFile 既有签名以减少改动）
     // 此处仅构造 file:// 引用供 commit body / TG 通知使用
-    const absolute = path.resolve(this.baseDir, item.dateStr, `${item.fileName}.md`);
+    // 注意：item.fileName 已含 ".md" 后缀（如 "ai-cli.md"），不要再加
+    const absolute = path.resolve(this.baseDir, item.dateStr, item.fileName);
     // Windows 路径在 file:// 中需要正斜杠，例如 file:///C:/...
     const fileUrl = "file:///" + absolute.replace(/\\/g, "/");
     return {
