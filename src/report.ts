@@ -63,7 +63,7 @@ export function getLlmBaseUrl(): string {
   ).replace(/\/$/, "");
 }
 
-function getLlmModel(): string {
+export function getLlmModel(): string {
   return process.env["OPENAI_MODEL"] ?? process.env["ANTHROPIC_MODEL"] ?? DEFAULT_MODEL;
 }
 

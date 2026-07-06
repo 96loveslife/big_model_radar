@@ -184,23 +184,25 @@ export async function fetchSkillsData(repo: string): Promise<{ prs: GitHubItem[]
 const GITHUB_ISSUE_BODY_LIMIT = 65536;
 const TRUNCATION_NOTICE = "\n\n---\n> ⚠️ 内容超过 GitHub Issue 上限，完整报告见提交的 Markdown 文件。";
 
+const LABEL_COLORS: Record<string, string> = {
+  openclaw: "e11d48",
+  trending: "f9a825",
+  hn: "ff6600",
+  weekly: "7c3aed",
+  monthly: "0d9488",
+  "digest-en": "1d76db",
+  "openclaw-en": "f472b6",
+  "web-en": "6366f1",
+  "trending-en": "fbbf24",
+  "hn-en": "fb923c",
+  archived: "6b7280",        // 灰色，用于过期 issue
+};
+
 export async function createGitHubIssue(title: string, body: string, label: string): Promise<string> {
   const digestRepo = process.env["DIGEST_REPO"] ?? "";
   if (body.length > GITHUB_ISSUE_BODY_LIMIT) {
     body = body.slice(0, GITHUB_ISSUE_BODY_LIMIT - TRUNCATION_NOTICE.length) + TRUNCATION_NOTICE;
   }
-  const LABEL_COLORS: Record<string, string> = {
-    openclaw: "e11d48",
-    trending: "f9a825",
-    hn: "ff6600",
-    weekly: "7c3aed",
-    monthly: "0d9488",
-    "digest-en": "1d76db",
-    "openclaw-en": "f472b6",
-    "web-en": "6366f1",
-    "trending-en": "fbbf24",
-    "hn-en": "fb923c",
-  };
   await ensureLabel(label, LABEL_COLORS[label] ?? "0075ca");
   const resp = await fetch(`https://api.github.com/repos/${digestRepo}/issues`, {
     method: "POST",
