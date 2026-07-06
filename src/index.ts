@@ -10,6 +10,9 @@
  *   ANTHROPIC_MODEL     - Backward-compatible alias for OPENAI_MODEL
  *   GITHUB_TOKEN        - GitHub token for API access and issue creation
  *   DIGEST_REPO         - owner/repo where digest issues are posted (optional)
+ *   DIGEST_TARGET       - "github" (default) or "local"
+ *   DIGEST_LOCAL_DIR    - local mode base dir, default "digests"
+ *   ARCHIVE_AFTER_DAYS  - archive GitHub issues older than N days, default 30
  */
 
 import {
@@ -19,7 +22,6 @@ import {
   fetchRecentItems,
   fetchRecentReleases,
   fetchSkillsData,
-  createGitHubIssue,
 } from "./github.ts";
 import {
   type RepoDigest,
@@ -37,6 +39,14 @@ import { loadWebState, saveWebState, fetchSiteContent, type WebFetchResult, type
 import { fetchTrendingData, type TrendingData } from "./trending.ts";
 import { fetchHnData, type HnData } from "./hn.ts";
 import { loadConfig } from "./config.ts";
+import {
+  createPublisher,
+  resolveTarget,
+  resolveLocalDir,
+  type Publisher,
+} from "./publisher.ts";
+import { newSummary, saveSummary, type DigestSummary } from "./summary.ts";
+import { archiveStaleIssues } from "./issue-archiver.ts";
 
 // ---------------------------------------------------------------------------
 // Repo config — loaded from config.yml, falls back to built-in defaults
@@ -389,6 +399,8 @@ async function saveWebReport(
   digestRepo: string,
   footer: string,
   lang: "zh" | "en" = "zh",
+  publisher: Publisher | null = null,
+  summary: DigestSummary | null = null,
 ): Promise<void> {
   const hasNewContent = webResults.some((r) => r.newItems.length > 0);
 
@@ -431,14 +443,23 @@ async function saveWebReport(
 
       console.log(`  Saved ${saveFile(webContent, dateStr, fileName)}`);
 
-      if (digestRepo) {
+      if (publisher) {
         const webTitle =
           lang === "en"
             ? `🌐 Official AI Content Report ${dateStr}${isFirstRun ? " (First Crawl)" : ""}`
             : `🌐 AI 官方内容追踪报告 ${dateStr}${isFirstRun ? "（首次全量）" : ""}`;
         const webLabel = lang === "en" ? "web-en" : "web";
-        const webUrl = await createGitHubIssue(webTitle, webContent, webLabel);
-        console.log(`  Created web issue (${lang}): ${webUrl}`);
+        const ref = await publisher.publish({
+          fileName,
+          content: webContent,
+          title: webTitle,
+          label: webLabel,
+          dateStr,
+          lang,
+          detail: `anthropic: ${anthropicNew} new, openai: ${openaiNew} new`,
+        });
+        if (summary) summary.issues.push(ref);
+        console.log(`  Published web (${lang}): ${ref.url ?? "(failed)"}`);
       }
     } catch (err) {
       console.error(`  [web/${lang}] Report generation failed: ${err}`);
@@ -461,6 +482,8 @@ async function saveTrendingReport(
   digestRepo: string,
   footer: string,
   lang: "zh" | "en" = "zh",
+  publisher: Publisher | null = null,
+  summary: DigestSummary | null = null,
 ): Promise<void> {
   const hasData = trendingData.trendingRepos.length > 0 || trendingData.searchRepos.length > 0;
   if (!hasData) {
@@ -478,12 +501,21 @@ async function saveTrendingReport(
 
   console.log(`  Saved ${saveFile(trendingContent, dateStr, fileName)}`);
 
-  if (digestRepo) {
+  if (publisher) {
     const trendingTitle =
       lang === "en" ? `📈 AI Open Source Trends ${dateStr}` : `📈 AI 开源趋势日报 ${dateStr}`;
     const trendingLabel = lang === "en" ? "trending-en" : "trending";
-    const trendingUrl = await createGitHubIssue(trendingTitle, trendingContent, trendingLabel);
-    console.log(`  Created trending issue (${lang}): ${trendingUrl}`);
+    const ref = await publisher.publish({
+      fileName,
+      content: trendingContent,
+      title: trendingTitle,
+      label: trendingLabel,
+      dateStr,
+      lang,
+      detail: `${trendingData.trendingRepos.length + trendingData.searchRepos.length} repos`,
+    });
+    if (summary) summary.issues.push(ref);
+    console.log(`  Published trending (${lang}): ${ref.url ?? "(failed)"}`);
   }
 }
 
@@ -494,6 +526,8 @@ async function saveHnReport(
   digestRepo: string,
   footer: string,
   lang: "zh" | "en" = "zh",
+  publisher: Publisher | null = null,
+  summary: DigestSummary | null = null,
 ): Promise<void> {
   if (!hnData.fetchSuccess) {
     console.log(`  [hn/${lang}] No data available, skipping report.`);
@@ -519,12 +553,21 @@ async function saveHnReport(
 
     console.log(`  Saved ${saveFile(hnContent, dateStr, fileName)}`);
 
-    if (digestRepo) {
+    if (publisher) {
       const hnTitle =
         lang === "en" ? `📰 Hacker News AI Digest ${dateStr}` : `📰 Hacker News AI 社区动态日报 ${dateStr}`;
       const hnLabel = lang === "en" ? "hn-en" : "hn";
-      const hnUrl = await createGitHubIssue(hnTitle, hnContent, hnLabel);
-      console.log(`  Created HN issue (${lang}): ${hnUrl}`);
+      const ref = await publisher.publish({
+        fileName,
+        content: hnContent,
+        title: hnTitle,
+        label: hnLabel,
+        dateStr,
+        lang,
+        detail: `${hnData.stories.length} stories`,
+      });
+      if (summary) summary.issues.push(ref);
+      console.log(`  Published HN (${lang}): ${ref.url ?? "(failed)"}`);
     }
   } catch (err) {
     console.error(`  [hn/${lang}] Report generation failed: ${err}`);
@@ -546,21 +589,53 @@ async function main(): Promise<void> {
   const dateStr = new Date(now.getTime() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
   const utcStr = now.toISOString().slice(0, 16).replace("T", " ");
   const digestRepo = process.env["DIGEST_REPO"] ?? "";
-
-  console.log(`[${now.toISOString()}] Starting digest | endpoint: ${getLlmBaseUrl()}`);
+  const target = resolveTarget();
+  const localBaseDir = resolveLocalDir();
+  // local 模式下 publisher 始终非空（LocalPublisher 不依赖网络）；github 模式仅当 digestRepo 设置才创建
+  const publisher: Publisher | null =
+    target === "local" ? createPublisher(target, digestRepo, localBaseDir) : digestRepo
+      ? createPublisher(target, digestRepo, localBaseDir)
+      : null;
+  const summaryStartMs = Date.now();
 
   const langs = (process.env["REPORT_LANGS"] ?? "zh")
     .split(",")
     .map((s) => s.trim().toLowerCase())
     .filter((s) => s === "zh" || s === "en");
   const enabledLangs = langs.length > 0 ? langs : ["zh"];
+  const languages: ("zh" | "en")[] = enabledLangs.filter((l): l is "zh" | "en" => l === "zh" || l === "en");
   const genZh = enabledLangs.includes("zh");
   const genEn = enabledLangs.includes("en");
+  console.log(`[${now.toISOString()}] Starting digest | endpoint: ${getLlmBaseUrl()} | target: ${target}`);
   console.log(`  Languages: ${enabledLangs.join(", ")}`);
+
+  const summary: DigestSummary = newSummary(dateStr, summaryStartMs, languages, target);
 
   // 1. Fetch all data in parallel
   const webState = loadWebState();
   const { fetched, skillsData, webResults, trendingData, hnData } = await fetchAllData(since, webState);
+
+  // 收集源数据快照（在所有数据抓取完成后回填）
+  const anthropicResult = webResults.find((r) => r.site === "anthropic");
+  const openaiResult = webResults.find((r) => r.site === "openai");
+  summary.sources = {
+    anthropic: {
+      newItems: anthropicResult?.newItems.length ?? 0,
+      totalDiscovered: anthropicResult?.totalDiscovered ?? 0,
+    },
+    openai: {
+      newItems: openaiResult?.newItems.length ?? 0,
+      totalDiscovered: openaiResult?.totalDiscovered ?? 0,
+    },
+    trending: {
+      repos: trendingData.trendingRepos.length + trendingData.searchRepos.length,
+      success: trendingData.trendingFetchSuccess,
+    },
+    hn: {
+      stories: hnData.stories.length,
+      success: hnData.fetchSuccess,
+    },
+  };
 
   const peerIds = new Set(OPENCLAW_PEERS.map((p) => p.id));
   const fetchedCli = fetched.filter((f) => f.cfg.id !== OPENCLAW.id && !peerIds.has(f.cfg.id));
@@ -653,19 +728,29 @@ async function main(): Promise<void> {
     );
     console.log(`  Saved ${saveFile(digestContent, dateStr, "ai-cli.md")}`);
     console.log(`  Saved ${saveFile(openclawContent, dateStr, "ai-agents.md")}`);
-    if (digestRepo) {
-      const cliUrl = await createGitHubIssue(
-        `📊 AI CLI 工具社区动态日报 ${dateStr}`,
-        digestContent,
-        "digest",
-      );
-      console.log(`  Created CLI issue (zh): ${cliUrl}`);
-      const openclawUrl = await createGitHubIssue(
-        `🦞 OpenClaw 生态日报 ${dateStr}`,
-        openclawContent,
-        "openclaw",
-      );
-      console.log(`  Created OpenClaw issue (zh): ${openclawUrl}`);
+    if (publisher) {
+      const cliRef = await publisher.publish({
+        fileName: "ai-cli.md",
+        content: digestContent,
+        title: `📊 AI CLI 工具社区动态日报 ${dateStr}`,
+        label: "digest",
+        dateStr,
+        lang: "zh",
+        detail: `cli(${zhSummaries.cliDigests.length} tools)`,
+      });
+      summary.issues.push(cliRef);
+      console.log(`  Published CLI (zh): ${cliRef.url ?? "(failed)"}`);
+      const openclawRef = await publisher.publish({
+        fileName: "ai-agents.md",
+        content: openclawContent,
+        title: `🦞 OpenClaw 生态日报 ${dateStr}`,
+        label: "openclaw",
+        dateStr,
+        lang: "zh",
+        detail: `openclaw + ${OPENCLAW_PEERS.length} peers`,
+      });
+      summary.issues.push(openclawRef);
+      console.log(`  Published OpenClaw (zh): ${openclawRef.url ?? "(failed)"}`);
     }
   }
   if (genEn && enSummaries) {
@@ -690,25 +775,35 @@ async function main(): Promise<void> {
     );
     console.log(`  Saved ${saveFile(enDigestContent, dateStr, "ai-cli-en.md")}`);
     console.log(`  Saved ${saveFile(enOpenclawContent, dateStr, "ai-agents-en.md")}`);
-    if (digestRepo) {
-      const cliEnUrl = await createGitHubIssue(
-        `📊 AI CLI Tools Digest ${dateStr}`,
-        enDigestContent,
-        "digest-en",
-      );
-      console.log(`  Created CLI issue (en): ${cliEnUrl}`);
-      const openclawEnUrl = await createGitHubIssue(
-        `🦞 OpenClaw Ecosystem Digest ${dateStr}`,
-        enOpenclawContent,
-        "openclaw-en",
-      );
-      console.log(`  Created OpenClaw issue (en): ${openclawEnUrl}`);
+    if (publisher) {
+      const cliEnRef = await publisher.publish({
+        fileName: "ai-cli-en.md",
+        content: enDigestContent,
+        title: `📊 AI CLI Tools Digest ${dateStr}`,
+        label: "digest-en",
+        dateStr,
+        lang: "en",
+        detail: `cli(${enSummaries.cliDigests.length} tools)`,
+      });
+      summary.issues.push(cliEnRef);
+      console.log(`  Published CLI (en): ${cliEnRef.url ?? "(failed)"}`);
+      const openclawEnRef = await publisher.publish({
+        fileName: "ai-agents-en.md",
+        content: enOpenclawContent,
+        title: `🦞 OpenClaw Ecosystem Digest ${dateStr}`,
+        label: "openclaw-en",
+        dateStr,
+        lang: "en",
+        detail: `openclaw + ${OPENCLAW_PEERS.length} peers`,
+      });
+      summary.issues.push(openclawEnRef);
+      console.log(`  Published OpenClaw (en): ${openclawEnRef.url ?? "(failed)"}`);
     }
   }
 
   // Web report: zh saves state, en skips state save
-  if (genZh) await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, footer, "zh");
-  if (genEn) await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, enFooter, "en");
+  if (genZh) await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, footer, "zh", publisher, summary);
+  if (genEn) await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, enFooter, "en", publisher, summary);
 
   await Promise.all([
     genZh && zhSummaries
@@ -720,6 +815,8 @@ async function main(): Promise<void> {
           digestRepo,
           footer,
           "zh",
+          publisher,
+          summary,
         )
       : Promise.resolve(),
     genEn && enSummaries
@@ -731,11 +828,27 @@ async function main(): Promise<void> {
           digestRepo,
           enFooter,
           "en",
+          publisher,
+          summary,
         )
       : Promise.resolve(),
-    genZh ? saveHnReport(hnData, utcStr, dateStr, digestRepo, footer, "zh") : Promise.resolve(),
-    genEn ? saveHnReport(hnData, utcStr, dateStr, digestRepo, enFooter, "en") : Promise.resolve(),
+    genZh ? saveHnReport(hnData, utcStr, dateStr, digestRepo, footer, "zh", publisher, summary) : Promise.resolve(),
+    genEn ? saveHnReport(hnData, utcStr, dateStr, digestRepo, enFooter, "en", publisher, summary) : Promise.resolve(),
   ]);
+
+  // 落盘 summary.json 与归档（归档仅 github 模式）
+  summary.durationMs = Date.now() - summaryStartMs;
+  const summaryPath = saveSummary(target === "local" ? localBaseDir : "digests", dateStr, summary);
+  console.log(`  Saved ${summaryPath}`);
+
+  if (target === "github") {
+    const archiveAfterDays = parseInt(process.env["ARCHIVE_AFTER_DAYS"] ?? "30", 10);
+    try {
+      await archiveStaleIssues(target, archiveAfterDays);
+    } catch (err) {
+      console.error(`  [archiver] error: ${err}`);
+    }
+  }
 
   console.log("Done!");
 }

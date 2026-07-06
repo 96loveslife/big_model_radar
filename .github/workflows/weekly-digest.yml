@@ -49,8 +49,10 @@ jobs:
           if git diff --cached --quiet; then
             echo "No weekly report to commit"
           else
+            DATE=$(date -u +%Y-%m-%d)
             WEEK=$(date -u +%Y-W%V)
-            git commit -m "digest: ${WEEK} weekly digest"
+            BODY=$(node scripts/build-commit.mjs digests/${DATE}/summary.json)
+            git commit -m "digest: ${WEEK} weekly digest" -m "$BODY"
             git pull --rebase
             git push
           fi
@@ -70,6 +72,13 @@ jobs:
             git pull --rebase
             git push
           fi
+
+      - name: Archive stale digest issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIGEST_REPO: ${{ github.repository }}
+          ARCHIVE_AFTER_DAYS: ${{ vars.ARCHIVE_AFTER_DAYS || '30' }}
+        run: pnpm tsx scripts/run-archiver.ts
 
       - name: Send Telegram notification
         env:

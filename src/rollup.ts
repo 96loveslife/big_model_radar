@@ -7,7 +7,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { callLlm, saveFile, autoGenFooter } from "./report.ts";
 import { buildWeeklyPrompt, buildMonthlyPrompt } from "./prompts.ts";
-import { createGitHubIssue } from "./github.ts";
+import { createPublisher, resolveTarget, resolveLocalDir, type Publisher } from "./publisher.ts";
+import { newSummary, saveSummary, type DigestSummary } from "./summary.ts";
+import { archiveStaleIssues } from "./issue-archiver.ts";
 
 const DIGESTS_DIR = "digests";
 const MAX_CHARS_PER_REPORT = 2500;
@@ -101,6 +103,16 @@ export async function runWeeklyRollup(): Promise<void> {
     `[weekly] Found ${Object.keys(dailyDigests).length} daily digests: ${Object.keys(dailyDigests).join(", ")}`,
   );
 
+  const target = resolveTarget();
+  const localBaseDir = resolveLocalDir();
+  const publisher: Publisher | null = digestRepo
+    ? createPublisher(target, digestRepo, localBaseDir)
+    : target === "local"
+      ? createPublisher(target, digestRepo, localBaseDir)
+      : null;
+  const summaryStartMs = Date.now();
+  const summary: DigestSummary = newSummary(dateStr, summaryStartMs, enabledLangs as ("zh" | "en")[], target);
+
   const footer = autoGenFooter("zh");
   const enFooter = autoGenFooter("en");
 
@@ -114,9 +126,18 @@ export async function runWeeklyRollup(): Promise<void> {
       zhSummary +
       footer;
     console.log(`  Saved ${saveFile(zhContent, dateStr, "ai-weekly.md")}`);
-    if (digestRepo) {
-      const url = await createGitHubIssue(`📅 AI 工具生态周报 ${weekStr}`, zhContent, "weekly");
-      console.log(`  Created weekly issue: ${url}`);
+    if (publisher) {
+      const ref = await publisher.publish({
+        fileName: "ai-weekly.md",
+        content: zhContent,
+        title: `📅 AI 工具生态周报 ${weekStr}`,
+        label: "weekly",
+        dateStr,
+        lang: "zh",
+        detail: `weekly ${weekStr}`,
+      });
+      summary.issues.push(ref);
+      console.log(`  Published weekly (zh): ${ref.url ?? "(failed)"}`);
     }
   }
 
@@ -130,6 +151,19 @@ export async function runWeeklyRollup(): Promise<void> {
       enSummary +
       enFooter;
     console.log(`  Saved ${saveFile(enContent, dateStr, "ai-weekly-en.md")}`);
+  }
+
+  summary.durationMs = Date.now() - summaryStartMs;
+  const summaryPath = saveSummary(target === "local" ? localBaseDir : "digests", dateStr, summary);
+  console.log(`  Saved ${summaryPath}`);
+
+  if (target === "github") {
+    const archiveAfterDays = parseInt(process.env["ARCHIVE_AFTER_DAYS"] ?? "30", 10);
+    try {
+      await archiveStaleIssues(target, archiveAfterDays);
+    } catch (err) {
+      console.error(`  [weekly archiver] error: ${err}`);
+    }
   }
 
   console.log("[weekly] Done!");
@@ -200,6 +234,16 @@ export async function runMonthlyRollup(): Promise<void> {
 
   console.log(`[monthly] Source: ${sourceLabel.zh}`);
 
+  const target = resolveTarget();
+  const localBaseDir = resolveLocalDir();
+  const publisher: Publisher | null = digestRepo
+    ? createPublisher(target, digestRepo, localBaseDir)
+    : target === "local"
+      ? createPublisher(target, digestRepo, localBaseDir)
+      : null;
+  const summaryStartMs = Date.now();
+  const summary: DigestSummary = newSummary(dateStr, summaryStartMs, enabledLangs as ("zh" | "en")[], target);
+
   const footer = autoGenFooter("zh");
   const enFooter = autoGenFooter("en");
 
@@ -213,9 +257,18 @@ export async function runMonthlyRollup(): Promise<void> {
       zhSummary +
       footer;
     console.log(`  Saved ${saveFile(zhContent, dateStr, "ai-monthly.md")}`);
-    if (digestRepo) {
-      const url = await createGitHubIssue(`📆 AI 工具生态月报 ${monthStr}`, zhContent, "monthly");
-      console.log(`  Created monthly issue: ${url}`);
+    if (publisher) {
+      const ref = await publisher.publish({
+        fileName: "ai-monthly.md",
+        content: zhContent,
+        title: `📆 AI 工具生态月报 ${monthStr}`,
+        label: "monthly",
+        dateStr,
+        lang: "zh",
+        detail: `monthly ${monthStr}`,
+      });
+      summary.issues.push(ref);
+      console.log(`  Published monthly (zh): ${ref.url ?? "(failed)"}`);
     }
   }
 
@@ -229,6 +282,19 @@ export async function runMonthlyRollup(): Promise<void> {
       enSummary +
       enFooter;
     console.log(`  Saved ${saveFile(enContent, dateStr, "ai-monthly-en.md")}`);
+  }
+
+  summary.durationMs = Date.now() - summaryStartMs;
+  const summaryPath = saveSummary(target === "local" ? localBaseDir : "digests", dateStr, summary);
+  console.log(`  Saved ${summaryPath}`);
+
+  if (target === "github") {
+    const archiveAfterDays = parseInt(process.env["ARCHIVE_AFTER_DAYS"] ?? "30", 10);
+    try {
+      await archiveStaleIssues(target, archiveAfterDays);
+    } catch (err) {
+      console.error(`  [monthly archiver] error: ${err}`);
+    }
   }
 
   console.log("[monthly] Done!");

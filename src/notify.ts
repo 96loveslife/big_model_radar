@@ -14,20 +14,33 @@ import fs from "node:fs";
 const BOT_TOKEN = process.env["TELEGRAM_BOT_TOKEN"] ?? "";
 const CHAT_ID = process.env["TELEGRAM_CHAT_ID"] ?? "";
 
-function resolvePagesUrl(): string {
-  const explicit = process.env["PAGES_URL"] ?? process.env["SITE_URL"];
-  if (explicit) return explicit.replace(/\/$/, "");
-
-  const repo = process.env["DIGEST_REPO"] ?? process.env["GITHUB_REPOSITORY"];
-  if (repo) {
-    const [owner, name] = repo.split("/");
-    if (owner && name) return `https://${owner}.github.io/${name}`;
-  }
-
-  throw new Error("Missing PAGES_URL/SITE_URL and unable to derive from repository.");
+function resolveTarget(): "github" | "local" {
+  const v = (process.env["DIGEST_TARGET"] ?? "github").toLowerCase();
+  return v === "local" ? "local" : "github";
 }
 
-const PAGES_URL = resolvePagesUrl();
+function buildUrl(target: "github" | "local", date: string, file: string): string {
+  if (target === "local") {
+    const baseDir = process.env["DIGEST_LOCAL_DIR"] ?? "digests";
+    if (!date) return `file:///${process.cwd().replace(/\\/g, "/")}/${baseDir}`.replace(/^\/+/, "");
+    const absolute = `${process.cwd()}/${baseDir}/${date}/${file}.md`.replace(/\\/g, "/");
+    return "file:///" + absolute.replace(/^\/+/, "");
+  }
+  // github
+  let base: string;
+  const explicit = process.env["PAGES_URL"] ?? process.env["SITE_URL"];
+  if (explicit) {
+    base = explicit.replace(/\/$/, "");
+  } else {
+    const repo = process.env["DIGEST_REPO"] ?? process.env["GITHUB_REPOSITORY"];
+    if (!repo) return `https://example.invalid/`;
+    const [owner, name] = repo.split("/");
+    if (!owner || !name) return `https://example.invalid/`;
+    base = `https://${owner}.github.io/${name}`;
+  }
+  if (!date) return base;
+  return `${base}/#${date}/${file}`;
+}
 
 const ZH_LABELS: Record<string, string> = {
   "ai-cli": "AI CLI 工具",
@@ -71,6 +84,7 @@ function buildMessage(date: string, reports: string[]): string {
   const baseReports = reports.filter((r) => !r.endsWith("-en"));
   const isWeekly = baseReports.includes("ai-weekly");
   const isMonthly = baseReports.includes("ai-monthly");
+  const target = resolveTarget();
 
   const icon = isMonthly ? "📆" : isWeekly ? "📅" : "📡";
   const suffix = isMonthly ? " 月报" : isWeekly ? " 周报" : "";
@@ -84,18 +98,23 @@ function buildMessage(date: string, reports: string[]): string {
 
   for (const r of ordered) {
     const zhLabel = ZH_LABELS[r] ?? r;
-    const zhUrl = `${PAGES_URL}/#${date}/${r}`;
+    const zhUrl = buildUrl(target, date, r);
     const enKey = `${r}-en`;
     if (reports.includes(enKey)) {
       const enLabel = EN_LABELS[r] ?? "EN";
-      const enUrl = `${PAGES_URL}/#${date}/${enKey}`;
+      const enUrl = buildUrl(target, date, enKey);
       lines.push(`• <a href="${zhUrl}">${zhLabel}</a>  ·  <a href="${enUrl}">${enLabel}</a>`);
     } else {
       lines.push(`• <a href="${zhUrl}">${zhLabel}</a>`);
     }
   }
 
-  lines.push(`\n<a href="${PAGES_URL}">🌐 Web UI</a>  ·  <a href="${PAGES_URL}/feed.xml">⊕ RSS</a>`);
+  if (target === "local") {
+    lines.push(`\n📂 本地落盘: ${process.cwd()}/${process.env["DIGEST_LOCAL_DIR"] ?? "digests"}/${date}/`);
+  } else {
+    const webUi = buildUrl(target, "", "").replace(/#$/, "");
+    lines.push(`\n<a href="${webUi}">🌐 Web UI</a>  ·  <a href="${webUi}/feed.xml">⊕ RSS</a>`);
+  }
   return lines.join("\n");
 }
 
