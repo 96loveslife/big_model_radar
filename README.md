@@ -375,3 +375,11 @@ To change the schedule, edit the cron expressions in the corresponding workflow 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=gsscsd/big_model_radar&type=Date)](https://star-history.com/#gsscsd/big_model_radar&Date)
+
+## Local-only mode
+
+```bash
+DIGEST_TARGET=local pnpm start
+```
+
+Skips all GitHub Issue API calls (`createGitHubIssue`, `ensureLabel`, `archiveStaleIssues`). Output goes to `digests/<date>/`. Set `DIGEST_LOCAL_DIR=digests-local` to write to a different directory.

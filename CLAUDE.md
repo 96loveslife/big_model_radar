@@ -24,6 +24,17 @@ export ANTHROPIC_BASE_URL=https://api.kimi.com/coding/  # omit for Anthropic
 export DIGEST_REPO=owner/repo   # omit to skip GitHub issue creation
 ```
 
+## Publishing modes
+
+- `DIGEST_TARGET=github` (default) — create GitHub Issues + commit files
+- `DIGEST_TARGET=local` — local disk only, no GitHub Issue API calls (no `ensureLabel`, no `archiveStaleIssues`)
+- `DIGEST_LOCAL_DIR` — local mode base directory, default `digests` (so local output is git-pushable as-is). Set to `digests-local` for isolated debugging.
+- `ARCHIVE_AFTER_DAYS` — archive GitHub Issues older than N days by adding `archived` label (default 30, github mode only)
+
+## Commit body
+
+`scripts/build-commit.mjs digests/<date>/summary.json` generates a rich commit body that lists each published issue, the source data status, and run stats. Workflows use it as a multi-`-m` commit.
+
 ## Architecture
 
 The pipeline runs in four sequential phases, each implemented as a named async function in `src/index.ts`:

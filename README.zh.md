@@ -352,3 +352,11 @@ OpenAI 内容精选            (research / release / company / safety / ...)
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=gsscsd/big_model_radar&type=Date)](https://star-history.com/#gsscsd/big_model_radar&Date)
+
+## 本地纯落盘模式
+
+```bash
+DIGEST_TARGET=local pnpm start
+```
+
+跳过所有 GitHub Issue API 调用（`createGitHubIssue`、`ensureLabel`、`archiveStaleIssues`），仅生成 `digests/<date>/` 下的 Markdown 文件。设置 `DIGEST_LOCAL_DIR=digests-local` 写到隔离目录。
