@@ -18,5 +18,5 @@ archiveStaleIssues(target, days)
   })
   .catch((err) => {
     console.error(`[run-archiver] fatal: ${err}`);
-    process.exit(0);  // 兜底：不阻塞 workflow
+    process.exit(0); // 兜底：不阻塞 workflow
   });

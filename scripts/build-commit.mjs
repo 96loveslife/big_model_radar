@@ -49,10 +49,15 @@ if (skipped.length > 0) {
 // 源数据状态
 const src = summary.sources ?? {};
 const srcParts = [];
-if (src.anthropic) srcParts.push(`anthropic: ${src.anthropic.newItems ?? 0} new / ${src.anthropic.totalDiscovered ?? 0} total`);
-if (src.openai)    srcParts.push(`openai: ${src.openai.newItems ?? 0} new / ${src.openai.totalDiscovered ?? 0} total`);
-if (src.trending)  srcParts.push(`trending: ${src.trending.repos ?? 0} repos (success=${src.trending.success})`);
-if (src.hn)        srcParts.push(`hn: ${src.hn.stories ?? 0} stories (success=${src.hn.success})`);
+if (src.anthropic)
+  srcParts.push(
+    `anthropic: ${src.anthropic.newItems ?? 0} new / ${src.anthropic.totalDiscovered ?? 0} total`,
+  );
+if (src.openai)
+  srcParts.push(`openai: ${src.openai.newItems ?? 0} new / ${src.openai.totalDiscovered ?? 0} total`);
+if (src.trending)
+  srcParts.push(`trending: ${src.trending.repos ?? 0} repos (success=${src.trending.success})`);
+if (src.hn) srcParts.push(`hn: ${src.hn.stories ?? 0} stories (success=${src.hn.success})`);
 if (srcParts.length > 0) {
   lines.push("Sources:");
   for (const p of srcParts) lines.push(`  ${p}`);
@@ -62,7 +67,9 @@ if (srcParts.length > 0) {
 const secs = Math.round((summary.durationMs ?? 0) / 1000);
 const m = Math.floor(secs / 60);
 const s = secs % 60;
-lines.push(`Stats: duration ${m}m${s}s | model ${summary.model} | target ${summary.target} | retries ${summary.llmRetries ?? 0} | errors ${(summary.errors ?? []).length}`);
+lines.push(
+  `Stats: duration ${m}m${s}s | model ${summary.model} | target ${summary.target} | retries ${summary.llmRetries ?? 0} | errors ${(summary.errors ?? []).length}`,
+);
 
 if ((summary.errors ?? []).length > 0) {
   lines.push("");

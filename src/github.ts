@@ -195,7 +195,7 @@ const LABEL_COLORS: Record<string, string> = {
   "web-en": "6366f1",
   "trending-en": "fbbf24",
   "hn-en": "fb923c",
-  archived: "6b7280",        // 灰色，用于过期 issue
+  archived: "6b7280", // 灰色，用于过期 issue
 };
 
 export async function createGitHubIssue(title: string, body: string, label: string): Promise<string> {

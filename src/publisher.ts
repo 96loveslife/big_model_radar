@@ -9,19 +9,19 @@ import { createGitHubIssue } from "./github.ts";
 export type DigestTarget = "github" | "local";
 
 export interface PublishItem {
-  fileName: string;             // "ai-cli.md"
-  content: string;              // 完整 Markdown
-  title: string;                // "📊 AI CLI 工具社区动态日报 2026-07-05"
-  label: string;                // "digest"
-  dateStr: string;              // "2026-07-05"
+  fileName: string; // "ai-cli.md"
+  content: string; // 完整 Markdown
+  title: string; // "📊 AI CLI 工具社区动态日报 2026-07-05"
+  label: string; // "digest"
+  dateStr: string; // "2026-07-05"
   lang: "zh" | "en";
   /** 用于 commit body 的统计行；每种报告类型自定义 */
-  detail?: string;              // "cli(7 repos): 12 issues, 5 PRs, 1 release"
+  detail?: string; // "cli(7 repos): 12 issues, 5 PRs, 1 release"
 }
 
 export interface PublishedRef {
   title: string;
-  url: string | null;           // github: html_url; local: file:// 绝对路径
+  url: string | null; // github: html_url; local: file:// 绝对路径
   fileName: string;
   label: string;
   lang: "zh" | "en";
@@ -96,11 +96,7 @@ class GitHubPublisher implements Publisher {
 // 工厂
 // ---------------------------------------------------------------------------
 
-export function createPublisher(
-  target: DigestTarget,
-  digestRepo: string,
-  localBaseDir: string,
-): Publisher {
+export function createPublisher(target: DigestTarget, digestRepo: string, localBaseDir: string): Publisher {
   if (target === "local") return new LocalPublisher(localBaseDir);
   return new GitHubPublisher(digestRepo);
 }

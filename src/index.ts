@@ -39,12 +39,7 @@ import { loadWebState, saveWebState, fetchSiteContent, type WebFetchResult, type
 import { fetchTrendingData, type TrendingData } from "./trending.ts";
 import { fetchHnData, type HnData } from "./hn.ts";
 import { loadConfig } from "./config.ts";
-import {
-  createPublisher,
-  resolveTarget,
-  resolveLocalDir,
-  type Publisher,
-} from "./publisher.ts";
+import { createPublisher, resolveTarget, resolveLocalDir, type Publisher } from "./publisher.ts";
 import { newSummary, saveSummary, type DigestSummary } from "./summary.ts";
 import { archiveStaleIssues } from "./issue-archiver.ts";
 
@@ -593,9 +588,11 @@ async function main(): Promise<void> {
   const localBaseDir = resolveLocalDir();
   // local 模式下 publisher 始终非空（LocalPublisher 不依赖网络）；github 模式仅当 digestRepo 设置才创建
   const publisher: Publisher | null =
-    target === "local" ? createPublisher(target, digestRepo, localBaseDir) : digestRepo
+    target === "local"
       ? createPublisher(target, digestRepo, localBaseDir)
-      : null;
+      : digestRepo
+        ? createPublisher(target, digestRepo, localBaseDir)
+        : null;
   const summaryStartMs = Date.now();
 
   const langs = (process.env["REPORT_LANGS"] ?? "zh")
@@ -802,8 +799,20 @@ async function main(): Promise<void> {
   }
 
   // Web report: zh saves state, en skips state save
-  if (genZh) await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, footer, "zh", publisher, summary);
-  if (genEn) await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, enFooter, "en", publisher, summary);
+  if (genZh)
+    await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, footer, "zh", publisher, summary);
+  if (genEn)
+    await saveWebReport(
+      webResults,
+      webState,
+      utcStr,
+      dateStr,
+      digestRepo,
+      enFooter,
+      "en",
+      publisher,
+      summary,
+    );
 
   await Promise.all([
     genZh && zhSummaries
@@ -832,8 +841,12 @@ async function main(): Promise<void> {
           summary,
         )
       : Promise.resolve(),
-    genZh ? saveHnReport(hnData, utcStr, dateStr, digestRepo, footer, "zh", publisher, summary) : Promise.resolve(),
-    genEn ? saveHnReport(hnData, utcStr, dateStr, digestRepo, enFooter, "en", publisher, summary) : Promise.resolve(),
+    genZh
+      ? saveHnReport(hnData, utcStr, dateStr, digestRepo, footer, "zh", publisher, summary)
+      : Promise.resolve(),
+    genEn
+      ? saveHnReport(hnData, utcStr, dateStr, digestRepo, enFooter, "en", publisher, summary)
+      : Promise.resolve(),
   ]);
 
   // 落盘 summary.json 与归档（归档仅 github 模式）
