@@ -1,6 +1,6 @@
 {
   "date": "2026-07-30",
-  "durationMs": 557608,
+  "durationMs": 491348,
   "model": "MiniMax-M3",
   "languages": [
     "zh"
@@ -8,34 +8,34 @@
   "issues": [
     {
       "title": "📊 AI CLI 工具社区动态日报 2026-07-30",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/239",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/244",
       "fileName": "ai-cli.md",
       "label": "digest",
       "lang": "zh",
       "status": "published",
-      "detail": "cli(7 tools)"
+      "detail": "cli(8 tools)"
     },
     {
       "title": "🦞 OpenClaw 生态日报 2026-07-30",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/240",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/245",
       "fileName": "ai-agents.md",
       "label": "openclaw",
       "lang": "zh",
       "status": "published",
-      "detail": "openclaw + 11 peers"
+      "detail": "openclaw + 7 peers"
     },
     {
       "title": "🌐 AI 官方内容追踪报告 2026-07-30",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/241",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/246",
       "fileName": "ai-web.md",
       "label": "web",
       "lang": "zh",
       "status": "published",
-      "detail": "anthropic: 1 new, openai: 27 new"
+      "detail": "anthropic: 0 new, openai: 12 new"
     },
     {
       "title": "📈 AI 开源趋势日报 2026-07-30",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/242",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/247",
       "fileName": "ai-trending.md",
       "label": "trending",
       "lang": "zh",
@@ -44,7 +44,7 @@
     },
     {
       "title": "📰 Hacker News AI 社区动态日报 2026-07-30",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/243",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/248",
       "fileName": "ai-hn.md",
       "label": "hn",
       "lang": "zh",
@@ -54,11 +54,11 @@
   ],
   "sources": {
     "anthropic": {
-      "newItems": 1,
+      "newItems": 0,
       "totalDiscovered": 428
     },
     "openai": {
-      "newItems": 27,
+      "newItems": 12,
       "totalDiscovered": 890
     },
     "trending": {
