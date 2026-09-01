@@ -1,75 +1,22 @@
 {
   "date": "2026-09-01",
-  "durationMs": 455506,
+  "durationMs": 121033,
   "model": "MiniMax-M3",
   "languages": [
     "zh"
   ],
   "issues": [
     {
-      "title": "📊 AI CLI 工具社区动态日报 2026-09-01",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/418",
-      "fileName": "ai-cli.md",
-      "label": "digest",
+      "title": "📆 AI 工具生态月报 2026-08",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/424",
+      "fileName": "ai-monthly.md",
+      "label": "monthly",
       "lang": "zh",
       "status": "published",
-      "detail": "cli(8 tools)"
-    },
-    {
-      "title": "🦞 OpenClaw 生态日报 2026-09-01",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/419",
-      "fileName": "ai-agents.md",
-      "label": "openclaw",
-      "lang": "zh",
-      "status": "published",
-      "detail": "openclaw + 7 peers"
-    },
-    {
-      "title": "🌐 AI 官方内容追踪报告 2026-09-01",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/420",
-      "fileName": "ai-web.md",
-      "label": "web",
-      "lang": "zh",
-      "status": "published",
-      "detail": "anthropic: 1 new, openai: 148 new"
-    },
-    {
-      "title": "📈 AI 开源趋势日报 2026-09-01",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/421",
-      "fileName": "ai-trending.md",
-      "label": "trending",
-      "lang": "zh",
-      "status": "published",
-      "detail": "95 repos"
-    },
-    {
-      "title": "📰 Hacker News AI 社区动态日报 2026-09-01",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/422",
-      "fileName": "ai-hn.md",
-      "label": "hn",
-      "lang": "zh",
-      "status": "published",
-      "detail": "30 stories"
+      "detail": "monthly 2026-08"
     }
   ],
-  "sources": {
-    "anthropic": {
-      "newItems": 1,
-      "totalDiscovered": 438
-    },
-    "openai": {
-      "newItems": 148,
-      "totalDiscovered": 932
-    },
-    "trending": {
-      "repos": 95,
-      "success": true
-    },
-    "hn": {
-      "stories": 30,
-      "success": true
-    }
-  },
+  "sources": {},
   "errors": [],
   "llmRetries": 0,
   "target": "github"
