@@ -1,6 +1,6 @@
 {
   "date": "2026-10-23",
-  "durationMs": 483533,
+  "durationMs": 452824,
   "model": "MiniMax-M3",
   "languages": [
     "zh"
@@ -8,7 +8,7 @@
   "issues": [
     {
       "title": "📊 AI CLI 工具社区动态日报 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/679",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/684",
       "fileName": "ai-cli.md",
       "label": "digest",
       "lang": "zh",
@@ -17,7 +17,7 @@
     },
     {
       "title": "🦞 OpenClaw 生态日报 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/680",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/685",
       "fileName": "ai-agents.md",
       "label": "openclaw",
       "lang": "zh",
@@ -26,16 +26,16 @@
     },
     {
       "title": "🌐 AI 官方内容追踪报告 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/681",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/686",
       "fileName": "ai-web.md",
       "label": "web",
       "lang": "zh",
       "status": "published",
-      "detail": "anthropic: 13 new, openai: 745 new"
+      "detail": "anthropic: 0 new, openai: 530 new"
     },
     {
       "title": "📈 AI 开源趋势日报 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/682",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/687",
       "fileName": "ai-trending.md",
       "label": "trending",
       "lang": "zh",
@@ -44,7 +44,7 @@
     },
     {
       "title": "📰 Hacker News AI 社区动态日报 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/683",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/688",
       "fileName": "ai-hn.md",
       "label": "hn",
       "lang": "zh",
@@ -54,11 +54,11 @@
   ],
   "sources": {
     "anthropic": {
-      "newItems": 13,
+      "newItems": 0,
       "totalDiscovered": 480
     },
     "openai": {
-      "newItems": 745,
+      "newItems": 530,
       "totalDiscovered": 1082
     },
     "trending": {

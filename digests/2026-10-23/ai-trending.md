@@ -1,306 +1,266 @@
 # AI 开源趋势日报 2026-10-23
 
-> 数据来源: GitHub Trending + GitHub Search API | 生成时间: 2026-10-23 00:09 UTC
+> 数据来源: GitHub Trending + GitHub Search API | 生成时间: 2026-10-23 04:11 UTC
 
 ---
 
-<think>We need answer Chinese structured report. Need carefully process data, filter AI/ML explicitly, classify dimensions, 3-8 representative each, stars total+today if available. Need trend analysis 200-300 Chinese chars? likely words/chars approximate. Need not hallucinate today's additions for topic search (none provided), indicate —/未提供. Need account weird data: date 2026-10-23 future relative perhaps accept supplied. Trending stars shown ⭐0 likely total unavailable/placeholder, today's additions. Need filter trending: php no, supabase maybe AI-related? Description says web/mobile and AI applications but generic platform, user says exclude unrelated general tools; likely exclude unless AI core. FastAPI generic framework, exclude. PCL game launcher exclude. Anthropic knowledge-work-plugins clearly AI-related? Plugins intended Claude Cowork, yes. Ponytail AI agent yes. Cloudflare security-audit-skill coding-agent skill yes. Graphify yes. claude-howto yes. Maybe supabase is AI app platform but general Postgres platform; under strict "明确相关" likely exclude as general infrastructure, mention not included. Trending AI five: anthropics, ponytail, cloudflare, graphify, claude-howto. Need list topic results all likely AI related, but some topic llm-model include educational/list/recommendation etc explicitly LLM; include? Need screen. All 81 likely AI-related except maybe generic ML foundational projects (still AI/ML), Tesseract OCR, netdata "AI-powered observability", perhaps included as ML/AI tooling. User asks filter AI/ML clearly related, so topic ml all relevant, including courses and OCR. We don't need list all 81, category representative 3-8 each, but perhaps report should make clear screened corpus and duplicates. Need classify filtered projects. They ask each dimension 3-8 representative projects. Could select top/representative across categories, avoid duplication? "一个项目可归入多类，优先归入最主要类别" Means can classify each project, likely list selected projects, potentially overlaps but priority main. Need decide category taxonomy and include 3-8 each. We have 5 categories; can list 3-8 each. Need stars total + today's if available. Topic results have total stars but no today's additions, trending have today additions and total displayed 0 (perhaps use 0 as supplied? It says [⭐0 (+287 today)]. We should transparently say Trending total field displays 0, treat as unavailable rather than actual zero; report "总量：榜单显示0（疑似未提供）；今日+287". Requirement total + today's. Could write "总 stars：榜单显示 0（可能为缺失值）；今日 +287". Don't falsely call zero. For topic projects, "总 stars 8,945；今日新增：未提供". Need perhaps include trending projects in categories with total placeholder. For selected topic repos, use exact numbers.
+<think>We need craft answer Chinese structured report based provided data date 2026-10-23. Need carefully filter/classify, 3-8 per category, stars total + today's additions if any. Need distinguish Trending vs topic search stars. Data odd: Trending all stars 0 with today additions; topic results have cumulative stars, likely no today increments except overlapping trending projects (ponytail, graphify maybe). Need avoid treating topic stars as today's. Need perform relevance filtering. Need discuss trends 200-300 Chinese chars perhaps. Need ensure all project links. Need select representative projects and categories, one primary category though can mention cross-category. Need likely report comprehensive but concise.
 
-Need analyze data quality: stars counts wildly inflated / future date, e.g. hermes-agent 256k, Ponytail 173k. We should not challenge unless note "按提供数据". Could calculate aggregate? Need today overview 3-5 sentences. Trend signal 200-300 Chinese words/chars from today's hot list. Need focus hot list. Mention coding-agent skills / context engineering / knowledge graph, not foundation model releases. Trending AI entries:
-- anthropics/knowledge-work-plugins +303
-- ponytail +1948
-- cloudflare/security-audit-skill +2979
-- graphify +1408
-- claude-howto +177
-Order top additions: cloudflare 2979, ponytail 1948, graphify 1408, anthropics 303, claude howto 177. Total AI trending additions = 2979+1948+1408+303+177 = 6815. Share all trending additions = total calculate: 287+303+1948+2979+1408+693+101+177+119. Let's sum: 287+303=590; +1948=2538; +2979=5517; +1408=6925; +693=7618; +101=7719; +177=7896; +119=8015. AI direct 6815 / 8015 = 85.0%. Could mention if useful, but ensure only based provided. Non-AI trending 4 (php, supabase, fastapi, PCL), though Supabase mentions AI applications but not AI core; direct AI additions 85%. Is "today's hot list" includes all. We can say after strict filter, 5/9 direct AI, 85.0% of displayed today stars. This is compelling. But check cloudflare security audit skill may be generic coding-agent skill and explicitly AI, yes. Ponytail AI agent. Graphify agent skill/RAG. Anthropics Claude Cowork plugins. Claude howto guide. Trend direction: agent tooling/skills and context/memory/security, rather than model weights/training. New stack/direction first appearing: no actual "first" evidence; say "榜单没有显示新模型权重/训练框架，信号集中在 agent skills + deterministic AST knowledge graph/no vector store + multi-agent tool ecosystems"; cannot claim first appearance. "首次登榜" question asks whether any emerging tech stack/direction first on list. We only have one-day snapshot, cannot establish first. Explicitly say "无法据此确认首次登榜". Emerging direction: context engineering / agent memory and skills, local deterministic knowledge graphs replacing/augmenting vector stores, security audits. Link to recent model/industry events: coding agents proliferation (Claude Code, Codex, Gemini CLI etc), context window/cost/long-running agents; model releases? Data mentions DeepSeek, Qwen etc but no dated recent releases. Say no specific new model release in today's list; tools are vendor/model-agnostic and align with coding-agent wave and MCP/agent interoperability; avoid inventing events. User requests relation to recent model releases/industry events. We can discuss broad current industry context: major models (Claude, GPT/Codex, Gemini, Qwen, DeepSeek, open-weight models) driving agent applications; repository descriptions explicitly mention those. Since supplied date 2026-10-23 and names maybe future; don't assert unprovided events. Phrase "与近期行业方向（编码 Agent、长上下文/低成本推理、MCP/多工具协作、开源模型生态）相连；榜单本身未提供某个新模型发布，故不能归因到单一发布". Good.
+Let's parse dataset deeply and determine filtering. Trending 9:
+php/php-src non-AI omit.
+anthropics/knowledge-work-plugins: AI-related plugins for Claude Cowork -> AI application/agent? likely AI productivity/workflow / agent skills, classify AI agents/workflows or application. Trending +303.
+DietrichGebert/ponytail: AI agent coding skill -> AI agent/development tool; +1948. Overlap topic llm with total 173,759.
+cloudflare/security-audit-skill: coding-agent skill for security audits -> AI agent/tooling/security; +2979. Is explicitly coding-agent skill, AI-related, include AI基础工具 or agents/workflows. Likely AI基础工具 (agent skill/development/security).
+Graphify-Labs/graphify: codebase to queryable knowledge graph, /graphify skill for coding agents, deterministic AST no vector store -> RAG/knowledge base (knowledge graph/code context), +1408. overlap topic llm total 133,146.
+supabase/supabase: "build web mobile AI applications" generic database/platform; AI-related? User says filter clearly related; likely exclude as general tool despite AI application mention. Could perhaps not include. FastAPI generic web framework exclude. luongnv89/claude-howto: visual guide Claude Code, AI-related, educational/documentation, include AI基础工具 or agents/workflows. +177. PCL omit.
+Potential Cloudflare skill could be AI coding-agent, definitely.
+Anthropic plugins intended knowledge workers Claude Cowork, AI application/workflow.
+Trending AI entries 6? anthropics, ponytail, cloudflare, graphify, claude-howto = 5. Maybe Supabase AI applications but generic, exclude. Need state excluded php, supabase, fastapi, PCL (and perhaps mention). Does FastAPI have AI relevance? no. Supabase description says AI applications but general platform; requirement clearly related likely exclude.
 
-Need formulate classifications. Let's map relevant projects.
+Topic search 81 listed? Let's count and classify. Need choose 3-8 each among screened. User likely expects use all relevant data maybe report 15-25 projects. Need select representative projects. They ask each dimension 3-8 representative. Five categories =&gt; 15-40 entries. We can select 3-8 each. Need perhaps include 5 each (25) with strong projects. Need mention total stars and today's additions if available. Topic data only total, no today additions. For overlapping trending give both total + today. Note source inconsistency: topic entries stars likely snapshot cumulative; don't infer today's. Need articulate "主题搜索仅提供累计 stars，未提供今日新增，以—表示". The trending list displays star total 0 likely weird; for trending use given +today and topic total if overlap. For trending-only total shown as 0 (perhaps no total due data), use "累计 stars：榜单未提供/显示0；今日 +..." rather than say 0 total. User asks total + today's as available. Could write "总 stars：榜单未提供（条目显示 0）；今日 +303". For ponytail and graphify, topic result gives total, use total 173,759 / +1,948; 133,146 / +1,408. For other trending-only total unavailable. Need be transparent.
 
-Input topic results grouped:
-llm-model (14?):
-0xPlaygrounds/rig 8,945 LLM apps Rust -> AI基础工具 (framework)
-open-compass/opencompass 7,536 evaluation -> 大模型/训练 maybe AI基础工具? Main evaluation platform; category large model/training.
-Eigenwise/atomic-agents 6,289 agent framework -> Agent
-skyzh/tiny-llm 4,786 educational inference system -> AI基础工具 or large model/training. Main learning LLM inference, foundational.
-AkaliKong/MiniOneRec 1,916 minimal reproduction OneRec (recommender) -> 大模型/训练 or AI application? Research.
-thinkwee/AgentsMeetRL 1,865 list agentic RL -> 大模型/训练 (research list)
-llm-jp awesome Japanese LLM 1,442 -> resource, perhaps 大模型/训练
-thinkwee/AwesomeOPD 879 on-policy distillation -> 大模型/训练
-story generation list 668 -> 大模型/训练 (research)
-awesome MLSecOps 480 -> AI基础工具/security dev perhaps
-picollm 318 on-device inference -> AI基础工具
-telegram summary bot 201 -> AI应用
-OpenEBFM 126 training foundation -> 大模型/训练
-generative recsys list 124 -> 大模型/训练
-test-time scaling survey 112 -> 大模型/训练.
-All explicit AI.
+Need analyze trends from today's hot榜. "今日新增" values:
+cloudflare +2979 biggest
+anthropics +303
+ponytail +1948
+graphify +1408
+claude-howto +177
+Potential sum AI trending = 6815? 303+1948=2251, +2979=5230, +1408=6638, +177=6815. All 9 sum maybe 8106? nonAI 287+101+119=507; total 7322? Let's calculate: 287+303=590; +1948=2538; +2979=5517; +1408=6925; +693=7618; +101=7719; +177=7896; +119=8015. AI 6815, nonAI 1200? php287+supabase693+fastapi101+PCL119=1200; yes 8015. AI share 85.0% of additions among listed. Could mention five AI-related trending entries account for 6,815 of 8,015 (~85%), despite 5/9 entries. Nice signal. Need verify data date future 2026-10-23; use stated date, don't question. Trend analysis 200-300 Chinese chars likely exact-ish. Need tie recent model releases/industry events—but provided data alone doesn't mention recent releases. We should avoid inventing specific events. Can infer agentic coding, skills/MCP, local-first, knowledge graphs/RAG, context engineering. User explicitly asks relation to recent model releases/industry events. We can say "与近期模型能力从对话转向长上下文、工具调用和代理化、以及 coding agent/MCP 生态扩张相呼应" but data date 2026 perhaps known? We don't have actual recent events, should qualify based on descriptions, not assert specific launch. Could mention OpenAI/Anthropic etc in repo descriptions (Ollama supports models, Claude Code, Codex, Gemini CLI). Maybe "不把某个未给出的新模型发布当作事实；从项目方向看..." But report should be professional. Could state "这类需求与近期大模型厂商将重点推向长上下文、工具调用、计算机使用及可执行代理的路线一致" without naming unprovided release. Also Graphify no vector store suggests vectorless/structured context, local deterministic parsing. Cloudflare security audit reflects agent skills governance/security. Ponytail "lazy senior dev" reflects context/token efficiency and code minimalism. Anthropic knowledge-work plugins reflects agentization of knowledge work. New stack first appearances: "coding-agent skill" / agent skills and knowledge graph rather than model weights; local deterministic AST + no vector store; self-evolving context DB, vectorless RAG, memory. Need distinguish trend evidence from topic search (7-day active). Could mention 81 repos, topic distribution. Need perhaps calculate counts by topics:
+llm-model 15? Let's count:
+1 rig
+2 opencompass
+3 atomic
+4 tiny
+5 nestia
+6 MiniOneRec
+7 AgentsMeetRL
+8 awesome japanese
+9 AwesomeOPD
+10 story
+11 MLSecOps
+12 picollm
+13 telegram
+14 OpenEBFM
+15 item ID =15.
+vector-db 17? list from anything through txtai/lancedb: let's count: anything 1, meili2, llama3, milvus4, volcengine5, PageIndex6, qdrant7, cognee8, RAG techniques9, weaviate10, zvec11, langchain4j12, LEANN13, txtai14, lancedb15. Actually 15.
+ai-agent: hermes, Agent-Reach, career, daily, ppt, cherry, nanobot, CowAgent, siyuan, Codewhale, CopilotKit, Vibe-Trading, oh-my-pi, QwenPaw, DeepSeek-Reasonix =15.
+llm: rea, ECC, firecrawl, AutoGPT, ollama, prompts, ponytail, transformers, dify, open-webui, langchain, MoneyPrinter, Graphify, browser-use =14.
+rag: awesome-llm-apps, claude-mem, ragflow, crawl4ai, headroom, mem0, langgraph, DeepTutor, LightRAG =9.
+ml: tensorflow, pytorch, ML beginners, courses, netdata, tesseract, OpenBB, ai engineering, AI beginners, sklearn, keras, ultralytics, supervision =13.
+Total 15+15+15+14+9+13=81. Useful trend overview: AI agent topic 15, LLM model 15, vector DB 15, general LLM 14, etc. But topic search results likely sorted stars and active last 7 days, not necessarily trending. Can state "81个项目中，agent/llm-model/vector-db各15，llm 14，显示..." Note topic labels not mutually exclusive? They are results grouped; apparently 81 unique, yes. Could mention topic search is active stock not daily velocity; use total stars carefully.
 
-ai-agent 15:
-NousResearch/hermes-agent 256245 -> Agent
-Panniantong/Agent-Reach 101026 -> Agent/tool
-career-ops 76610 -> app
-daily_stock_analysis 66890 -> app
-ppt-master 65988 -> app
-cherry-studio 52892 -> app
-nanobot 49283 -> agent
-CowAgent 47507 -> agent
-siyuan 46885 -> app/knowledge workspace perhaps RAG/knowledge
-Codewhale 41110 -> agent/CLI
-CopilotKit 38184 -> AI基础工具/agent frontend
-Vibe-Trading 36334 -> app
-oh-my-pi 36287 -> agent/CLI
-QwenPaw 35955 -> agent
-DeepSeek-Reasonix 35933 -> agent
-Wait count 15? Hermes, Agent-Reach, career, stock, ppt, cherry, nanobot, CowAgent, siyuan, codewhale, CopilotKit, Vibe, ohmy, QwenPaw, Reasonix = 15. User says 81: count likely 14+15+? RAG 13, vector 11, llm 12, ml 12 = 77? Let's count not essential.
+Need decide report entries and categories.
 
-RAG:
-open-webui 156488 -> AI application? User categories: RAG/knowledge base; it is interface supports Ollama/OpenAI, main AI app/platform. Could classify AI应用 or RAG. "优先最主要类别": AI application / interface, likely AI应用.
-langchain 148291 -> foundation tool
-awesome-llm-apps 142727 -> AI应用 (collection)
-Graphify 132925 -> RAG
-claude-mem 102335 -> Agent or RAG; persistent context, agent memory. Agent primary maybe 🤖.
-ragflow 92672 -> RAG
-crawl4ai 86053 -> foundation/data ingestion tool, perhaps RAG
-headroom 77553 -> foundation tool/context compression
-mem0 67657 -> RAG/knowledge or Agent memory; RAG primary perhaps.
-anything-llm 67458 -> AI app / RAG workspace
-llama_index 52625 -> RAG
-milvus 46453 -> vector DB RAG
-langgraph 43731 -> Agent framework (though topic RAG; primary Agent)
-DeepTutor 42165 -> AI app
-LightRAG 40273 -> RAG.
-Vector:
-meilisearch 59637 -> AI基础工具 / RAG (hybrid search)
-OpenViking 40600 -> RAG
-PageIndex 39489 -> RAG
-qdrant 35191 -> RAG
-cognee 32677 -> RAG
-RAG_Techniques 29975 -> RAG educational
-weaviate 16903 -> RAG
-zvec 16138 -> RAG
-langchain4j 13281 -> foundation tool / RAG
-LEANN 13056 -> RAG
-txtai 13027 -> RAG / foundation
-lancedb 11744 -> RAG.
-llm general:
-rea 366122 -> AI基础工具? reverse engineering with agents; Agent primary likely Agent/developer tool.
-ECC 286525 -> Agent/harness optimization, primary Agent
-firecrawl 194303 -> RAG/data tool
-AutoGPT 187715 -> Agent
-ollama 184338 -> foundation/inference
-prompts.chat 174006 -> AI app/resource
-ponytail 173431 -> Agent
-transformers 168002 -> large model/training
-dify 159281 -> workflow/Agent
-MoneyPrinterTurbo 134237 -> app
-browser-use 118890 -> Agent
-ml:
-tensorflow 201184 -> large model/training / foundation framework
-pytorch 104982 -> large model/training
-ML beginners 91680 -> educational, AI/ML
-cs-video courses 83741 -> educational, AI/ML broad
-netdata 81093 -> AI-powered observability, AI application/tool
-tesseract 77118 -> OCR, ML application/infrastructure
-OpenBB 74557 -> AI agents/data app
-ai engineering scratch 72477 -> education
-AI beginners 70125 -> education
-scikit 67868 -> ML foundation
-keras 64377 -> model/training
-ultralytics 62749 -> model/application
-supervision 51266 -> CV tool.
-Trending AI:
-knowledge-work-plugins +303 (Claude Cowork plugins) -> AI Agent/workflow or application
-ponytail +1948 -> Agent
-security-audit-skill +2979 -> AI基础工具 (agent skill) / Agent. Main category AI基础工具 perhaps security/developer skill.
-graphify +1408 -> RAG
-claude-howto +177 -> AI基础工具? educational developer tool; Agent perhaps.
-Could list top 3-8 per category. Need decide whether include duplicates across categories. We can make category lists with 5-8 each and explicitly state primary classification; selected projects may overlap only if truly multi-category. Requirement "一个项目可归入多类，优先归入最主要类别" means likely acceptable to assign each once. We should cover important projects from all data. Need ensure each category has 3-8. Could list 5 each = 25 entries, manageable but answer long. Desired oververbosity 5, user asks robust report. We can list 5 per category (25) with links, stars, one sentence. Maybe include 6 in key categories. Need include trending AI projects prominently and representative topic projects. Could classify 81 into categories, but not list all. They ask "将筛选后的项目按...分类" potentially implies all filtered projects should be categorized, but output section asks each dimension list 3-8 representative projects. So likely only representative list required, not exhaustive. We should mention "81 个主题结果大多明确 AI/ML，以下按主要用途归类，列代表性项目；完整清单不逐项展开". But perhaps need filter all 81 and classification maybe expected to identify all? We can provide counts and selected lists. Need possibly include screening notes/exclusions.
+Let's understand every project to classify accurately.
 
-Let's parse exact counts and maybe calculate category counts to demonstrate filtering. Need accurately count all input? Could classify all 81, but no need perhaps. Yet "第一步（过滤）...第二步（分类）...第三步输出" likely report should be based on filtered data. We can state direct AI/ML topic results 81/81? Are all topic search results AI/ML? Let's inspect possible questionable:
-- tesseract OCR is ML.
-- netdata AI-powered observability.
-- cs-video-courses computer science courses with ML topic; AI/ML related? Topic ml but description generic CS courses. User says AI/ML clearly related; maybe exclude because generic CS course list? 
-- ML-For-Beginners, AI-For-Beginners, ai-engineering-from-scratch clearly educational AI/ML.
-- awesome lists explicitly AI.
-- OpenBB AI agents.
-- LangChain etc.
-All 81 may have been retrieved via AI topics, so likely all related. Trending 5 direct; exclude 4. But if strict, Supabase has AI apps mention but core not AI. FastAPI may be used for AI but general. PHP, PCL no. Need maybe include Cloudflare security audit skill despite no explicit LLM? "coding-agent skill" AI. Anthropic knowledge work plugins. Good.
+AI基础工具 (framework, SDK, inference engine, dev tools, CLI):
+- ollama/ollama: local model runtime, total 184,359. Strong.
+- huggingface/transformers: model definition/training/inference framework 168,005. Could primary "大模型/训练" because model framework, but category says foundational tools and training; likely AI基础工具 or 大模型/训练. Need distribute.
+- langchain-ai/langchain: agent engineering platform 148,302, foundational framework.
+- langchain-ai/langgraph: resilient agents 43,748, could agent/workflow.
+- langchain4j: Java LLM app framework 13,283, basic tool.
+- 0xPlaygrounds/rig: Rust modular LLM apps 8,947.
+- atomic-agents: agent framework 6,291 perhaps agents.
+- open-webui: interface not exactly basic tool; AI app perhaps.
+- TensorFlow/PyTorch/scikit/Keras: large model/training.
+- picollm: on-device inference 318, basic tool.
+- tiny-llm: educational inference system 4,787, basic tool or training.
+- cloudflare/security-audit-skill (trending): coding-agent skill, basic tool.
+- luongnv89/claude-howto: guide, perhaps AI基础工具? User categories don't include educational resources; can place AI基础工具 (developer tool/learning) or AI应用. Better "AI基础工具" because Claude Code usage/agent skill.
+- firecrawl/crawl4ai: data acquisition SDK, basic tool / RAG. Could list RAG.
+- headroom: context compression library/proxy/MCP, basic tool / RAG.
+- CopilotKit maybe agent UI framework basic tool.
+- QwenPaw/nanobot etc agents.
+- rea reverse engineering agent application? Agent.
+- ECC agent harness performance optimization system: basic tool or agent workflow.
+- oh-my-pi coding agent: agent.
+- DeepSeek-Reasonix coding agent: agent.
+- security audit skill: foundational dev tool.
 
-Need report date title "AI 开源趋势日报｜2026-10-23". Mention data snapshot and stars caveat.
+AI智能体/工作流:
+- anthropics/knowledge-work-plugins (plugins for Claude Cowork) total unavailable, +303.
+- ponytail (AI coding agent skill) total 173,759 +1,948.
+- cloudflare/security-audit-skill maybe basic tool but could be agent workflow. Need one project can categories, but avoid duplicate maybe list under agent/workflow as coding-agent skill. User says can multi-category, prioritize main. 
+- luongnv89/claude-howto maybe agent workflow.
+- NousResearch/hermes-agent 256,297 (personal agent)
+- HKUDS/nanobot 49,289
+- zhayujie/CowAgent 47,511
+- codewhale-hq/Codewhale 41,111
+- agentscope-ai/QwenPaw 35,964
+- can1357/oh-my-pi 36,307
+- esengine/DeepSeek-Reasonix 35,935
+- langgraph 43,748
+- AutoGPT 187,714 maybe agent/workflow (classic autonomous agent)
+- career-ops 76,647, daily stock, ppt etc are applications.
+- CopilotKit 38,186 is frontend stack for agents, basic/agent.
+- Agent-Reach 101,074 is tool enabling agent internet, basic/agent.
+- rea 367,350 reverse engineering with agents (application/agent)
+- ECC 286,635 harness optimization (agent infrastructure).
+Need select 3-8. We can choose trending ones plus high-star active repos: Hermes, nanobot, LangGraph, QwenPaw, CowAgent, ponytail, Cloudflare maybe. But 8 max. Need ensure category distinction.
 
-Let's think through categories and best representative projects, ensuring stars exact and links.
+AI应用 (specific products/vertical solutions):
+- career-ops 76,647
+- daily_stock_analysis 66,902
+- ppt-master 66,148
+- Cherry Studio 52,896 (general productivity app)
+- Vibe-Trading 36,351
+- MoneyPrinterTurbo 134,308
+- browser-use 118,910 (library, arguably basic tool, but AI browser agent product)
+- OpenBB 74,563 (AI agent data platform)
+- siyuan 46,885 (knowledge workspace)
+- anything-llm 67,464 (local-first agent experience; app)
+- telegram-summary-bot 201
+- DeepTutor 42,200
+- maybe Graphify (knowledge tool, RAG).
+- Anthropic knowledge-work plugins (application/workflow)
+- Open WebUI 156,505 (application)
+- Cherry Studio.
+Need select 3-8. Include high relevance / diverse verticals: Open WebUI, AnythingLLM, MoneyPrinterTurbo, career-ops, ppt-master, browser-use, OpenBB, DeepTutor perhaps 8. But maybe "AI应用" should concrete app products, and foundational libraries not. Use 6-8.
 
-Potential structure:
+大模型/训练:
+- TensorFlow 201,192
+- PyTorch 104,989
+- Hugging Face Transformers 168,005
+- opencompass 7,537 (evaluation not training, but model/evaluation)
+- tiny-llm 4,787
+- OpenEBFM 127
+- ultralytics 62,758 (ML not necessarily LLM; explicitly AI/ML relevant, category large model/training perhaps ML training)
+- ai-engineering-from-scratch 72,523 (education)
+- Keras 64,376
+- scikit-learn 67,870
+- AgentsMeetRL / OPD research lists
+not framework maybe training.
+- Ollama inference (basic).
+- ML-For-Beginners/AI-For-Beginners not specifically large models but AI/ML, user says AI/ML clearly relevant; categories include AI overall but named "大模型/训练". Could include model/training frameworks. Need 3-8. Select PyTorch, TensorFlow, Transformers, Ollama maybe inference, OpenCompass, Ultralytics, tiny-llm or OpenEBFM. But overlap categories allowed; to avoid duplicate maybe Ollama under basic tools, PyTorch/TensorFlow/Transformers/Ultralytics/OpenCompass/tiny-llm. "模型权重" none listed, don't claim.
+Could classify TensorFlow/PyTorch as 大模型/训练 though broad ML frameworks. Include scikit-learn maybe not large model; perhaps user expects all AI-related projects not necessarily only LLM. Category title says 大模型/训练, broad ML training acceptable. Mention classic ML included because data's AI/ML scope.
 
-# AI 开源趋势日报（2026-10-23）
-> 数据口径：Trending 的今日新增最可信；主题搜索只给累计 stars，未提供今日新增。Trending 的累计 stars 字段显示为 0，按缺失/未展示处理，不视作真实零。
+RAG/知识库:
+- vector databases: Milvus 46,454, Qdrant 35,195, Weaviate 16,905, zvec 16,139, LanceDB 11,746, maybe anything-llm.
+- llama_index 52,628
+- OpenViking 40,613
+- PageIndex 39,503
+- Cognee 32,680
+- RAG_Techniques 29,976
+- LangChain4j 13,283 (could basic)
+- LEANN 13,058
+- txtai 13,028
+- graphify 133,146 +1408
+- RAGFlow 92,685
+- crawl4ai 86,063 (data ingestion)
+- claude-mem 102,352
+- headroom 77,580
+- mem0 67,670
+- LightRAG 40,275
+- langgraph 43,748 (agent/RAG)
+- siyuan knowledge workspace 46,885
+Need select 3-8, likely 8: Graphify, claude-mem, RAGFlow, LlamaIndex, OpenViking, PageIndex, Milvus/Qdrant, mem0/LightRAG. We need represent vectorless trend and storage. Maybe select:
+  Graphify (today +1408, total 133,146) — AST deterministic knowledge graph, no vector DB.
+  claude-mem (102,352) — persistent context memory.
+  RAGFlow (92,685) — RAG engine + agents.
+  LlamaIndex (52,628) — document processing platform.
+  OpenViking (40,613) — self-evolving context DB, memory/RAG/skills.
+  PageIndex (39,503) — vectorless reasoning RAG.
+  Milvus (46,454) — vector DB infra.
+  mem0 (67,670) — memory layer.
+Could omit vector DB variety or include Qdrant instead of Milvus. Max 8. Good.
 
-## 过滤结果
-- Trending 9 -> direct AI/ML 5: links; today additions. Excluded php, supabase, fastapi, PCL. Maybe mention Supabase has AI application support but not AI-native, excluded under strict criterion.
-- Topic search 81 -> retained as AI/ML-related; potentially broad educational/data tools kept due explicit ML/LLM/agent tags. No duplicate between lists? Graphify/ponytail overlap trending; yes list unique? Data says topic results already deduped within search, but overlaps across sources. We can mention five trending AI items also appear in topic search? Graphify and ponytail definitely; perhaps not Anthropics/cloudflare/claude-howto. "已按仓库去重" means likely 81 unique topic results but cross-source duplicates remain; report avoids double counting. Need not say 81/81 if questionable. Could say "主题搜索结果整体均带有 llm/ai-agent/rag/vector-db/ml 主题，且描述明确落在 AI/ML；保留作为背景样本". Some `topic:llm-model` lists are research/educational but clearly LLM.
+AI基础工具 choose 6-8:
+- Ollama 184,359 — local inference runtime.
+- Transformers 168,005 — but place large model perhaps avoid duplicate; can list in both if needed. Need each category 3 min. 
+- LangChain 148,302 — agent engineering platform.
+- CopilotKit 38,186 — frontend stack/protocol for agents.
+- Agent-Reach 101,074 — internet access tool.
+- crawl4ai 86,063 — LLM-ready crawler (could RAG)
+- headroom 77,580 — context compression (could RAG)
+- cloudflare/security-audit-skill — +2979 (trending)
+- luongnv89/claude-howto — +177 (trending)
+- firecrawl 194,358 — data/web ingestion
+- ECC 286,635 — agent harness optimization.
+Could select 8 strongest: ECC, firecrawl, ollama, langchain, Agent-Reach, headroom, CopilotKit, Cloudflare skill. But ECC description is agent harness performance optimization, more agent infrastructure; perhaps category agent. Need prioritize main. Cloudflare clearly developer skill. Include today's trending. Maybe "AI基础工具" can list 7: Ollama, LangChain, Firecrawl, Headroom, Agent-Reach, cloudflare skill, claude-howto. CopilotKit perhaps agent UI. We can mention cross-category tags.
 
-Then today overview 3-5 sentences. Example 4 sentences:
-"今日最清晰的信号不是新模型权重，而是编码 Agent 的外围基础设施：安全审计、技能库、行为约束、上下文/知识组织同时升温。Trending 直接 AI 项目 5 个，累计今日新增 6,815 stars，占榜单展示新增约85%，其中 Cloudflare security-audit-skill (+2,979) 和 Ponytail (+1,948) 最突出。Graphify 以本地确定性 AST + 可解释知识图谱替代/补充向量检索，显示 RAG 正从“ embeddings 基础设施”走向可解释上下文工程。主题搜索中 Agent harness、长期记忆、浏览器/网页数据获取及本地推理仍是高星项目密集区。2,979) 和 ponytail (+1,948) 领先。Graphify (+1,408) 把代码库、文档、SQL/PDF 转成可解释知识图谱，代表 RAG/上下文工程的本地化、可审计路线。主题搜索的 stars 存量则显示，应用落地（求职、股票、PPT、知识工作区）、Agent 编排和记忆/检索基础设施仍是大盘主流；未出现以新模型权重为首要热点的信号。" That's 4 sentences, good. Need be cautious "累计今日新增 6815" calculate. Include all five.
+AI agents choose 8:
+- NousResearch/hermes-agent 256,297 — personal agent grows with user.
+- AutoGPT 187,714 — autonomous agent platform (though not newly active? topic).
+- Ponytail 173,759 +1948 — coding agent skill.
+- maybe ECC 286,635 — harness optimization
+but not an agent framework; basic.
+- career-ops is application, not here.
+- nanobot 49,289
+- CowAgent 47,511
+- LangGraph 43,748
+- QwenPaw 35,964
+- oh-my-pi 36,307
+- DeepSeek-Reasonix 35,935
+- Graphify is knowledge graph, not primary.
+- anthropics plugins +303
+Could list 8: Hermes, Ponytail, LangGraph, nanobot, CowAgent, QwenPaw, oh-my-pi, DeepSeek-Reasonix. But then Anthropic trending +303 and Cloudflare maybe omitted from category? We need ensure hot projects represented. Could use multi-category: list Anthropic under AI应用 or agent. Maybe agents list 8 include Anthropic instead of one. Need capture all trending relevant:
+- Anthropic knowledge-work plugins -> agent/workflow
+- ponytail -> agent
+- Cloudflare skill -> foundation/agent
+- Graphify -> RAG
+- claude-howto -> foundation/agent.
+Could include all 5 in relevant lists; then choose 3-8. Agents: Anthropic, Ponytail, Hermes, nanobot, LangGraph, CowAgent, QwenPaw, DeepSeek-Reasonix = 8. Cloudflare in basic; claude-howto in basic; graphify RAG. Good.
+Could omit AutoGPT despite high stars, but it is representative and likely expected. Maybe replace one. AutoGPT is classic agent, definitely. Need choose based trend not just total. We can include 8:
+  anthropics plugins
+  ponytail
+  NousResearch/hermes-agent
+  AutoGPT
+  LangGraph
+  nanobot
+  CowAgent
+  QwenPaw or DeepSeek-Reasonix.
+But total star sorted list seems synthetic future and high. User likely wants notable. Could list "代表项目" not exhaustive. Need maybe include 8 max and mention additional in trend. We can choose diverse.
+Potentially `affaan-m/ECC` has 286,635, high and directly agent harness performance optimization; likely important. Could classify foundational tool, but agent workflow. `morluto/rea` 367,350 is highest but niche reverse engineering with agents, likely AI application/agent; why not include? Dataset may intentionally contain high stars and expected filtering/classification. Need use representative projects across categories, not necessarily all. We can include high star projects strategically.
 
-## categories
-Could introduce "按主要用途归类；stars总量来自主题结果；今日新增仅Trending有。"
+Let's inspect likely task evaluation: They may expect:
+- filter out php, supabase? Maybe FastAPI? PCL.
+- identify trending AI repos: anthropics/knowledge-work-plugins, ponytail, cloudflare/security-audit-skill, graphify, claude-howto. Maybe Supabase due AI mention? 
+- classify all relevant topic search into categories.
+- output 3-8 per category.
+- trend analysis mentions coding agent skills, agentic workflows, knowledge graph/RAG, local-first.
+Need provide links each item.
+Need ensure not fabricate current stars. Use supplied values exactly formatted. For topic projects, "今日新增：未提供" not "0". For trending entries, given total `⭐0`; likely say "累计 stars：榜单显示 0（未给出有效累计值）". Maybe user expects total + today's; we can format "Stars：0（榜单字段如此；今日 +2,979）". But if we say total 0, misleading, but faithfully data. For overlapping use cumulative. We can state upfront:
+- `今日新增` only available for Trending; topic search provides cumulative stars, not daily additions.
+- Trending's total field is 0 for all, so report it as "累计未提供（榜单显示 0）" rather than treating as real zero.
+Then entries can be concise.
 
-### 🔧 AI 基础工具
-Need 3-8, include:
-- cloudflare/security-audit-skill (today +2979; total unavailable) — coding-agent security audit skill, multi-phase machine-readable independently verified findings. Why today: top AI trending.
-- anthropics/knowledge-work-plugins (+303; total unavailable) — Claude Cowork plugins knowledge workers; ecosystem extension.
-- DietrichGebert/ponytail (+1948; total unavailable) — makes coding agents lazy senior dev, prompt/behavior optimization; but primary agent? It is an AI agent skill, could list Agent not foundation. To avoid duplicate, choose in Agent category. Need 3-8 foundation from topic:
-  - ollama 184,338 — local model runtime/inference
-  - huggingface/transformers 168,002 — model definition/training/inference framework
-  - langchain 148,291 — agent engineering platform (maybe Agent)
-  - CopilotKit 38,184 — frontend stack/protocol for agents (foundation)
-  - headroom 77,553 — compress tool outputs/context, library/proxy/MCP (foundation)
-  - crawl4ai 86,053 — LLM-ready crawler (foundation)
-  - langchain4j 13,281 — Java SDK
-  - tensorflow 201,184 / pytorch 104,982 etc.
-Need 5-7. User wants each item project + stars + one sentence why today. For topic projects, "why today" can mean why representative/attention, not actual today's data. Say "值得关注..." Avoid claim today event.
-Maybe select 7:
-1 cloudflare security skill (trending)
-2 ollama
-3 transformers
-4 headroom
-5 crawl4ai
-6 CopilotKit
-7 langchain4j or TensorFlow. But cloudflare is more Agent skill; primary category maybe foundation tool due skill. We can assign it here and not Agent. Ponytail in Agent.
-Anthropic knowledge-work plugins could be application or Agent. Put Agent/workflow.
-`llama_index` RAG.
-`firecrawl` RAG/tool.
-`meilisearch` RAG.
-Need not include general ML frameworks in foundation if training category.
+Need decide whether include total stars for topic items exactly. Yes.
 
-Maybe categories primary:
-🔧 AI基础工具:
-- cloudflare/security-audit-skill
-- ollama
-- huggingface/transformers
-- headroom
-- crawl4ai
-- CopilotKit
-- langchain4j
-Could include `0xPlaygrounds/rig` (Rust modular LLM apps) instead of some, to surface newer. 8 max. Use 7 or 8. `rig` 8,945 highly relevant and Rust emerging. Include it.
-What about `melo` no.
-Stars:
-cloudflare total shown 0; +2,979.
-ollama 184,338 total; today not provided.
-transformers 168,002.
-headroom 77,553.
-crawl4ai 86,053.
-CopilotKit 38,184.
-rig 8,945.
-langchain4j 13,281.
-Could say total stars are cumulative at snapshot, not necessarily exact due data. For cloudflare use "总量：榜单未显示（原始为0）". Requirement total + today; format consistently:
-`Stars：总量未提供（Trending原值0）/ 今日 +2,979`
-For `ponytail`: `总量 173,431 / 今日 +1,948` because topic search gives total and trending gives addition. Great! `Graphify` total 132,925 / +1,408. Anthropic no topic total -> unavailable / +303. Claude howto unavailable / +177. Other trending no topic data unavailable. For Cloudflare no topic. Good.
-Maybe `supabase` excluded despite AI mention.
+Let's enumerate filtered projects and classification maybe introduce "筛选结果". User requests first step filtering and second classification; report should make filtering explicit perhaps section "筛选口径". We can list omitted non-AI. Then categorized lists.
 
-🤖 AI Agent/Workflow:
-Need 3-8 representative, highlight trending Ponytail, Anthropic plugins, plus topic top:
-- Ponytail (+1948, total 173,431) — behavior constraint/skill, highest-ish trending AI addition (after Cloudflare)
-- anthropics/knowledge-work-plugins (+303, total unavailable) — Claude Cowork plugin ecosystem, knowledge worker workflows
-- NousResearch/hermes-agent (256,245) — personal agent grows with user; high star
-- Agent-Reach (101,026) — internet access for agents via one CLI, no API fees; data acquisition
-- career-ops (76,610) — job search agent
-- nanobot (49,283) — self-hosted personal agent framework
-- langgraph (43,731) — resilient agents (though topic RAG)
-- AutoGPT (187,715) perhaps classic autonomous agent, but not necessarily current. Could choose 8. Need 3-8. We can list 8 perhaps include `oh-my-pi`, `Codewhale`, `browser-use`. Which most representative? User likely expects recognizable top stars. We can list 8:
-1 Ponytail
-2 Anthropic plugins
-3 AutoGPT
-4 Hermes
-5 Agent-Reach
-6 CopilotKit? foundation already
-7 nanobot
-8 langgraph
-Could include browser-use as important, maybe replace AutoGPT? Current trend coding agents and browser agents. `browser-use` 118,890 deserves. We can list 8 with browser-use, omit AutoGPT? AutoGPT is iconic but data high. Maybe 8: Ponytail, Anthropic plugins, Hermes, Agent-Reach, browser-use, nanobot, langgraph, oh-my-pi/Codewhale. Could mention AutoGPT in note not list? Need likely select based stars. Use 8:
-- Ponytail
-- anthropics
-- NousResearch/hermes-agent
-- Panniantong/Agent-Reach
-- browser-use/browser-use
-- HKUDS/nanobot
-- langchain-ai/langgraph
-- can1357/oh-my-pi
-Could classify career-ops in applications. Good.
-Why today worth attention: trend additions for first two; topic stock indicates etc. For topic no daily additions.
+Need maybe not include every 81 because output could be huge. Requirements each category 3-8 representative, so 15-40 entries. We can select ~6 per category =30, enough. But "AI 相关性筛选" might expect all AI-related projects classified? Wording: "将筛选后的项目按以下维度分类" could imply classify all filtered projects, but then output asks each dimension list 3-8 representative projects, not necessarily exhaustive. We should clarify listed projects are representative, and perhaps provide an "筛选范围/分类概览" indicating all topic repos are AI/ML relevant, but only representative entries displayed. Could potentially classify all 81? That would be long and violate 3-8 each. We can say "下列按主要用途挑选每类 6–8 个；其余项目仍属于 AI/ML，但非当日优先推荐". Yet user may expect comprehensive filtering. Need balance. We could include a compact "筛选结果" with excluded and say all 81 topic search entries retained as AI/ML; classification is representative due requested limits. Maybe provide category counts for all 81 based primary classification? Could derive and show counts, demonstrating complete filtering. But need classify all perhaps not list. Let's consider doing a thorough classification appendix? User explicitly asks each dimension 3-8 projects, likely don't list >8. We can include category counts (if accurately assign) and representative lists. But if counts wrong, avoid. Could state "主题搜索的 81 项均有明确 AI/ML 语义；下面每类列 6–8 个高关注代表". There are generic `nestia` etc but AI-related via chatbot; all likely retain. Need filter perhaps `telegram-summary-bot` clearly AI, `netdata AI-powered observability`, courses AI/ML. Fine.
 
-📦 AI应用:
-3-8, select vertical apps:
-- career-ops/career-ops 76,610
-- daily_stock_analysis 66,890
-- hugohe3/ppt-master 65,988
-- CherryHQ/cherry-studio 52,892
-- siyuan-note/siyuan 46,885 (knowledge workspace human+agents; could RAG but app)
-- Vibe-Trading 36,334
-- MoneyPrinterTurbo 134,237
-- open-webui 156,488 or OpenBB 74,557 / DeepTutor 42,165. Need max 8. Pick open-webui (general AI interface), MoneyPrinterTurbo (content), career, stock, ppt, cherry, siyuan, DeepTutor maybe. Could include Vibe-Trading instead of DeepTutor. Need show 3-8, perhaps 8. "应用" should not include framework. `open-webui` main user interface, yes. `MoneyPrinterTurbo` high star. `DeepTutor` vertical education. `Vibe-Trading` finance overlaps stock. We can choose 8:
-open-webui 156,488
-MoneyPrinterTurbo 134,237
-career-ops 76,610
-daily_stock_analysis 66,890
-ppt-master 65,988
-cherry-studio 52,892
-siyuan 46,885
-DeepTutor 42,165
-Could mention Vibe-Trading in community hotspots maybe. Need all selected have links and exact stars.
-Why today worth attention: topic search active; no today additions. Use wording "高星且直接面向..." not claim today's.
+Could identify non-AI from topic? All descriptions AI/ML explicit or topic labels. Maybe `meilisearch` is generic search engine but description says AI-powered hybrid search; still AI-related. `Supabase` trending generic but mention AI apps; requirement says exclude general tools. Need explicitly exclude `php/php-src`, `supabase/supabase`, `fastapi/fastapi`, `Meloong-Git/PCL`; maybe `supabase` has AI application claim but platform is general. Also could exclude `tesseract`? OCR is AI/ML and relevant, include broad ML perhaps. `ML-For-Beginners` and `AI-For-Beginners` are educational resources—not one of categories exactly, but AI/ML clear. Could place foundation/training. `cs-video-courses` description only CS courses, topic ml; perhaps likely AI/ML course list, but no explicit AI in description. "与 AI/ML 明确相关" topic label and list likely AI courses; could retain as AI education. `netdata` says AI-powered observability, relevant. `OpenBB` AI agents, relevant. `tesseract` OCR engine (ML), relevant. `supabase` perhaps AI app platform but generic; exclude due explicit instruction.
+Trending `fastapi` often used for AI apps but generic; exclude.
+Could classify `anthropics/knowledge-work-plugins` as AI applications (knowledge workers) rather than agent workflow. Since category definitions: "AI应用（具体应用产品、垂直场景解决方案）"; plugins for Cowork are concrete productivity solution but not standalone app. Main category agent/workflow because plugins/skills extend agent. Note cross-category.
+`luongnv89/claude-howto` educational guide not tool; perhaps list under AI基础工具/开发者工具. Could say "开发者教育/脚手架". 
+`cloudflare/security-audit-skill`: agent skill, perhaps AI智能体/工作流 more semantically. We can put under basic tools with label "Agent Skill / 安全工具". Maybe user wants coding agent tools trending. Fine.
+`Graphify`: RAG/knowledge base, though no vector store. Good.
 
-🧠 大模型/训练:
-3-8:
-- tensorflow 201,184
-- pytorch 104,982
-- transformers 168,002 (but already foundation list; duplicate? They said one project can multi categories, but priority. If primary foundation already, don't duplicate ideally. Could put transformers here as primary model framework, and use Ollama in foundation.)
-- opencompass 7,536
-- skyzh/tiny-llm 4,786
-- OpenEBFM 126
-- AgentsMeetRL 1,865
-- AwesomeOPD 879
-- testtimescaling 112
-Maybe 8. Need include model training/evaluation. `TensorFlow`, `PyTorch`, `Transformers` foundational frameworks; `opencompass` evaluation; `tiny-llm` inference education; `OpenEBFM` training; `AgentsMeetRL` survey. Could include scikit-learn/Keras/YOLO? Those are ML, but category "大模型/训练" perhaps not all ML. We need reflect 81 includes ml. Could include `scikit-learn` and `ultralytics` in this category? They are broad ML foundation / CV. But category label specifically large model/training, can include model development frameworks. Maybe list 8:
-TensorFlow, PyTorch, HuggingFace Transformers, Keras (64,377), OpenCompass, tiny-llm, AgentsMeetRL, OpenEBFM. This omits scikit/Ultralytics but okay representative.
-Could instead classify Transformers in big model/training, and foundation list use Ollama, rig, headroom, crawl4ai, CopilotKit, langchain4j, Cloudflare. Good no duplicate. In training list include transformers.
-Stars exact:
-tensorflow 201,184
-pytorch 104,982
-transformers 168,002
-keras 64,377
-opencompass 7,536
-tiny-llm 4,786
-AgentsMeetRL 1,865
-OpenEBFM 126
-Could note these are topic stars, no today.
-Maybe OpenCompass evaluation is AI foundation tool but primary model evaluation; fine.
+Let's map selected lists and rationale.
 
-🔍 RAG/知识库:
-3-8:
-- Graphify (132,925, today +1408) — standout trending
-- open-webui? application, not duplicate
-- mem0 (67,657) — memory layer
-- ragflow (92,672)
-- crawl4ai maybe foundation already; avoid duplicate
-- llama_index 52,625
-- OpenViking 40,600
-- PageIndex 39,489
-- Qdrant 35,191
-- LightRAG 40,273
-- AnythingLLM 67,458
-- milvus 46,453
-- vector DB.
-Need max 8. Select Graphify, RAGFlow, mem0, AnythingLLM, LlamaIndex, OpenViking, PageIndex, Qdrant or LightRAG. Need demonstrate vector DB and vectorless RAG. Could list 8:
-Graphify
-ragflow
-mem0
-anything-llm
-llama_index
-OpenViking
-PageIndex
-Qdrant
-Maybe LightRAG is prominent and exact 40,273; replace AnythingLLM? AnythingLLM local-first agent/RAG workspace. Could mention LightRAG in note. Need 3-8, 8. Perhaps use:
-- Graph</think>
+Option report structure:
+
+# AI 开源趋势日报｜2026-10-23
+
+## 口径与过滤
+- Trending: retain 5: links, additions. Exclude 4 general/non-AI (php, supabase, fastapi, PCL). Explain Supabase/FastAPI can serve AI but core repo not AI-specific.
+- Topic search: 81 all retained (AI/ML explicit via topic/description); topic stars are cumulative snapshot, no today's delta. Trending total star field is 0; mark unavailable. Maybe note overlap projects.
+- Today's AI trending additions 6,815 / total listed 8,015 = 85%, strong signal. Is this a calculation useful. Include maybe.
+
+## 1 今日速览 (3-5 sentences)
+Could write 4 sentences:
+"今日 AI 热度明显由 coding-agent skills/工作流主导：Cloudflare security audit +2979, ponytail +1948, Anthropic plugins +303. Graphify +1408 shows knowledge/context layer ... The 81 active topic repos have agent/LLM/vector DB concentrated; OLLama/Transformers etc show local inference and model infra remain foundational. Overall from model race to agent execution, skills, memory/RAG, governance."
+Need mention no new model launch evidence maybe trend section.
+
+## 2 categories
+Need decide exact entries, perhaps 6 each. Let's construct high-quality representative list with total + daily.
+
+Category 1 AI基础工具 (7 or 8):
+1. [cloudflare/security-audit-skill](...) — Stars: cumulative unavailable (trending shows 0), today +2,979. "Cloudflare 的多阶段、可独立验证、机器可读安全审计 skill；今日 AI 工具中最强增量，安全/治理成为 agent 标配."
+2. [anthropics/knowledge-work-plugins](...) — total unavailable, +303. Maybe agent not basic; don't duplicate.
+3. [ollama/ollama] — ⭐184,359, today —. Local model runtime, supports many models.
+4.</think>
 
 ---
 *本日报由 [Big Model Radar](https://github.com/96loveslife/big_model_radar) 自动生成。*

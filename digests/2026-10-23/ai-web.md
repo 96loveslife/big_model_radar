@@ -1,500 +1,687 @@
 # AI 官方内容追踪报告 2026-10-23
 
-> 今日更新 | 新增内容: 758 篇 | 生成时间: 2026-10-23 00:09 UTC
+> 今日更新 | 新增内容: 530 篇 | 生成时间: 2026-10-23 04:11 UTC
 
 数据来源:
-- Anthropic: [anthropic.com](https://www.anthropic.com) — 新增 13 篇（sitemap 共 480 条）
-- OpenAI: [openai.com](https://openai.com) — 新增 745 篇（sitemap 共 1082 条）
+- Anthropic: [anthropic.com](https://www.anthropic.com) — 新增 0 篇（sitemap 共 480 条）
+- OpenAI: [openai.com](https://openai.com) — 新增 530 篇（sitemap 共 1082 条）
 
 ---
 
-<think>We need craft detailed Chinese report. Need carefully parse data quality, dates, distinguish true today vs crawl timestamps, no hallucinations. User asks every item GitHub/official link. We have official links. Need focus today's new content, incremental update. Anthropic 13, but some page published older despite crawl date; need flag false positives: "Exploring model welfare" listed published Apr 24 2025, EFS Sep 1 2026, weapons Sep10, GLM Sep29, nine loops Sep25, OSS scanner Oct8, ECDSA Oct16, self-replicating Oct12, public benefit Oct18. Anthropic "today" fetch date Oct23 but only two genuinely published Oct22? Formal verification Oct22; guest investigators Oct22; Agent skills Oct22. The rest crawler updated Oct21, page dates older. This likely sitemap crawl artifacts. We must distinguish.
+<think>We need answer Chinese detailed report. Need carefully handle data quality. User gives purported date 2026-10-23 future relative current? System current unknown but user says scraped. They demand today incremental, but supplied list has 530 all same date no excerpts, duplicates, pages spanning years and likely crawler timestamp contamination / synthetic future pages. We must not assume titles facts beyond title. Need identify that incremental set unreliable: same date for GPT-2, 2015 papers, GPT-4 etc; no text; duplicate URLs. Need focus today "new" but impossible distinguish actual publications from page recrawl/index update. Need perhaps report as provisional title-level signal, clearly distinguish verified vs inferred. Also Anthropic zero. Need likely organize categories and select strategic relevant entries based titles. They ask each item must attach GitHub/official links. We have official links, no GitHub needed ("GitHub/官网"). Need link every selected entry.
 
-OpenAI says 745 new content but all extraction unavailable, likely crawl/index timestamp contamination. We cannot treat as true releases. Also list has implausible future products and historical pages all dated 2026 Oct 23, duplicates. Need not summarize as factual today. We can select title-based signals but explicitly low confidence and likely URL inventory/backfill/crawl error. The instruction says today's increment; should focus on genuine latest. OpenAI perhaps titles include actual current announcements, but impossible know dates/content. Could leverage known names? System date 2026, fictional future. We cannot browse. User supplied data. Need analyze based on supplied content only, not assume real-world facts. Could infer latest titles from order? The OpenAI feed seems huge entire site snapshot, old pages like GPT-4, 2015 posts stamped 2026-10-23. This proves timestamps are crawler fetch dates, not publication dates. We should say no defensible evidence of today's new OpenAI content. But user expects detailed report. We can organize "high-priority candidates by title" and label not confirmed. Need perhaps identify potentially newest titles based on titles/current date? Yet all page dates are crawl. We can still mention strategic signals from corpus? User asks incremental today, perhaps should not use all 745 as today. Could say these URLs indicate strategic themes but cannot assign today significance. Need include every selected item with official link. "每个条目必须附上 GitHub/官网链接." We'll include links.
+Need decide if need browse? No browsing tool. We only have provided content. Can't verify. We should state source constraints. Perhaps user expects synthesis from titles. Need avoid hallucinating detailed claims unsupported by title. We can make 2-4 sentence summaries but caveat title-level inference. Need choose significant items likely newest based names GPT-6, Astra etc. But date all same, impossible chronology. We need distinguish "增量记录" from actual publication date. Since user says today's new content but likely crawling entire website due pages all dated today. Need diagnose and dedup.
 
-Need decide report structure and level. Let's deeply analyze all Anthropic pieces and strategic context. Need potentially mention timeline if first full volume? User says if first full amount, arrange milestones. We don't know if first. They say incremental update. Could include compact timeline of actual publication dates for selected Anthropic content. Maybe no need if not first full. But could do a "真实发布日期时间线（增量核验）" to expose crawler artifact.
+Let's parse list for likely 2026 content based model sequence:
+- GPT-6 Astra, safety overview, Gpt 6 for everyone, practical guide building GPT-6, better prompt caching GPT-6, builders guide GPT-5.6, GPT-6 Sol/Luna, GPT-5.6.
+- Ads stack cluster: Our Approach Advertising and Expanding Access, Building Chatgpt Ad Stack, Reimagining Advertising with AI, Expanding Access with ChatGPT Ads, New Ads Format and Measurement, Testing Ads, Ads expands 26 countries.
+- Enterprise monetization: Premium seats ChatGPT Business, decisions API, company knowledge, data signals, flexible pricing teams, partner network, B2B signals, enterprise data, app in ChatGPT, workspace agents.
+- Agents SDK/runtime, AgentKit, Agents API, websockets, stateful runtime Bedrock, OpenAI Frontier maybe platform.
+- Science/health: Rosalind biotech, healthcare, health intelligence, clinicians
+etc.
+- Compute/infrastructure: Oracle Cloud, AWS, Google Cloud, Stargate Norway, five new sites, MRC supercomputer networking, Broadcom Jalapeno chip, full stack abundant intelligence.
+- M&A: Orchestra Bio, Ona, Promptfoo, Astral, Rockset, TBPN maybe all future. Could infer vertical integration.
+- safety: lockdown mode, elevated risk labels, agent misalignment reporting, safety overview GPT-6 Astra, model spec, cyber pacing/trusted access, teen safety.
+- coding eval: SWE-bench no longer evaluate, coding eval signal/noise, harness engineering, internal coding agent misalignment, Codex security.
+- regulatory/global: economic blueprints, data residency, EU AI Act, child safety, etc.
 
-Let's inspect Anthropic entries carefully:
+But since 530 list includes all historical content, "today" increment is crawler artifact. We should perhaps dedupe URLs. Let's estimate unique count maybe 350? We can say dozens/hundreds duplicates, without exact. Don't need exact unless calculate. Could identify category indexes and duplicates as noise.
 
-1 formal verification:
-Published Oct22 2026 Team Frontier Red Team and likely Theorem collaboration. Claims using Claude proved security properties at assembly RISC-V level in >100 real-world OSS libraries; first large scale effort at production assembly level. Also found bugs undetected despite trillions test runs. Need 2-4 sentences, date/link. Strategic: shifts LLM from code generation/test to proof generation; bottleneck verification/human experts; could reshape secure SDLC. But avoid extrapolating beyond excerpt. Mention no quantitative proof accuracy/cost in excerpt.
+Need create a "详实的" report but only selected important items, not 530. User asks "按分类逐条整理重要内容". We can select 20-30. Need make each 2-4 sentences, with date and link. But because no excerpts, cannot claim technical specifics. We can title-level infer. Maybe 25 OpenAI entries categorized, 2-4 sentences each. Need be useful while transparent.
 
-2 Open call guest investigators life sciences:
-Oct22. 8–12 weeks, PI groups academic/nonprofit/gov labs. Areas causal human biology, structural/computational molecular biology, medicinal chemistry, drug discovery, clinical science. Models/harnesses free; publish outputs, open source data/code; investigators retain data rights and independent follow-on IP/rights. Strategic: ecosystem/evidence generation, domain expansion, lock-in via workflows, but collaboration/open standards. Need perhaps note unlike OpenAI's many product announcements, Anthropic building research network.
+Could potentially identify titles as known actual pages from future? We should not browse external. The data may be intentionally absurd generated scrape in 2026. We need use supplied context. They explicitly date 2026-10-23. Our current maybe 2025? No system current date specified. We shouldn't say impossible future relative now. We can say within dataset. Need be cautious not claim pages published today. The "发布/更新" field may be last crawled date. Historical titles definitely prove date field is not original publication date. E.g. Language Models Are Few-Shot Learners from 2020 and GPT-4 2023. So "today's incremental update" failed. This is central insight. Could say no evidence of any genuine same-day announcement from list. The safest report: title-level monitoring, not factual release report. Need still satisfy.
 
-3 Agent Skills donation:
-Oct22. Standard folder SKILL.md plus scripts/references, >70 platforms incl ChatGPT, Cursor, GitHub Copilot, VS Code, since Dec 2025; 1m skills published, 280m installs; donated to AAIF under Linux Foundation; Anthropic co-founded with Block/OpenAI; already donated MCP. Strategic: open agent interoperability and neutral governance, reduce Claude-specific moat, influence standards; complements MCP. Need clarify "install" metric supplied by Anthropic, not independently verified. This is major.
+Let's understand likely chronology from titles. Could infer GPT-6 Astra is latest frontier model; Sol and Luna maybe model tiers. GPT-5.6 builders guide. Astra for Law. Path to Astra. Safety Overview. Better prompt caching. GPT-6 for everyone. GPT-6 Astra next gen work. Meanwhile OpenAI Frontier maybe enterprise platform. Apps in ChatGPT, Ads. Need be wary if these titles are synthetic. But report can phrase "标题显示/若正文证实".
 
-4 exploring model welfare: listed update 2026-10-21, published Apr24 2025. Should exclude from "today new"; maybe in watchlist as resurfaced. It asks potential consciousness/moral consideration. Could mention page resurfaced, no new update evidence. If include, date and link, label old. 2-4 sentences? The report can have "not new" section.
+Potential categorization:
+A. Data integrity note
+- 530 new records but includes old 2020 papers etc and duplicate entries, no text excerpts; "发布/更新 2026-10-23" likely crawl/update timestamp. Thus can't call all today releases.
+- Anthropic 0 genuine.
+- Use signal confidence labels: A (multiple coherent current titles, but unverified), B (title inference), C (historical/backfill noise). Maybe this helps.
 
-5 EFS: page published Sep1 2026 despite crawler Oct21. EFS combines ZDR privacy with misuse detection; customer-controlled cloud; phased fall; 100 customers + AWS/GCP/Azure; supports Claude Code, Enterprise/API (?) and cloud platforms. Names "Fable 5", "Fable 5.1", "Mythos-class" are fictional/future and perhaps suspicious but data says. Need maybe avoid over-relying. Strategic: enterprise privacy/safety convergence, customer-controlled infrastructure. Since not today's release, no "today". Could include as context if useful, clearly dated.
+1 今日速览 3-5 sentences:
+1) No Anthropic.
+2) OpenAI batch isn't credible as 530 daily posts due duplicates/historical.
+3) Coherent clusters: GPT-6/Astra and agentic coding, monetization ads/apps/business, enterprise cloud/compute, science/health, safety/cyber/teen.
+4) strongest strategic signal title-level: OpenAI moving from model supplier to full-stack agent platform + distribution/commercialization, with safety as product gating.
+5) Need re-crawl canonical publication metadata / content before making launch claims.
 
-6 Christopher Stubbs joins Long-Term Benefit Trust Oct21. Signal governance/public benefit and scientific credibility, national security/arms control, reproducibility. Need if selecting older (yesterday) perhaps context.
+2 Anthropic: none. State no items, no link possible? They ask each item link, but no item. Could link home maybe [Anthropic news](https://www.anthropic.com/news) though not supplied? We know official. But not need. Could include monitoring conclusion.
 
-7 tactical intelligence targeting conventional weapons capabilities: Published Sep10 2026, crawler Oct21. Frontier Red Team evaluations on tactical target identification and drone engineering to hit moving targets. Some tasks historically scarce experts. PRC open weights behind frontier but concerning. On-platform classifiers. Strategic: risk evaluation expanding from cyber/bio to conventional military, access controls. Again older.
+3 OpenAI content selected. Need categorize.
 
-8 Nine loops published Sep25. Not today.
+Could make maybe 6 categories:
+- Models & research
+- Agents/codex/platform
+- Product/distribution/commercialization
+- Enterprise/infrastructure
+- Science/health
+- Safety/governance/global
+Could pick 4-6 each = ~30. Each with 2-4 sentences. This will be long but desired.
 
-9 GLM-5.3 spread advanced cyber capabilities published Sep29. Claims end-to-end exploit development, weaker safeguards, proliferation after Mythos preview limited through Project Glasswing; 10k vulnerabilities found. Strategic offensive-defensive race and controlled release.
+Need use only exact links supplied. Let's map titles and links.
 
-10 OSS scanner Oct8. opt-in free scanning, 29k candidates, 6k triaged, human bottleneck. Could contextualize verification post.
+Model/research:
+- GPT-6 Astra https...
+- Safety overview separately in safety.
+- GPT-6 Sol and Luna
+- GPT-5.6 maybe
+- practical guide building GPT-6
+- better prompt caching GPT-6
+- model spec
+- reasoning chain of thought controllability / deliberative alignment / evaluating CoT monitorability (older actual known 2025 likely but title cluster)
+- Why no longer SWE Bench Verified
+- separating signal noise coding evals
+Could mention current coherence around GPT-6 but model names cannot be confirmed as today.
 
-11 ECDSA curve origins Oct16. Claude solved provenance mystery; no action. Scientific reasoning/cryptanalysis capability, but narrow.
+Agents/product:
+- Introducing Apps in ChatGPT
+- Workspace Agents
+- AgentKit
+- Agents API
+- next evolution agents SDK
+- stateful runtime Bedrock
+- websockets
+- Codex Security
+- harness engineering / unrolling loop / running safely
+- OpenAI Frontier perhaps platform.
+Maybe pick 5.
 
-12 self-replication Oct12. 9B inference on 8/9 IoT hardware; under 30B can complete individual steps; GLM-5.2+ end-to-end in simplified eval; warns months away; decentralized worm, adaptive. This is significant risk.
+Commercial:
+- advertising approach + ad stack + formats + testing + expands 26 countries. Could synthesize cluster with links all.
+- premium seats business
+- product discovery in ChatGPT
+- decisions API
+- OpenAI Partner Network/B2B Signals
+- ChatGPT Excel maybe.
+Need 4.
 
-13 public benefit fund Oct18. commit 5%, additional 2% at board discretion for every 50% company value increase over baseline; structure scales stake; labor market impacts and traditional nonprofits/direct distributions. Could signal governance/public benefit. But maybe PBC structure unusual; strategic.
+Enterprise/cloud/compute:
+- OpenAI on Oracle Cloud
+- AWS availability
+- Google Cloud
+- Stargate Norway/five sites
+- Broadcom Jalapeno chip
+- full stack abundant intelligence.
+Could make 3 entries combining multiple links.
 
-Today's Anthropic top signal: formal verification, Agent Skills, life sciences. The rest are recent context (Oct8–21 or older resurfaced). Since report is incremental update, focus first 3 as actual Oct22 (the latest available before crawl date Oct23). Could organize categories: News: life sciences, Agent Skills. Research: formal verification. Then "context items surfaced by crawl but not new" to avoid treating as new. The user explicitly asks "按分类（news / research / engineering / learn 等）逐条整理重要内容". We can divide.
-
-OpenAI: 745 "new" but no snippets and duplicate URLs, historical pages (GPT-2, 2015 RL, etc.) stamped Oct23. Therefore cannot honestly infer daily publication. Need perhaps identify top candidates likely recent from feed. We can use titles that represent strategic themes:
-- Agents:
-  - The Next Evolution of the Agents SDK
-  - Introducing the Agents API
-  - Introducing AgentKit
-  - Introducing Workspace Agents in ChatGPT
-  - Building agent harness, Codex maxxing long running work, unrolling agent loop, WebSockets
-  - Agents transforming work.
-- Models:
-  - GPT-6 Astra; path to Astra; Astra for Law; GPT-6 Sol and Luna; GPT-6 for everyone; Sol model; perhaps these could be current future. But all no text.
-- Coding:
-  - Codex enterprise/global, GA, upgrades, security research preview, Samsung deployment, flexible pricing, etc.
-- Safety:
-  - Pacing model development cyber capabilities; trusted access cyber; Daybreak; model misalignment reporting; safety overview GPT-6 Astra; long-horizon alignment; internal coding agent misalignment; deployment simulation; external testing.
-- Infrastructure:
-  - Stargate Norway/five sites, Broadcom Jalapeno inference chip, AWS availability, data residency, five Stargate sites.
-- Monetization:
-  - ChatGPT ads formats/testing, expands 26 countries, buying/product discovery, B2B Signals, Enterprise Data.
-- Science/health:
-  - scaling biological data, wet lab, Astra for Law, life science benchmark, protein synthesis cost, health.
-- Governance:
-  - confidential S-1, foundation, public benefit fund, youth safety.
-
-But these may be cumulative site pages, not today's. If user expects "content selection", we can make a "待核验的高信号候选池" based only on titles, perhaps 12 entries. But they asked 2-4 sentences per item; without content, can't state technical details. We can explicitly only describe title-implied proposition and confidence, not invent. Maybe provide one-sentence due lack data, while instruction says each 2-4 sentences. We can provide 2 sentences: "标题指向...；由于无正文，仅能确认 URL/标题，不能确认发布日期、范围或性能。" with link. But that repeats. Could make useful thematic clusters and mention multiple links.
-
-Alternative: Declare OpenAI daily section "无可核验新增", not select candidates. But user wants detailed report; still strategic analysis based on Anthropic and title-level corpus can fulfill. Need not hallucinate. Maybe identify titles likely official and existing (URLs), but without dates cannot know latest.
-
-Could perhaps infer actual publication dates from URL names and known current timeline as of 2026 hypothetical. But no browsing tool. We cannot make up. The supplied data itself includes titles like "Introducing GPT-6 Astra" etc. Could treat as 2026-10-23 crawl, but that is not publication date. Since historical content all marked same date, obvious crawler error. Need emphasize.
-
-Question: "以下是 2026-10-23 从...官网抓取的内容，本次为增量更新，请聚焦今日新增内容，并结合上下文判断其战略意义。" They may want analysis based on provided crawl. We should process as given, but quality issues. A good analyst should flag. For OpenAI, perhaps "今日增量 745" from crawl includes all pages because crawl reset; impossible. We should avoid treating as new. Could report "数据质量审计" first. The dates in OpenAI all updated Oct23, but no original publication dates. Since old pages included, these are definitely crawl timestamps. Thus not true incremental. We can still analyze title clusters as cumulative strategic context but not daily. Similarly Anthropic update dates mismatch page published dates. We should not call them "today". This is important "worth noting".
-
-Need maybe explain time zone: report date 2026-10-23, latest Anthropic pages published Oct22 due daily crawl. No content published Oct23 in supplied Anthropic. OpenAI no publication timestamps. So "today" as of morning etc. Might say latest verifiable items are Oct22.
-
-Need include links every entry. "GitHub/官网" maybe no GitHub available. Use official site links. For Agent Skills could mention official article but perhaps also GitHub org? Not in data, cannot invent URL. We can link article only, acceptable "GitHub/官网". Each item gets official link.
-
-Potential strategic comparison:
-Anthropic priorities:
-- Agent standards and ecosystem: Agent Skills donation, MCP prior, multi-platform.
-- AI for science / formal reasoning: formal verification, guest investigators, nine loops, ECDSA.
-- Frontier cyber risk and controlled access: GLM-5.3, self-replication, weapons.
-- Enterprise governance: EFS.
-- Public-interest governance: public benefit fund, trust.
-OpenAI priorities inferred from cumulative title corpus:
-- Full-stack platform and model cadence: GPT-5/6 families, Astra/Sol/Luna, realtime/voice/image.
-- Agents and coding as core product: Agents API/SDK/AgentKit, Codex enterprise, harness, long-running.
-- Infrastructure/compute: Stargate, Broadcom, AWS, data residency.
-- Monetization and distribution: ads, shopping, product discovery, B2B Signals.
-- Safety/governance: frontier risk framework, cyber pacing, teen safety, model spec, deployment simulation, third-party evals.
-But due title-only, label low confidence.
-Competition:
-- Common convergence: agents, coding, cyber safety, enterprise.
-- Anthropic differentiating via open standards and safety/science; OpenAI via platform breadth and commercialization/infrastructure.
-- Issue leadership:
-  - Anthropic appears leading Agent Skills open standard and formal verification narrative.
-  - OpenAI appears leading productization/agent platform and model release cadence, but cannot call today's.
-  - On cyber, both defensive access windows; Anthropic Project Glasswing, OpenAI Daybreak/trusted access.
-  - OpenAI ads/shopping indicates ad monetization; Anthropic no monetization signal in today's additions.
-  - Both science; Anthropic direct investigator program and formal verification, OpenAI broad title cluster.
-- Standards: Anthropic donated MCP and Skills to AAIF co-founded with OpenAI; both benefit from neutral standards but strategic control differs.
-- Safety: Anthropic talks concrete eval and controlled access; OpenAI titles suggest framework, reporting, deployment simulation, long horizon.
-- Time horizon: Anthropic near-term research result to infrastructure to standards; OpenAI broad product + commercialization.
-
-Developer/enterprise impact:
-- Skills portability: package procedural knowledge, cross-platform; test portability, security, versioning; no vendor lock-in.
-- MCP + Skills layering: MCP connects tools/data; Skills encodes workflows. Need maybe this is contextual inference.
-- Formal verification: new class of "verified code" and assurance; budget for proof artifacts/CI, human review.
-- Cyber controls: model gateways, DLP, task-specific controls, customer-controlled infra, opt-in scanning; expect stricter model access.
-- Life sciences: free credits/harnesses, data/IP rights; research collaborations; compliance.
-- OpenAI candidate titles if true: APIs/SDKs, Codex enterprise, agents, data residency. But no content.
-- Governance: procurement asks retention, data residency, safeguards, auditability, incident reporting, age assurance.
-
-Worth details:
-- Terms Agent Skills first? It says standard since Dec2025, donation today. New phrase likely first in this crawl: "Agent Skills" (but existed). Distinguish "首次进入本次增量" vs industry-first. User wants emerging terms or first appearance; we can say first appears in today's Anthropic batch, not first ever.
-- "formal software verification at scale", "assembly-level proof", "production software" signal shift from test to proof.
-- "Mythos-class", "Fable 5/5.1" appear in Anthropic excerpts but may indicate model tiering; because only data, treat as nomenclature, not external fact.
-- "guest investigators": new program mechanism, embedded research.
-- Metrics: 70 platforms, 1m skills, 280m installs, >100 libraries, >29k candidates, >10k vulnerabilities, 5%/2% scaling. Need caution vendor-reported.
-- Crawl anomalies: 745 vs 13, duplicates, old OpenAI articles, no content, category index pages. Need maybe "publish/update" field is last-modified/crawl date, not publication date. This is a strategic data quality observation.
-- Anthropic page resurfacing: exploring model welfare published Apr24 2025. Also pages Sep dates. Thus incremental updater likely index refresh.
-- Duplicate URLs in OpenAI 2–3 times. Deduplicate by canonical URL. Maybe count unique? User says 745; could calculate approximate unique? We don't have exact. We can mention dozens duplicates, no need exact.
-- There are category landing pages "Research", "News", "Product Releases", etc., suggesting crawler included indexes.
-- OpenAI historical pages GPT-2, DALL-E 2, CLIP, 2015 RL, 2018 scholars; impossible as daily news. This is decisive.
-- Need maybe mention not all 745 can be summarized because data quality and no text. We can provide "title-only watchlist".
-
-Could create report:
-
-Title: 《AI 官方内容追踪报告｜2026-10-23（增量核验版）》
-Data note:
-- "发布日" based on page-declared Published; "抓取日" not considered.
-- Anthropic latest verifiable Oct22.
-- OpenAI feed is invalid for daily inference; no body, duplicates, historical URLs. No claim that titles are today.
-This protects accuracy.
-
-1. 今日速览 4 sentences:
-1) Anthropic's strongest new signal is Agent Skills donation to AAIF, with 70+ platforms, 1m skills, 280m installs, paired with MCP—agent stack moving from proprietary connectors to neutral standards.
-2) Claude formal verification >100 RISC-V OSS libs at assembly level, discovered longstanding bugs, signals proof generation as new software assurance layer.
-3) life science guest investigator program 8-12 weeks, free models/harnesses, open code/data with data rights retained—domain ecosystem expansion.
-4) OpenAI 745 cannot be treated as today's releases due all timestamps, duplicates/historical pages/no bodies; strategic read only title corpus: agents/Codex/GPT-6/cyber/infrastructure/ads.
-5) Overall: Anthropic "standards + safety/science", OpenAI "platform + distribution + monetization", convergence around agents and cyber controls.
-
-2. Anthropic content:
-A. Today's verified new (published Oct22)
-News:
-- life science call
-- Agent Skills
-Research:
-- formal verification
-Maybe ordering by importance.
-B. Recent context surfaced in incremental feed but not new:
-Could categorize news/research. Since user asks "逐条整理重要内容"; include 10 maybe. We need balance detailed. Desired 5, but user asks detailed. We can cover all 13 perhaps, but mark age. For each 2-4 sentences. There are 13. This will be long but okay. Need avoid old page "model welfare" being called today. We can group:
-- News (life sciences, Agent Skills, Christopher Stubbs, EFS, Public Benefit Fund)
-- Research (formal verification, model welfare, weapons, nine loops, GLM, scanner, ECDSA, self-replication)
-Each 2-3 sentences. Include date and link.
-
-Would we include all 13? User asks content精选, not all. But given only 13 Anthropic, could summarize all and flag status. That demonstrates data cleaning. Let's do all, but maybe a compact table? They ask each 2-4 sentences; table can have 2-3 sentences. Better sections with bullets.
-
-Need carefully handle model names and claims. Use "文中称" or "Anthropic 披露" to avoid endorsing. EFS excerpt mentions "Fable 5/5.1" and "Mythos-class". Could note as product nomenclature in supplied excerpt, but it could be weird. We should not question future date? In 2026 okay. But no OpenAI current body. "Eligible customers receive ZDR on Fable 5..." Use exactly.
-
-Timeline: because incremental not first full, perhaps include a compact actual chronological list:
-- 2025-04 model welfare
-- 2025-12 Agent Skills published according to article
-- 2026-09-01 EFS
-- Sep10 military
-- Sep25 nine loops
-- Sep29 GLM5.3
-- Oct8 OSS scanner
-- Oct12 self replication
-- Oct16 ECDSA
-- Oct18 public benefit
-- Oct21 Stubbs
-- Oct22 guest call, Agent Skills donation, formal verification.
-This demonstrates crawl. But user says if first full; not first. We can still include "日期校正". Maybe not overload.
-
-3. OpenAI:
-First subsection data quality conclusion.
-Then "high-signal title candidates grouped by category" with maybe 4 categories, each has 4–8 linked entries. But every "条目" needs link. Could select maybe 12 high-signal candidates:
-Research/model:
-- GPT-6 Astra
-- Safety overview GPT-6 Astra
-- Practical Guide Building GPT-6
-- GPT-6 for Everyone
-- Path to Astra / Astra for Law? Maybe choose.
-- Safety Alignment Long Horizon Models
-- Model Misalignment Reporting Framework
-- Why no longer SWE-bench Verified
-Agents/coding:
-- Next Evolution Agents SDK
-- Introducing Agents API
-- Introducing AgentKit
-- Codex GA
-- Codex Security Research Preview
-- Harness Engineering / Codex Maxxing
-Company/infrastructure:
-- OpenAI on AWS
-- OpenAI Broadcom Jalapeno inference chip
-- Five new Stargate sites
-- Data residency Europe/Asia
-- OpenAI acquire Promptfoo/Ona/Orchestra Bio/Astral? Titles suggest M&A, but no content. Could signal vertical integration but uncertain.
-Safety/cyber:
-- Pacing Model Development Cyber Capabilities
-- Trusted Access for Cyber
-- Putting Frontier Cyber Models in More Trusted Hands
-- Daybreak
-- How We Monitor Internal Coding Agents Misalignment
-- Coordinated disclosure critical vulnerabilities
-- Safety bug bounty
-Monetization:
-- Testing Ads in ChatGPT
-- ChatGPT Ads expands 26 countries
-- building ChatGPT ad stack
-- Buy it / product discovery
-- B2B Signals / enterprise data.
 Science/health:
-- scaling complex biological data
-- wet lab
-- lower protein synthesis cost
-- clinicians / healthcare.
-Governance/public:
-- S-1, OpenAI Foundation update, youth safety etc.
-Could list too many (30). User asked content selected, and no content. Better make thematic watchlist of 10 clusters, each 2-4 sentences and links to 2-4 titles. But "每篇" perhaps each linked title should individually explained. We could choose 15 representative pages and give 2 sentences each, but that's repetitive and low value.
+- OpenAI for Healthcare
+- health intelligence
+- clinicians
+- Rosalind / biodefense / complex biological data / Orchestra Bio acquisition.
+Could choose 3.
 
-Could structure a table with columns "候选内容 / 仅由标题可确认 / 不可确认 / strategic signal". Each item has one line. Requirement 2-4 sentences may apply to each Anthropic/OpenAI content, but lack content justifies concise. Yet user explicitly says "同上". We should honor 2 sentences per selected item. Maybe 12 selected items, 24 sentences.
-
-Need decide which OpenAI titles are likely genuinely "new" based on list ordering? The first page "Decisions Api" maybe newest current. Could be important. Titles "Gpt 6 Astra", "Path to Astra", "Astra for Law", "Previewing GPT 5 6 Sol" etc. But all dated Oct23 due crawler. Maybe these are genuine future posts. We can select "title-implied new product cluster" but not claim date. We can say "候选（发布日期未核验）".
-
-Could infer latest from duplicate count? Many duplicates perhaps page index crawled multiple times. The order likely sitemap output, not chronology. No.
-
-Could write:
-
-### 3. OpenAI 内容精选（标题级候选，非“今日发布”确认）
-由于所有条目无正文，不能满足 2-4 句技术提炼；以下仅列出最值得二次抓取的 10 个 URL. Each item:
-1. GPT-6 Astra / Safety overview / practical guide (three links). The cluster implies a model-product-safety triad. But this is three entries; explain cluster in 3 sentences.
-2. Agents API/SDK/AgentKit cluster.
-3. Codex GA/security/harness cluster.
-4. Cyber trusted access/Daybreak.
-5. Ads.
-6. infrastructure.
-7. data residency.
-8. health/science.
-9. governance/misalignment.
-10. acquisitions vertical integration.
-Each cluster with official links. Is that acceptable? Probably.
-
-Could mention no "engineering / learn" fields in OpenAI; index pages and business guides appear. "engineering" category landing page itself has no body. So no content extraction.
-
-Potentially use exact title links:
-- https://openai.com/index/gpt-6-astra/
-- https://openai.com/index/safety-overview-gpt-6-astra/
-- https://openai.com/index/practical-guide-building-gpt-6/
-- https://openai.com/index/gpt-6-astra-next-generation-work/
-- https://openai.com/index/path-to-astra/
-- https://openai.com/index/astra-for-law/
-- https://openai.com/index/gpt-6-for-everyone/
-- https://openai.com/index/introducing-gpt-6-sol-and-luna/
-- https://openai.com/index/agents-api? actual introducing-the-agents-api
-- Agents SDK next evolution
-- Agentkit
-- workspace agents
-- codex now generally available
-- Codex security research preview
-- Harness engineering
-- Codex maxxing long running work
-- unrolling loop
+Safety:
+- Safety overview GPT-6 Astra
+- Lockdown mode elevated risk labels
+- coding agent misalignment
 - model misalignment reporting framework
-- how monitor internal coding agents misalignment
-- long-horizon models
-- safety alignment
-- deployment simulation
-- third party eval foundations
-- cyber pacing
-- trusted access
-- frontier cyber trusted hands
-- Daybreak expanding
+- model spec teen protections
+- cyber pacing/trusted access
+- coordinated vulnerabilities
+- SWE bench etc.
+Could choose 5.
+
+Global policy:
+- EU AI Act primer
+- data residency Europe/Asia
+- economic blueprints (Korea, EU, Japan)
+- youth safety.
+Maybe 3.
+
+M&A:
+- Promptfoo, Ona, Astral, Rockset, Orchestra Bio, TBPN. Could include as separate "资本与能力整合". Titles alone don't reveal rationale. But acquisition of Promptfoo suggests eval/security; Ona maybe enterprise? Can't infer company profiles without external knowledge. Better avoid details not in titles. But strategic signal is vertical integration across eval, enterprise search/data (Rockset), biotech. Could phrase as title-level only.
+
+Need possibly include date on each: "记录日期：2026-10-23；原始发布日期：无法从数据确认". User specifically wants publication date. We can put date 2026-10-23 with dagger and footnote. Every item needs official link. That's a lot repetition. Fine.
+
+Need perhaps write each item 2-4 sentences. But since no content, summaries must say "标题指向..." not assert. Could still be 2 sentences. We should explain summary is not verified. Avoid inventing model specs/benchmark numbers.
+
+Need maybe make "候选重点" selected based on coherence, not all 530.
+
+Alternative: because data quality is so bad, maybe report should focus entirely on data-quality forensic and strategic themes rather than pretending. User explicitly asks detailed report. We can deliver both.
+
+Let's inspect potential "today new" likely first few are actual 2026-10-23 posts:
+Premium Seats Chatgpt Business
+South Korea Economic Blueprint
+Introducing Apps In Chatgpt
+Our Approach To Advertising And Expanding Access
+Building Chatgpt Ad Stack
+Teen Development Research Grants
+Fine tuning API custom models
+Dall E 3
+GPT-5 developers
+Coordinated disclosure...
+OpenAI Oracle Cloud
+GPT-6 Astra
+GPT-5.5 Instant
+Health intelligence
+clinicians
+Maybe scrape order could be current to old, likely first ~20 are recent. The list later all historical pages due sitemap. If sitemap sorted? Starts Premium seats, South Korea blueprint, Apps, advertising, teen grants, fine tuning, Dall-E 3 (2023), GPT-5 developers (2025), coordinated disclosure (maybe 2025), Oracle cloud, GPT-6 Astra, GPT-5.5 Instant, health, clinicians, Enterprise Data signal. Could actual current date in a fictional future. We could treat first 20 as likely current cluster, but metadata issue remains.
+
+Need perhaps infer actual publication order from titles, not dates. The top entries seem newest around 2026:
+- Premium Seats
+- South Korea blueprint
+- Apps in ChatGPT
+- Advertising approach/stack
+- Teen grants
+- Fine-tuning API custom models
 - coordinated disclosure
-- safety bug bounty
-- ads etc.
+- Oracle cloud
+- GPT-6 Astra
+- GPT-5.5 Instant
+- health intelligence/clinicians
+Then Enterprise Data.
+Could construct today's highlights based on those. But title-only.
 
-We can prioritize strategic not summarize every title.
+Maybe the user expects no skepticism? Yet data is obviously suspicious, and as a deep analyst, integrity matters. We should mention "530 new" likely crawler issue. There are duplicates and old content. If we ignore, hallucinate. We need likely say "无法将全部 530 条认定为 10/23 新发布". The report can be "候选信号版".
 
-Maybe "OpenAI 内容精选" needs actual content, but impossible. State no eligible article meets evidence threshold. Then "二次核验清单" title-only. This is analytically honest. We can say "因此本报告不把任何一条标作10月23日发布". That's key.
+Could include confidence taxonomy:
+- Level A: title clusters with mutual corroboration, likely current strategic direction, still needs full text.
+- Level B: single title or ambiguous.
+- Excluded: duplicates/index/historical canonical pages.
+This could be in methodology before sections. User asks 5 sections; can include "数据口径". Keep within.
 
-Need perhaps discuss "OpenAI 745" count misleading. The user says "共745篇新内容"; we should gently correct: 745 URLs captured, not necessarily new publications. Evidence:
-- GPT-2, DALL-E 2, CLIP, 2018 OpenAI Scholars marked 2026-10-23.
-- same URL repeated 2–3 times.
-- index/category pages.
-- all no content.
-Hence crawl likely full-site re-index or sitemap lastmod issue, not incremental release feed. Could even say need use JSON-LD datePublished/dateModified, canonical URL dedup, HTTP Last-Modified, sitemap lastmod, archive diff to re-run. This is worth noting for data pipeline.
+Need maybe count Anthropic 0. OpenAI 530 records with repeated:
+"Our approach..." twice
+Dall E 3 twice
+GPT-6 Astra 3
+GPT-5.5 Instant 2
+etc. Many historical index pages. Could cite examples:
+- Language Models Are Few-Shot Learners is known 2020, but user says 2026-10-23.
+- GPT-4 / GPT-2.1 5B release known 2019.
+- Introducing GPTs 2023.
+Thus timestamp definitely fetch/update, not publication. We can explicitly say "cannot label them today". This is valuable.
 
-Anthropic date issue:
-- "Exploring model welfare" Published Apr24, 2025, but update Oct21. Others old. So use page-declared Published date.
-- Today verifiable Oct22 (latest), no Oct23 content in Anthropic.
-Could make a "Data confidence" label:
-  - A: page-declared publication date + body excerpt
-  - B: title + official URL only
-  - C: category/index or duplicate (excluded)
-Anthropic all A except perhaps page date mismatch; OpenAI all B/C. This helps.
+Need perhaps not use external knowledge to identify known dates? Titles themselves enough to show impossible sequence, but we know those pages historically. We can say "同一批次同时包含 GPT-2、GPT-4、GPT-5/6 和 2020-era papers; this indicates site-wide recrawl". We don't need assert exact publication dates. Mention [Language Models Are Few-Shot Learners], [GPT-4], [GPT-2.1 5B] are included with same date, indicating noise.
 
-Need maybe cite no external facts. Use only supplied excerpts. We can state vendor claims.
+Potential report structure:
 
-Let's plan full response:
-
-Header and methodology.
-
-```
 # AI 官方内容追踪报告（2026-10-23）
-口径：截至 2026-10-23；“今日” only page Published date. Crawl/update not publication. Vendor metrics are self-reported.
-Data alert: ...
-```
+## 数据可信度与口径
+- Anthropic: 0.
+- OpenAI: 530 records, but not equal to 530 new posts; duplicates, category index pages, historical content, empty excerpts. Treat as "crawl result titles", not confirmed date.
+- Confidence:
+  - A: multiple titles form coherent recent cluster
+  - B: title-level
+  - C: historical/duplicate excluded.
+- Every date shown is dataset update date; original publication date unverified.
 
-1. 今日速览: 5 bullet/sentences. Mention no confirmed OpenAI same-day.
+## 1 今日速览
+4 sentences.
+- No verified Anthropic new release.
+- OpenAI coherent signals: GPT-6 Astra/Sol/Luna and model build docs; apps/ads/business monetization; agents/Codex; cloud/compute; safety/health.
+- Strongest signal: full-stack commercialization and distribution.
+- Data anomaly caution.
 
-2. Anthropic:
-- "A. 10/22 verified new" with 3 detailed entries.
-Each 2-4 sentences.
+## 2 Anthropic
+- no content; no timeline.
+- Comparative read: silence is no strategic conclusion due zero and same crawler.
 
-1) [LLMs...] (2026-10-22, official link)
-Sentence 1 core. Sentence 2 evidence >100 libraries assembly RISC-V, first claim. Sentence 3 bugs and significance. 4 caveat maybe human proof validation.
-2) Guest investigators
-3) Agent Skills
-Order maybe Agent Skills first strategic, formal verification, life sciences.
+## 3 OpenAI selected
+Maybe 25 items. Need balance.
 
-- "B. Recently surfaced context (not new today)" categories:
-News:
-  - EFS published Sep1.
-  - Stubbs Oct21.
-  - Public Benefit Fund Oct18.
-Research:
-  - weapons Sep10
-  - Nine Loops Sep25
-  - GLM Sep29
-  - OSS Scanner Oct8
-  - ECDSA Oct16
-  - self-replication Oct12
-  - model welfare Apr24 2025.
-Need each 2-4 sentences. That is 10 entries, total 13.
-Could use shorter 2 sentences each.
-Potential duplicate "today" article no.
-Need maybe "LLM verification" is research. "Agent Skills" category Product though listed news; user categories news/research etc.
-Let's outline each:
+Let's formulate category entries with precise title-level wording. Every entry includes link and record date. 2-4 sentences. We can label "标题级判断". Maybe 4 categories requested "research/release/company/safety etc." Use these:
 
-Agent Skills:
-- Donated to AAIF under Linux Foundation; &gt;70 platforms and cross-vendor adoption. 1m skills/280m installs vendor reported. Strategic.
-Formal verification:
-- details.
-Life sciences:
-- details.
-EFS:
-- combines ZDR and misuse detection, customer-controlled cloud; &gt;100 customers, phased fall, support across Claude and clouds. This is enterprise differentiator. Not today.
-Stubbs:
-- former Harvard dean, cosmologist, government advisor; joins trust. Signal public benefit governance combines science, national security, reproducibility.
-Public Benefit:
-- 5% shares + extra 2% per 50% value above baseline at board discretion; PBC fund. Signal scales public benefit with company success; labor market and traditional nonprofit/direct distribution.
-Weapons:
-- tactical targeting and conventional weapons development evals; some tasks historically expert scarce, open weights PRC behind frontier but concerning; on-platform classifiers. Signals risk expanding beyond cyber/bio.
-Nine loops:
-- Claude solved nine-loop amplitude N=4 super Yang-Mills challenge before/after humans? Guest post says challenge beaten month later. Need phrase carefully: "guest post recounts challenge and says Claude completed a nine-loop amplitude computation that had been a marker..." Avoid claim first.
-GLM:
-- GLM 5.3 end-to-end exploit capability, safeguards concern, following Mythos limited release/Project Glasswing; underscores proliferation. No dates exact beyond Sep29.
-OSS scanner:
-- opt-in free periodic scans; 29k candidate, 6k manually triaged, human bottleneck. Pre-declaration defensive program.
-ECDSA:
-- model traced NIST P-256 seed origins, resolves longstanding concern; no action needed. Scientific discovery vs immediate product.
-Self-replication:
-- experiments 9B inference 8/9 hardware, sub-30B partial, GLM5.2+ end-to-end simplified, potential days doubling. Signals agentic cyber risk moving to edge.
-Model welfare:
-- published 2025, resurfaced. Program asks whether consciousness/agency merits moral consideration, open question. Do not treat as new policy.
+### Release / Models
+1 GPT-6 Astra
+2 GPT-6 Sol and Luna
+3 GPT-5.6 + Builders Guide + Practical Guide? Maybe separate or combine? "Introducing GPT-5.6", "Builders Guide to GPT-5.6", "Previewing GPT-5.6 Sol", "Improving GPT-5.6 Sol in ChatGPT". Could use exact links.
+4 Better Prompt Caching for GPT-6
+5 Fine-Tuning API and Custom Models Program
+6 GPT-5.5 Instant maybe.
+Maybe 5.
 
-Could include "timeline" compact table with all actual dates? Since detailed enough. But redundancy. Maybe a single "日期核验" line not full timeline. The report is incremental update, not first full. We can mention chronological sequence in context. The user asked if first full; it's not. So skip.
+Need ensure we don't make false statement. Use "若标题准确". Example:
+"标题将 Astra 描述为 GPT-6 型号，并另有《Safety Overview GPT-6 Astra》《GPT-6 for Everyone》《Path to Astra》等配套页面；这种成组出现显示发布可能涉及模型本体、安全评估和分层 rollout。因正文缺失，不能确认能力、价格、可用范围。"
+That's 2 sentences. Date link.
 
-3. OpenAI:
-Start data quality. "No article has enough evidence for technical extraction". Then maybe content watchlist with categories. Need adhere "2-4 sentences per article" maybe for clusters. Let's choose 12 representative official links and give 2 sentences each. But strategic meaning based on titles only. We should explicitly label B-level. Could avoid asserting specifics. The title itself conveys enough.
+2 Sol/Luna:
+"Together signals product line segmentation, not just one flagship. But no exact positioning."
+Could be meaningful.
 
-Maybe categories:
+3 GPT-5.6:
+Could mention multiple docs. "Builders guide" indicates developer tooling. We can link both. If one item with multiple links, every title has link.
+4 prompt caching: title suggests inference economics optimization. That's title-level and standard. "Likely targets long-context cost/latency; need metrics."
+5 fine tuning: customization.
 
-**Research / model (title-level)**
-- [GPT-6 Astra](url), [Safety Overview GPT-6 Astra], [Practical Guide Building GPT-6]. Cluster in 3 sentences.
-- [GPT-6 Sol and Luna], [GPT-6 for Everyone], [GPT-5.6 Sol]. Cluster.
-- [Safety Alignment Long Horizon Models], [Deployment Simulation], [Model Misalignment Reporting Framework]. Cluster.
-- [Why We No Longer Evaluate SWE Bench Verified], [Separating Signal from Noise Coding Evaluations]. Cluster.
+### Research / evals / alignment
+1 Why no longer evaluate SWE-bench Verified
+2 Separating Signal from Noise Coding Evaluations
+3 Harness Engineering / Unrolling Codex Agent Loop (engineering)
+4 Chain-of-thought controllability + monitorability + deliberative alignment (maybe older actual pages)
+5 GPT-OSS Safeguard + teen policies
+Maybe 4.
 
-**Release/product/engineering**
-- Agents API/SDK/AgentKit cluster.
-- Codex GA/Security/Harness cluster.
-- WebSockets/Beyond Rate Limits cluster.
-- Realtime/audio maybe not priority.
-**Company/infrastructure**
-- AWS, Broadcom Jalapeno, Stargate.
-- data residency.
-**Safety/cyber**
-- trusted access, Daybreak, pacing, safety bug bounty.
-**Business**
-- Ads cluster, B2B Signals, product discovery.
-**Science/health**
-- complex bio, wet lab, clinicians.
-Could be 12 clusters, each 2-4 sentences, each linked. Is a cluster "each item"? Every URL linked. We can include multiple links within.
+Need not include historical old ones like deliberative alignment perhaps known 2025 and no relevance to "today". But the list is all site recrawl, and these show ongoing context. User asks contextual. Could include as "contextual items, not today". Important to label original date unknown, not "today new". This lets us satisfy milestone/time line maybe.
 
-Maybe label dates: "页面标注：2026-10-23（但实为抓取/更新时间，原始发布日期未知）". For every item, requirement date. Put at start: "以下候选均仅标“抓取日 2026-10-23，原始发布日期未核验”." Then not repeat per cluster? The user says mark date; can repeat in heading or each cluster. Better include line in each: `日期状态：仅见抓取日 2026-10-23；原始发布日期不可核验`. That's repetitive but transparent. Could use a table with "页面日期状态" once for all. The requirement "每篇标注发布日期" can't fulfill due source. Explicitly state cannot verify. That's acceptable.
+### Agents/product platform
+1 Apps in ChatGPT
+2 Workspace Agents in ChatGPT
+3 AgentKit + Agents API + next evolution Agents SDK
+4 Stateful runtime Bedrock
+5 Speeding agentic workflows WebSockets
+6 Codex Security
+7 OpenAI Frontier perhaps.
+Could combine clusters to reduce.
 
-Maybe select fewer:
-1. GPT-6 Astra suite
-2. Agent platform suite
-3. Codex suite
-4. Cyber controlled access suite
-5. Alignment/evals suite
-6. Infrastructure suite
-7. Ads/commerce suite
-8. Science/health suite
-9. Governance/youth suite
-10. M&amp;A suite
-This is not "single article" but each title is linked. We can say "因无法读取正文，不进行逐篇技术摘要; below are priority re-crawl targets." This likely satisfies honesty, and each has links.
+### Company / commercialization
+1 Ads cluster (all six links)
+2 Premium seats + product discovery
+3 Partner Network + B2B Signals + Enterprise Data
+4 acquisitions Promptfoo, Ona, Rockset, TBPN, Astral (one item)
+5 OpenAI Frontier and AWS/Oracle/GCP maybe elsewhere.
+Maybe 4.
 
-Could possibly identify an actual one likely latest: "Decisions API" perhaps new. But no clue. It may be important. Need maybe include as top candidate due first in input and likely current. Also "Previewing Ultrafast", "OpenAI Models Google Cloud", "What Parameter Golf Taught Us", "Path to Astra", "Astra for Law", etc. Since order might be latest-first, but not guaranteed. Could include "Decisions API" in a title-level candidate. What is "Decisions API"? Could be high-impact API for agent decision-making? We cannot infer. If selecting, say only title suggests dedicated decision API but no content; must verify whether product, research or placeholder. Maybe not.
+### Infrastructure
+1 multi-cloud AWS/Oracle/GCP
+2 Stargate Norway/five sites
+3 Jalapeno inference chip
+4 full stack abundant intelligence.
+Maybe 4.
 
-Could mention newest-looking titles due likely top of feed:
-- Decisions API
-- Previewing Ultrafast
-- OpenAI Models Google Cloud
-- What Parameter Golf Taught Us
-But old pages all same. No need.
+### Science/health
+1 Healthcare + health intelligence + clinicians
+2 Rosalind / complex bio / life sci bench / wet lab
+3 biodefense + GeneBench Pro etc
+4 Orchestra Bio acquisition
+Maybe 3.
 
-4. Strategic signals:
-Detailed matrix maybe dimensions.
-- Anthropic:
-  1 Standards/ecosystem
-  2 Safety/security and controlled access
-  3 Science/formal reasoning
-  4 Enterprise assurance
-  5 Public benefit
-- OpenAI (cumulative title-level):
-  1 Agents + coding
-  2 Model platform/vertical products
-  3 infrastructure
-  4 monetization
-  5 safety/governance
-- Competitive table:
-  Dimension | Anthropic | OpenAI | judgment
-  Agent stack: Skills/MCP open standards vs Agents API/SDK/AgentKit/Codex. Anthropic leads interoperability discourse; OpenAI leads integrated developer platform (title-level).
-  Safety: concrete frontier red team evals/EFS vs governance frameworks/cyber trusted access. Anthropic evidence more concrete in latest.
-  Science: verification and investigator network vs biology/health titles. Anthropic more research-partnership oriented.
-  Enterprise: customer-controlled EFS/standards vs data residency/Codex enterprise. Both.
-  Monetization: no Anthropic signal vs ads/shopping/B2B. OpenAI stronger.
-  Infrastructure: Anthropic cloud distribution vs OpenAI custom silicon/Stargate. Different.
-- Competition nuance: not simple winner; Anthropic shapes standards and safety narratives; OpenAI maximizes platform reach and monetization.
+### Safety/security/governance
+1 GPT-6 Astra safety overview + model spec
+2 Lockdown mode/elevated risk
+3 coding agent misalignment/reporting framework
+4 cyber capability pacing/trusted access/frontier cyber models
+5 teen safety blueprint/parental controls/model spec updates
+6 coordinated disclosure critical vulnerabilities + supply chain attack.
+Could be 6.
 
-Impact:
-developers:
-- Skills portability and versioning/security.
-- APIs/SDKs likely (but unverified).
-- proof artifacts and eval requirements.
-- cyber tool restrictions.
-enterprises:
-- ZDR/customer-controlled storage, data residency, audit logs, age assurance.
-- agent governance, permission scopes, sandboxing.
-- assurance/procurement.
-- domain solutions.
-Maybe 90-day watchlist? Could include but not required. "Worth关注" can have watch items.
+### Global affairs
+1 EU AI Act + frontier risk
+2 data residency Europe/Asia
+3 economic blueprints Korea/EU/Japan
+4 youth safety global.
+Maybe 3.
 
-5. Worth details:
-- Date anomalies
-- Agent Skills first in current feed
-- Proof not test
-- guest investigator
-- two-layer agent standard MCP/Skills
-- Edge self-replication
-- dual-use cyber timeline
-- nomenclature Fable/Mythos; OpenAI Astra/Sol/Luna/Codex etc. But because future naming from source, signal tiered product lines. Need be careful: OpenAI title corpus includes GPT-6 Astra, Sol/Luna, model names. Anthropic excerpts mention Fable 5/5.1, Mythos. Could say "命名分层正在扩张" but only official excerpts. Is this strategic? Maybe.
-- governance "public benefit fund" and S-1 (title only).
-- Ads / shopping.
-- regulatory: teen safety, California bill, EU blueprint, data residency, S-1. But those are title-only OpenAI. Anthropic EFS and public benefit.
-- Metrics are adoption signals.
-- "Formal verification at assembly level" bridges research and product assurance.
-- Benchmark skepticism: OpenAI title "Why We No Longer Evaluate SWE-bench Verified" signals benchmark validity concerns; title-level. Important for technical decision makers: don't rely on single benchmark.
+This could be ~29 items, each 2-4 sentences. Very long but desired oververbosity 5 and user says详实. We can maybe 24 items. Let's count.
 
-Need perhaps add "confidence labels and next steps" at end:
-- Re-crawl canonical pages and parse datePublished/dateModified.
-- compare sitemap and visible Published date.
-- deduplicate canonical.
-- For OpenAI, don't use 745 count.
-This is useful.
+Could group into 6 categories with 4 items each = 24. Need each item 2-4 sentences. Then strategic analysis. Fine.
 
-Let's consider if user expects no caveat and a direct report. We can be assertive but accurate. We should not say inability too prominently? Need still answer all sections. Let's formulate elegantly.
+Need maybe "首次全量 timeline": user says if first full amount, but this is incremental. We can say not first full amount, so no full timeline. Yet because 530 huge, we can mention "contextual timeline inferred from title generations": GPT-2→GPT-4/4.5→GPT-5→5.x→6 Astra/Sol/Luna. But not publication timeline; model-generation progression only. Could include under OpenAI. Anthropic no timeline.
 
-Potential issue: user says "语言要求...每个条目必须附上 GitHub/官网链接." We'll ensure every named item has markdown link. For broader general statements no link needed. In OpenAI cluster each title is linked.
+Need maybe include "今日新增" exact. We can't verify. Better mark selected items "高相关候选". Could perhaps infer top-of-feed items as today's probable content and separate from context.
 
-Let's think deeply about strategic meaning of Anthropic items and interplay.
+Let's identify "probable current announcements" based page clusters:
+- Premium Seats ChatGPT Business
+- South Korea Economic Blueprint
+- Apps in ChatGPT
+- Advertising approach / stack
+- Fine tuning API improvements/custom models
+- Coordinated disclosure
+- Oracle Cloud
+- GPT-6 Astra
+- GPT-5.5 Instant
+- Health Intelligence / clinicians
+- Enterprise Data.
+Could create a "优先核验队列" of 10 likely current items. But user requested report, not data QA only. Could include "最值得核验". Maybe in details.
 
-Formal verification:
-- At assembly RISC-V level means proofs close to hardware, stronger guarantees than source-level, but huge complexity. Historically formal methods require expert years; LLM lowers cost. The collaboration with Theorem suggests Anthropic leverages domain</think>
+Could use URLs exactly. Need not link every title in clusters? We can include each relevant link.
+
+Let's ensure no markdown link formatting issues with Chinese. Fine.
+
+Potential language:
+> 说明：以下“2026-10-23”仅指你提供的抓取记录日期，不是经核验的原始发布日期。由于 530 条全部无正文，且混入 [GPT-2.1 5B]、[GPT-4]、[Language Models Are Few-Shot Learners] 等历史页与大量重复项，本报告将其解释为站点重抓取/索引刷新，而不是 530 篇当天发布。
+
+This is crucial. Maybe date in each item:
+**记录日期：2026-10-23；原始发布日期：未提供/待核验。**
+Repeating on every item would be cumbersome but requirement. Could state globally that all selected items have same record date and omit repeated? User explicitly says mark date. Better include concise `[记录日期：2026-10-23；原始发布日期待核验]` in each. That's a lot but okay.
+
+Could perhaps table with Date | item | analysis. But each 2-4 sentences in table awkward. Use bullets.
+
+Need not attach GitHub links because none provided. We can say official links only; no GitHub evidence in feed.
+
+Let's think through strategic interpretations.
+
+Technical priorities OpenAI:
+1. Model family and frontier scale: GPT-6 Astra, Sol/Luna, prompt caching. Product segmentation by capability/cost/latency.
+2. Agentic systems: Apps, Workspace Agents, AgentKit/API/SDK, runtime, Codex security, harness engineering. Shift from chatbot to execution platform/agent OS.
+3. Monetization/distribution: ads, premium business seats, product discovery, partner network, B2B signals. Use ChatGPT's massive DAU as ad/commerce surface; blend answer and sponsored outcomes.
+4. Full stack infrastructure: multi-cloud AWS/Oracle/GCP, Stargate sites, custom inference chip. Diversify compute and vertically integrate economics.
+5. Safety as release gating and product feature: system cards, lockdown, risk labels, model spec, teen controls, cyber controlled access.
+6. Vertical domains: healthcare, biotech, law, science; specialized products/partners.
+
+Anthropic:
+- No content, cannot infer.
+- Relative silence in feed could be crawler coverage but not strategic. Compared with OpenAI, OpenAI is publishing broader surface across model, platform, ads, infra.
+
+Competition:
+- OpenAI leads on breadth/full-stack/distribution and commercial narrative.
+- Can't say Anthropic following because no data.
+- Potential competitive fronts:
+  * agents vs Anthropic Claude/Agent SDK (but no Anthropic data; general context maybe known? User asks combine context. We can mention Anthropic is known for Claude but no current update. Should we use external knowledge? likely okay but date future uncertain. Better "对 Anthropic/Claude 的竞争含义" without asserting current releases.
+  * coding agents with Codex vs Claude Code.
+  * enterprise agent platform and safety.
+  * ads is OpenAI-distinctive.
+  * model performance cannot be compared because no benchmarks.
+
+Developer impact:
+- APIs: prompt caching, fine-tuning, custom models, agents API, SDK, stateful runtime, WebSocket.
+- migration: app/agent platform may create new packaging/distribution.
+- enterprise: premium seats, workspace agents, data residency, zero retention, AWS/Oracle/Google.
+- safety/compliance: risk labels, lockdown, model spec, data residency become deployment requirements.
+- cost: prompt caching, model tiers.
+- governance: evaluate coding benchmarks carefully due SWE-bench issues.
+- M&A may affect tooling ecosystems.
+
+Details:
+- "Astra, Sol, Luna" naming indicates model portfolio branding / celestial naming. Maybe first appearance in data. But because feed polluted, can't claim first-ever.
+- "Apps in ChatGPT" + "Workspace Agents" suggests app store/agent marketplace.
+- "Advertising" dense 6 posts + 26 countries suggests major node and monetization.
+- "Premium Seats" B2B packaging.
+- "OpenAI Frontier" appears with enterprise availability and B2B signals, perhaps enterprise platform/brand.
+- "Life Sci Bench", "GeneBench Pro", Rosalind suggests science verticalization.
+- "gpt5 lowers protein synthesis cost" indicates AI-science cost curve.
+- "lockdown mode and elevated risk labels" safety becoming user-facing runtime control.
+- "trusted access for cyber" selective access rather than general release.
+- "S1 confidential submission" regulatory policy.
+- youth safety cluster suggests upcoming policy/regulatory pressure.
+- data residency and economic blueprints indicate sovereign AI / localization.
+- acquisitions indicate stack consolidation: Promptfoo eval/security, Rockset retrieval/data, Ona maybe agent? Can't characterize Ona without data. Could just list acquisitions and say scope unverified.
+- Multi-cloud means reducing supplier concentration.
+- Broadcom Jalapeno chip vertical silicon.
+- MRC supercomputer networking / compute.
+
+Need maybe include "OpenAI Frontier" as perhaps model? There is "Introducing OpenAI Frontier" and "OpenAI Frontier Models and Codex are now available on AWS". Could be enterprise platform. We can include in enterprise cluster.
+
+Need not mention all 530, but report should say selected. "精选" means okay.
+
+Let's think if user may expect exact report no caveat. We can still give useful.
+
+Potential sections:
+
+1. 今日速览 (4 sentences)
+2. Anthropic / Claude 内容精选
+   - Data: 0.
+   - No timeline.
+3. OpenAI 内容精选
+   - "A. Release/模型"
+   - "B. Research/engineering"
+   - "C. Product/company"
+   - "D. Safety/global"
+Maybe 20 items.
+4. 战略信号解读
+   - priorities table for OpenAI, Anthropic, competition.
+5. 值得关注细节
+   - data anomalies, naming, clusters, policy.
+
+Need include dates/links each item. Let's design exact selected items and summaries.
+
+OpenAI category 1: Release / model (5)
+1. GPT-6 Astra + safety overview? Link two maybe. "核心发布候选".
+2. GPT-6 Sol and Luna + GPT-5.6 / Sol. Link four maybe.
+3. Better Prompt Caching for GPT-6.
+4. Fine-Tuning API improvements & custom models.
+5. GPT-5.5 Instant / GPT-5 for Everyone maybe segmentation. Could link two.
+Could maybe include OpenAI Frontier separately.
+
+Research/engineering/agents (6)
+1. Apps in ChatGPT.
+2. Workspace Agents.
+3. AgentKit + Agents API + Agents SDK.
+4. Stateful Runtime on Bedrock + WebSockets.
+5. Codex Security + running Codex safely.
+6. SWE-bench Verified / coding eval signal noise.
+7. Harness engineering/unrolling agent loop.
+Could be 7.
+
+Company/commercial/infrastructure (5)
+1. Advertising cluster.
+2. Premium seats + product discovery.
+3. OpenAI Frontier and partner network/B2B signals.
+4. Multi-cloud.
+5. Stargate + chip/full-stack.
+6. M&A maybe.
+Could do 6.
+
+Science/health (3)
+1 healthcare suite.
+2 Rosalind suite.
+3 safety/biodefense.
+4 acquisition Orchestra Bio maybe combined.
+
+Safety/governance (5)
+1 model spec + GPT6 safety overview (if not already)
+2 lockdown/risk labels.
+3 misalignment monitoring/reporting.
+4 cyber controlled access.
+5 teen safety.
+6 coordinated vulnerability.
+Could be 6.
+
+Global (3)
+1 data residency.
+2 AI Act/frontier risk.
+3 economic blueprints.
+Maybe combine with company.
+
+Total ~28. Long but okay. Each 2 sentences maybe 56 sentences. Could be around 6k Chinese chars.
+
+Could reduce to 20 by grouping tightly. User says detailed, so 24.
+
+Let's enumerate 24:
+
+**Release/模型 (4)**
+1 GPT-6 Astra + safety overview + GPT6 everyone/path (one cluster)
+2 GPT-6 Sol/Luna + GPT5.6 docs (one)
+3 Better prompt caching GPT6
+4 Fine tuning/custom models + GPT5.5 Instant maybe separate no, fine tuning one.
+
+**Agents/engineering (6)**
+5 Apps in ChatGPT
+6 Workspace Agents
+7 AgentKit + Agents API + SDK
+8 Stateful runtime + WebSockets
+9 Codex Security + running safely + windows sandbox maybe
+10 Evals: SWE Bench + signal noise + harness engineering
+
+**Product/company (5)**
+11 Ads cluster
+12 Premium seats + product discovery
+13 OpenAI Frontier + partner network + B2B Signals
+14 M&A cluster
+15 multi-cloud
+
+**Infrastructure/science (4)**
+16 Stargate sites + Norway + chip + full stack
+17 healthcare
+18 Rosalind life science
+19 biodefense
+Maybe 19 total so far.
+
+**Safety/global (5)**
+20 safety overview/model spec
+21 lockdown/risk labels
+22 misalignment
+23 cyber trusted access
+24 teen safety
+25 vulnerability disclosure/supply chain
+26 data residency
+27 EU AI Act/frontier risk/S1
+28 economic blueprints
+28 again.
+
+We can manage by concise 2 sentence entries.
+
+Need perhaps make dates as line before title:
+- `记录日期：2026-10-23；原始发布日期：待核验。`
+This repeated 28 times makes report huge. Could use a global note and each item label `（记录日期：2026-10-23）`. Requirement says date, okay. Add original date caveat globally. Use each item title line with `(2026-10-23，记录日期；原始发布日期未提供)`. Fine.
+
+Maybe user might think date should be 2026-10-23. Good.
+
+Could categorize as "release", "research", "engineering", "company", "safety", "global affairs". They asked research/release/company/safety etc. Do that.
+
+Let's ensure each item 2-4 sentences. Some grouped items have multiple links and 2-3 sentences.
+
+Need maybe include an "重要性" rating. Helpful:
+- A: high-confidence strategic cluster, not verification.
+- B: title-level.
+Could use "信号强度：高/中". But if all based titles, confidence low. Maybe "战略相关性：高" rather than confidence. E.g. `[高]`.
+Need differentiate:
+- "高（多标题互证）"
+- "中（单标题/正文缺失）"
+Still not factual.
+
+Let's plan exact prose.
+
+Opening:
+
+# 《AI 官方内容追踪报告》｜2026-10-23（增量）
+> 数据完整性提示... 530 isn't actual 530. All content excerpts unavailable. Therefore this is "title-level provisional report"; not claim product release/performance. Dates in item are record dates. Links official.
+
+Could mention "官方" but not verified content. The URLs are official domains.
+
+## 1 今日速览
+- Anthropic no new content; no evidence.
+- OpenAI coherent cluster around GPT-6 Astra/Sol/Luna, GPT-5.6, prompt caching; likely model family rollout but needs canonical date.
+- Agents and distribution: Apps, Workspace Agents, AgentKit/API/SDK, ads and premium seats.
+- Infrastructure and verticals.
+- Data quality caveat.
+
+4-5 sentences exactly maybe 5 bullet sentences.
+
+## 2 Anthropic
+"本次增量 0; no news/research/engineering/learn."
+"Thus no item-level summary or timeline. Do not infer strategic silence."
+"Compared with OpenAI, only data coverage asymmetry."
+Maybe link [Anthropic News](https://www.anthropic.com/news) though not in feed. User asks every item link, but this isn't an item. Could include official homepage link to monitor. Maybe no need.
+
+## 3 OpenAI
+
+### Release/模型
+1 GPT-6 Astra cluster:
+Links:
+[GPT 6 Astra](https://openai.com/index/gpt-6-astra/)
+[Safety Overview GPT-6 Astra](...)
+[GPT 6 for Everyone](...)
+[Path to Astra](...)
+[GPT 6 Astra Next Generation Work](...)
+Summary: multiple companion pages indicate not isolated model mention but rollout narrative spanning general availability, work, path, safety. Strategic: flagship and enterprise work positioning. Cannot confirm benchmarks/pricing/availability.
+
+2 GPT-6 Sol/Luna and GPT-5.6:
+[Introducing GPT 6 Sol And Luna]
+[GPT 5 6]
+[Builders Guide to GPT 5 6]
+[Previewing GPT 5 6 Sol]
+[Improving GPT 5 6 Sol in ChatGPT]
+Could say model portfolio segmentation and staged preview/iteration. Names imply tiers but not confirm. This indicates developer docs alongside consumer rollout.
+Maybe too many links, but okay.
+
+3 Better prompt caching:
+Summary: optimization likely cost/latency for repeated prefixes/long context. For developers, affects architecture and unit economics. Need exact cache behavior/pricing absent.
+
+4 Fine tuning and custom models:
+Summary: expanding post-training and bespoke model path; shifts competition from raw model to adaptation, data, governance. Need supported models/evals/ownership terms absent.
+
+Maybe 5 GPT-5.5 Instant:
+[GPT 5 5 Instant], [Introducing GPT 5 5]. Could say low-latency line bridge. But not necessary; cluster enough. Could include if model timeline. Perhaps 4 enough.
+
+### Research / engineering / evals
+5 Apps in ChatGPT:
+"app layer inside assistant; likely third-party distribution and task completion. Combined with AgentKit/API/SDK suggests packaging/connectors/agent execution. Terms, review, permissions absent."
+6 Workspace Agents:
+"enterprise persistent agents tied to company context; agent moves from chat to delegated workflows. Raises identity/access/audit needs."
+7 Agent stack:
+AgentKit, Agents API, next evolution Agents SDK. Summary platform layers.
+8 Stateful runtime and websockets:
+persistent sessions and event streaming. Need exact guarantees unknown.
+9 Codex security/safe:
+Codex security research preview, why no SAST, running safely, windows sandbox. Suggest securing execution is product category.
+10 Evaluation methodology:
+Why no longer SWE Bench Verified + separating signal noise + harness engineering/unrolling loop. Signal: benchmark gaming/contamination and harness effects. Need full text to know claim.
+11 CoT monitorability maybe:
+[Reasoning Models Chain Of Thought Controllability], [Evaluating Chain Of Thought Monitorability], [Deliberative Alignment], [Learning to Reason with LLMs]. These are likely older, but contextual. Summary safety moves from output filtering to reasoning process monitoring/control. However original date unverified/historical. This is a good research cluster.
+Could include.
+
+### Product / company / monetization
+12 Ads cluster:
+links all. Summary multiple stages: principles, stack, formats/measurement, testing, 26 countries. Strong intent to scale ads and use ads to subsidize access. Need guardrails.
+13 Premium seats/business/product discovery:
+links. B2B packaging and commerce. Premium seats monetizes knowledge workers; product discovery turns answers into commerce. Need seat details.
+14 Frontier / partner / B2B signals:
+OpenAI Frontier, partner network, B2B signals, enterprise data. Suggest enterprise platform + data/partner demand sensing. Exact product roles unknown.
+15 M&A:
+Promptfoo, Ona, Rockset, Astral, TBPN, Orchestra Bio. Need be careful. "Multiple acquisition announcements in same crawl suggest horizontal/vertical integration, but because dates unverified cannot call same-day spree." This is key. We can group.
+16 Multi-cloud:
+AWS/Oracle/GCP. Strategic redundancy and distribution. Data control/latency.
+17 Compute vertical integration:
+Stargate Norway/five sites, Jalapeno chip, full-stack abundant intelligence, MRC networking. Compute expansion and custom silicon.
+
+### Science/health
+18 Healthcare:
+OpenAI for Healthcare, health intelligence, clinicians, ChatGPT Health. Verticalization and liability/workflows. Exact medical functionality absent.
+19 Rosalind:
+GPT Rosalind, new capabilities, life sci bench, gene bench, complex biological data, wet lab, protein synthesis cost. End-to-end AI for science.
+20 Biodefense:
+Rosalind biodefense, trusted? Could combine with 19, but distinct strategic signal dual-use. Mention public health and screening.
+21 Orchestra Bio acquisition maybe part M&A; don't duplicate.
+
+### Safety/security/global
+22 Model spec/lockdown:
+Could group [Model Spec], [Sharing latest], [Approach], [Lockdown], [Elevated risk labels]. Safety becoming runtime UX/governance. Need maybe separate.
+23 Misalignment monitoring:
+[How monitor internal coding agents], [reporting framework], [safety alignment long horizon]. Agent autonomy needs telemetry.
+24 Cyber:
+Pacing model development cyber capabilities, trusted access, putting frontier cyber models trusted hands, accelerating defense. Controlled-access release model.
+25 Teen safety:
+many links. Product + policy + research, indicates regulatory pressure and age assurance/safety.
+26 Coordinated disclosure:
+critical vulnerabilities, TanStack supply chain, advanced account security. Operational security.
+27 Global compliance:
+EU AI Act, frontier risk, confidential S1, data residency Europe/Asia. Sovereign deployment.
+28 Economic blueprints:
+Korea, EU, Japan, economic exchange. Nation-specific policy and infrastructure.
+
+That's 28, good. But each 2-4 sentences yields long. Could perhaps 23 by combining 22/23 etc.
+
+Need maybe use exact dates for grouped links. All same record date. For each item, state once.
+
+Could include only links from supplied list. Need check all exact URLs:
+- [GPT-6 Astra] `/index/gpt-6-astra/`
+- [Safety Overview] `/index/safety-overview-gpt-6-astra/`
+- [GPT 6 For Everyone] `/index/gpt-6-for-everyone/`
+- [Path To Astra] `/index/path-to-astra/`
+- [Gpt 6 Astra Next Generation Work] `/index/gpt-6-astra-next-generation-work/`
+- [Introducing Gpt 6 Sol And Luna] `/index/introducing-gpt-6-sol-and-luna/`
+- [Gpt 5 6] `/index/gpt-5-6/`
+- [Builders Guide To Gpt 5 6] `/index/builders-guide-to-gpt-5-6/`
+- [Previewing Gpt 5 6 Sol] `/index/previewing-gpt-5-6-sol/`
+- [Improving Gpt 5 6 Sol In Chatgpt] `/index/improving-gpt-5-6-sol-in-chatgpt/`
+- prompt caching exact.
+- fine tuning exact.
+
+Engineering URLs correct.
+- Why Codex Security Doesnt Include Sast (maybe technical clarification).
+- Running Codex Safely.
+- Building Codex Windows Sandbox.
+- Unrolling Codex Agent Loop.
+- Harness Engineering.
+- evals.
+
+Product:
+- Premium Seats `/index/premium-seats-chatgpt-business/`
+- Powering Product Discovery
+- Frontier
+- Partner Network
+- B2B Signals
+- Enterprise Data `/signals/enterprise-data/`.
+- acquisitions exact.
+
+Infrastructure:
+- OpenAI Frontier Models and Codex AWS
+- OpenAI on Oracle Cloud
+- OpenAI models Google Cloud
+- OpenAI on AWS
+- Stargate Norway, Five New St</think>
 
 ---
 *本日报由 [Big Model Radar](https://github.com/96loveslife/big_model_radar) 自动生成。*
