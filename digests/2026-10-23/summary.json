@@ -1,6 +1,6 @@
 {
   "date": "2026-10-23",
-  "durationMs": 818894,
+  "durationMs": 673492,
   "model": "MiniMax-M3",
   "languages": [
     "zh"
@@ -8,7 +8,7 @@
   "issues": [
     {
       "title": "📊 AI CLI 工具社区动态日报 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/689",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/694",
       "fileName": "ai-cli.md",
       "label": "digest",
       "lang": "zh",
@@ -17,7 +17,7 @@
     },
     {
       "title": "🦞 OpenClaw 生态日报 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/690",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/695",
       "fileName": "ai-agents.md",
       "label": "openclaw",
       "lang": "zh",
@@ -25,17 +25,8 @@
       "detail": "openclaw + 7 peers"
     },
     {
-      "title": "🌐 AI 官方内容追踪报告 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/691",
-      "fileName": "ai-web.md",
-      "label": "web",
-      "lang": "zh",
-      "status": "published",
-      "detail": "anthropic: 0 new, openai: 481 new"
-    },
-    {
       "title": "📈 AI 开源趋势日报 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/692",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/696",
       "fileName": "ai-trending.md",
       "label": "trending",
       "lang": "zh",
@@ -44,7 +35,7 @@
     },
     {
       "title": "📰 Hacker News AI 社区动态日报 2026-10-23",
-      "url": "https://github.com/96loveslife/big_model_radar/issues/693",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/697",
       "fileName": "ai-hn.md",
       "label": "hn",
       "lang": "zh",
@@ -58,7 +49,7 @@
       "totalDiscovered": 480
     },
     "openai": {
-      "newItems": 481,
+      "newItems": 0,
       "totalDiscovered": 1082
     },
     "trending": {
