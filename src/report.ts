@@ -52,6 +52,18 @@ function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+/**
+ * 思考型模型（如 MiniMax-M3）默认开启 thinking，思考文本可能混入 content
+ * 返回，导致 issue 正文出现"思考过程"而非报告。报告生成场景默认关闭；
+ * 可用环境变量 LLM_THINKING=adaptive|enabled|disabled 覆盖。
+ */
+function buildThinkingConfig(): Record<string, unknown> {
+  const mode = process.env["LLM_THINKING"];
+  if (mode) return { thinking: { type: mode } };
+  if (/^minimax/i.test(getLlmModel())) return { thinking: { type: "disabled" } };
+  return {};
+}
+
 function getLlmApiKey(): string {
   return process.env["OPENAI_API_KEY"] ?? process.env["ANTHROPIC_API_KEY"] ?? "";
 }
@@ -98,6 +110,8 @@ function extractTextContent(content: unknown): string {
 }
 
 export async function callLlm(prompt: string, maxTokens = 4096): Promise<string> {
+  // 截断重试只做一次，用独立标志而不是 attempt，避免与 429 重试计数互相干扰
+  let truncationRetried = false;
   for (let attempt = 0; ; attempt++) {
     await acquireSlot();
     let released = false;
@@ -116,6 +130,7 @@ export async function callLlm(prompt: string, maxTokens = 4096): Promise<string>
           messages: [{ role: "user", content: prompt }],
           temperature: 0.2,
           max_tokens: maxTokens,
+          ...buildThinkingConfig(),
         }),
       });
       if (!resp.ok) {
@@ -124,12 +139,25 @@ export async function callLlm(prompt: string, maxTokens = 4096): Promise<string>
 
       const data = (await resp.json()) as {
         choices?: Array<{
+          finish_reason?: string;
           message?: {
             content?: unknown;
           };
         }>;
       };
-      const content = data.choices?.[0]?.message?.content;
+      const choice = data.choices?.[0];
+      // 输出被 max_tokens 截断（表现为报告尾部缺失）时翻倍预算重试一次
+      if (choice?.finish_reason === "length") {
+        if (truncationRetried) {
+          // 重试后仍截断：抛错走降级路径，宁可显示"生成失败"也不发布断尾报告
+          throw new Error(`LLM output still truncated at max_tokens=${maxTokens}`);
+        }
+        truncationRetried = true;
+        console.warn("[llm] output truncated by max_tokens — retrying with 2x budget");
+        maxTokens = maxTokens * 2;
+        continue;
+      }
+      const content = choice?.message?.content;
       return extractTextContent(content);
     } catch (err) {
       if (attempt < MAX_RETRIES && is429(err)) {
