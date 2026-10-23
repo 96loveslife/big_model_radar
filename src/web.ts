@@ -2,10 +2,16 @@
  * Web content fetching for AI company news/blog/research.
  *
  * Strategy:
- *   - Discover article URLs via sitemaps (no date filter needed — lastmod is reliable)
- *   - Compare with stored state to find new/updated URLs
+ *   - Discover article URLs via sitemaps
+ *   - New = URL never seen before (case-insensitive). A lastmod bump on an
+ *     already-seen URL only refreshes stored state — sitemaps churn lastmod
+ *     constantly (CMS re-crawls/edits; OpenAI changed 63% of URLs in 2 days),
+ *     and treating that as "new" re-surfaced old articles every run.
  *   - Fetch content only for new URLs; on first run, cap at MAX_CONTENT_FETCH_FIRST_RUN per site
- *   - After every run, mark ALL discovered URLs as seen so future runs stay incremental
+ *   - First run marks every discovered URL as seen (baseline). Incremental runs
+ *     mark a new URL as seen only after it produced a report item — fetch
+ *     failures and cap-deferred URLs stay unseen and retry next run, so no
+ *     genuinely new article is ever dropped permanently.
  *
  * State is persisted in digests/web-state.json (committed to git by the Actions workflow).
  */
@@ -28,7 +34,7 @@ export interface WebPageItem {
 
 interface SiteState {
   lastChecked: string;
-  /** url → lastmod string (or "seen" if no lastmod available) */
+  /** lowercased url → lastmod string (or "seen" if no lastmod available) */
   seenUrls: Record<string, string>;
 }
 
@@ -95,6 +101,10 @@ const SITE_CONFIGS: Record<"anthropic" | "openai", SiteConfig> = {
 
 /** Max articles to fetch full content for on the very first run (per site). */
 const MAX_CONTENT_FETCH_FIRST_RUN = 25;
+/** Max new URLs processed per incremental run (per site). Guards against site
+ *  restructures dumping a large batch of old URLs into the sitemap at once;
+ *  URLs beyond the cap are deferred to later runs, not dropped. */
+const MAX_NEW_PER_RUN = 30;
 /** Characters of page text forwarded to the LLM per article. */
 const MAX_CONTENT_LENGTH = 1_500;
 /** Polite delay between individual page GETs (ms). */
@@ -184,6 +194,26 @@ function extractText(html: string): string {
     .slice(0, MAX_CONTENT_LENGTH);
 }
 
+/**
+ * Extract the real publication date from HTML meta tags or <time> elements.
+ * Falls back to empty string if none found.
+ */
+function extractPublicationDate(html: string): string {
+  // Prefer OpenGraph/article meta tags
+  const metaMatch =
+    html.match(/<meta[^>]+property=["']article:published_time["'][^>]+content=["']([^"']+)["']/i)?.[1] ??
+    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']article:published_time["']/i)?.[1] ??
+    html.match(/<meta[^>]+name=["']date["'][^>]+content=["']([^"']+)["']/i)?.[1] ??
+    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']date["']/i)?.[1];
+  if (metaMatch) return metaMatch.trim();
+
+  // Fall back to <time datetime="...">
+  const timeMatch = html.match(/<time[^>]+datetime=["']([^"']+)["']/i)?.[1];
+  if (timeMatch) return timeMatch.trim();
+
+  return "";
+}
+
 function urlCategory(url: string): string {
   try {
     return new URL(url).pathname.split("/").filter(Boolean)[0] ?? "article";
@@ -250,6 +280,25 @@ async function discoverUrls(site: "anthropic" | "openai"): Promise<Array<{ loc: 
 
 const STATE_FILE = path.join("digests", "web-state.json");
 
+/** 状态键归一化：sitemap 会返回同一页面的大小写变体（如
+ *  long-running-Claude / long-running-claude），键区分大小写会把旧文误判为新 URL */
+function stateKey(url: string): string {
+  return url.toLowerCase();
+}
+
+/** 合并历史 state 中的大小写变体（加载时一次性迁移），保留较新的 lastmod */
+function normalizeSiteState(siteState: SiteState): void {
+  const merged: Record<string, string> = {};
+  for (const [url, lastmod] of Object.entries(siteState.seenUrls)) {
+    const key = stateKey(url);
+    const prev = merged[key];
+    if (prev === undefined || prev === "seen" || (lastmod !== "seen" && lastmod > prev)) {
+      merged[key] = lastmod;
+    }
+  }
+  siteState.seenUrls = merged;
+}
+
 function emptyState(): WebState {
   return {
     anthropic: { lastChecked: "", seenUrls: {} },
@@ -258,11 +307,15 @@ function emptyState(): WebState {
 }
 
 export function loadWebState(): WebState {
+  let state: WebState;
   try {
-    return JSON.parse(fs.readFileSync(STATE_FILE, "utf-8")) as WebState;
+    state = JSON.parse(fs.readFileSync(STATE_FILE, "utf-8")) as WebState;
   } catch {
     return emptyState();
   }
+  normalizeSiteState(state.anthropic);
+  normalizeSiteState(state.openai);
+  return state;
 }
 
 export function saveWebState(state: WebState): void {
@@ -294,24 +347,41 @@ export async function fetchSiteContent(
     return b.lastmod.localeCompare(a.lastmod);
   });
 
-  // New = not seen before, OR lastmod is newer than what we stored
-  const newUrls = allDiscovered.filter(({ loc, lastmod }) => {
-    const prev = siteState.seenUrls[loc];
-    if (!prev) return true;
-    if (lastmod && lastmod > prev) return true;
-    return false;
-  });
+  // 仅"从未见过"的 URL 才算新文章（键不区分大小写）。
+  // 不再把 lastmod 变动当作更新：sitemap 的 lastmod 会被 CMS 频繁批量刷新
+  // （OpenAI 90% 的变动 URL 是同一批反复抖动；Anthropic 迁移日一天碰了全站），
+  // 旧行为导致旧文章反复被报成"新增"。
+  const newUrls: Array<{ loc: string; lastmod?: string }> = [];
+  const newKeys = new Set<string>();
+  for (const entry of allDiscovered) {
+    const key = stateKey(entry.loc);
+    if (siteState.seenUrls[key] !== undefined || newKeys.has(key)) continue;
+    newKeys.add(key);
+    newUrls.push(entry); // allDiscovered 已按 lastmod 新→旧排序，大小写变体保留较新者
+  }
+
+  // 防洪：站点重构可能一次性把大量旧 URL 塞进 sitemap，增量运行每轮最多处理 N 条；
+  // 被推迟的 URL 不标记已见，下一轮自动补投（推迟而非丢弃）
+  let effectiveNew = newUrls;
+  if (!isFirstRun && newUrls.length > MAX_NEW_PER_RUN) {
+    console.warn(
+      `  [web/${site}] ${newUrls.length} new URLs exceeds cap — taking newest ${MAX_NEW_PER_RUN}, rest deferred`,
+    );
+    effectiveNew = newUrls.slice(0, MAX_NEW_PER_RUN);
+  }
 
   // Cap content fetches on first run to avoid excessive runtime
-  const toFetch = isFirstRun ? newUrls.slice(0, MAX_CONTENT_FETCH_FIRST_RUN) : newUrls;
+  const toFetch = isFirstRun ? effectiveNew.slice(0, MAX_CONTENT_FETCH_FIRST_RUN) : effectiveNew;
 
   console.log(
     `  [web/${site}] ${isFirstRun ? "First run" : "Incremental"}: ` +
-      `${newUrls.length} new URLs, fetching content for ${toFetch.length}`,
+      `${effectiveNew.length} new URLs, fetching content for ${toFetch.length}`,
   );
 
   // Build items — either from full page fetches or from sitemap metadata only
   const items: WebPageItem[] = [];
+  // 成功产出报告条目的键，决定新 URL 是否标记为已见
+  const producedKeys = new Set<string>();
   if (cfg.metadataOnly) {
     for (const { loc, lastmod } of toFetch) {
       items.push({
@@ -322,20 +392,25 @@ export async function fetchSiteContent(
         site,
         category: urlCategory(loc),
       });
+      producedKeys.add(stateKey(loc));
     }
   } else {
     // Fetch page content sequentially with a polite delay
     for (const { loc, lastmod } of toFetch) {
       try {
         const html = await httpGet(loc);
+        // 优先用页面真实发布日期：sitemap lastmod 是 CMS 改动时间（常为抓取时间戳），
+        // 直接展示会把旧文章标成"近期发布"
+        const published = extractPublicationDate(html);
         items.push({
           url: loc,
           title: extractTitle(html),
-          lastmod: lastmod ?? "",
+          lastmod: published || lastmod || "",
           content: extractText(html),
           site,
           category: urlCategory(loc),
         });
+        producedKeys.add(stateKey(loc));
       } catch (err) {
         console.error(`  [web/${site}] Failed to fetch ${loc}: ${err}`);
       }
@@ -343,10 +418,20 @@ export async function fetchSiteContent(
     }
   }
 
-  // Mark ALL discovered URLs as seen (not just fetched ones)
-  // This ensures future runs are truly incremental
+  // 标记已见：
+  //   - 首次运行：全部标记，一次性建立基线（否则存量 URL 次日全变"新增"）
+  //   - 增量运行：已见过的刷新 lastmod；新 URL 仅在成功产出条目后标记 ——
+  //     抓取失败或被上限推迟的保持"未见"，下一轮自动重试/补投，避免永久遗漏
   for (const { loc, lastmod } of allDiscovered) {
-    siteState.seenUrls[loc] = lastmod ?? "seen";
+    const key = stateKey(loc);
+    const value = lastmod ?? "seen";
+    const prev = siteState.seenUrls[key];
+    if (prev !== undefined) {
+      // allDiscovered 按 lastmod 新→旧排序：首个出现即最新值，同键变体不覆盖
+      if (prev === "seen" || (value !== "seen" && value > prev)) siteState.seenUrls[key] = value;
+      continue;
+    }
+    if (isFirstRun || producedKeys.has(key)) siteState.seenUrls[key] = value;
   }
   siteState.lastChecked = new Date().toISOString();
 

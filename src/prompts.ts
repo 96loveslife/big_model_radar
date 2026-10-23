@@ -611,10 +611,10 @@ export function buildWebReportPrompt(
     lang === "en"
       ? isAnyFirstRun
         ? "This is the first full crawl. Please focus on the overall content landscape, historical context, and core themes of each site, rather than individual articles."
-        : "This is an incremental update. Please focus on today's new content and assess its strategic significance in context."
+        : "This is an incremental update. Please focus on today's new content and assess its strategic significance in context. If an item's publication date is clearly old, it is a previously published article newly added to the sitemap — label it as 'older article newly indexed' rather than presenting it as new content."
       : isAnyFirstRun
         ? "本次为首次全量抓取，请重点梳理各站点的内容格局、历史脉络与核心主题，而非仅关注单篇文章。"
-        : "本次为增量更新，请聚焦今日新增内容，并结合上下文判断其战略意义。";
+        : "本次为增量更新，请聚焦今日新增内容，并结合上下文判断其战略意义。若条目发布日期明显较早，说明它是新进入 sitemap 的旧文，请标注为「旧文新收录」，不要当作今日新发布的内容。";
 
   if (lang === "en") {
     return `You are a deep content analyst focused on AI, skilled at extracting strategic signals from official announcements, technical blogs, research papers, and product documentation.
