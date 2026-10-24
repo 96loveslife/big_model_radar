@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-24",
+  "durationMs": 386972,
+  "model": "MiniMax-M3",
+  "languages": [
+    "zh"
+  ],
+  "issues": [
+    {
+      "title": "📊 AI CLI 工具社区动态日报 2026-10-24",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/698",
+      "fileName": "ai-cli.md",
+      "label": "digest",
+      "lang": "zh",
+      "status": "published",
+      "detail": "cli(8 tools)"
+    },
+    {
+      "title": "🦞 OpenClaw 生态日报 2026-10-24",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/699",
+      "fileName": "ai-agents.md",
+      "label": "openclaw",
+      "lang": "zh",
+      "status": "published",
+      "detail": "openclaw + 7 peers"
+    },
+    {
+      "title": "🌐 AI 官方内容追踪报告 2026-10-24",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/700",
+      "fileName": "ai-web.md",
+      "label": "web",
+      "lang": "zh",
+      "status": "published",
+      "detail": "anthropic: 1 new, openai: 2 new"
+    },
+    {
+      "title": "📈 AI 开源趋势日报 2026-10-24",
+      "url": "https://github.com/96loveslife/big_model_radar/issues/701",
+      "fileName": "ai-trending.md",
+      "label": "trending",
+      "lang": "zh",
+      "status": "published",
+      "detail": "89 repos"
+    }
+  ],
+  "sources": {
+    "anthropic": {
+      "newItems": 1,
+      "totalDiscovered": 486
+    },
+    "openai": {
+      "newItems": 2,
+      "totalDiscovered": 1084
+    },
+    "trending": {
+      "repos": 89,
+      "success": true
+    },
+    "hn": {
+      "stories": 30,
+      "success": true
+    }
+  },
+  "errors": [],
+  "llmRetries": 0,
+  "target": "github"
+}
