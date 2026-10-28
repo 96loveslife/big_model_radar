@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""
+cli_tool_report.py
+
+Generates a horizontal comparative analysis report for AI CLI tools
+based on a JSON data source. The script is designed for production
+use: robust error handling, type safety, logging, and input validation.
+
+The expected JSON format (example):
+
+[
+    {
+        "name": "Claude Code",
+        "issues": 50,
+        "prs": 2,
+        "releases": 1
+    },
+    ...
+]
+
+The script accepts the path to the JSON file via the ``--data`` flag
+or defaults to ``/opt/PROD/config/ai_cli_tools.json`` if it exists.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+import os
+import sys
+from pathlib import Path
+from typing import Any, Dict, Iterable, List, Sequence
+
+# --------------------------------------------------------------------------- #
+# Logging configuration
+# --------------------------------------------------------------------------- #
+LOG_FORMAT = "%(asctime)s [%(levelname)s] %(message)s"
+logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
+logger = logging.getLogger(__name__)
+
+# --------------------------------------------------------------------------- #
+# Data structures
+# --------------------------------------------------------------------------- #
+class ToolStats:
+    """
+    Represents statistics for a single AI CLI tool.
+    """
+
+    def __init__(self, name: str, issues: int, prs: int, releases: int) -> None:
+        self.name = name
+        self.issues = issues
+        self.prs = prs
+        self.releases = releases
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "ToolStats":
+        """
+        Create a ToolStats instance from a dictionary.
+
+        Raises:
+            ValueError: If required keys are missing or types are incorrect.
+        """
+        try:
+            name = str(data["name"])
+            issues = int(data["issues"])
+            prs = int(data["prs"])
+            releases = int(data["releases"])
+        except KeyError as exc:
+            raise ValueError(f"Missing required key: {exc}") from exc
+        except (TypeError, ValueError) as exc:
+            raise ValueError(f"Invalid type for key in {data}") from exc
+
+        return cls(name, issues, prs, releases)
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Return a serialisable dictionary representation."""
+        return {
+            "name": self.name,
+            "issues": self.issues,
+            "prs": self.prs,
+            "releases": self.releases,
+        }
+
+# --------------------------------------------------------------------------- #
+# Core logic
+# --------------------------------------------------------------------------- #
+def load_tool_stats(path: Path) -> List[ToolStats]:
+    """
+    Load tool statistics from a JSON file.
+
+    Args:
+        path: Path to the JSON file.
+
+    Returns:
+        A list of ToolStats instances.
+
+    Raises:
+        FileNotFoundError: If the file does not exist.
+        json.JSONDecodeError: If the file contains invalid JSON.
+        ValueError: If the JSON structure is not as expected.
+    """
+    logger.debug("Loading tool statistics from %s", path)
+    if not path.is_file():
+        raise FileNotFoundError(f"Data file not found: {path}")
+
+    with path.open("r", encoding="utf-8") as fh:
+        raw_data = json.load(fh)
+
+    if not isinstance(raw_data, list):
+        raise ValueError("JSON root must be a list of tool entries")
+
+    tools: List[ToolStats] = []
+    for entry in raw_data:
+        if not isinstance(entry, dict):
+            raise ValueError(f"Each entry must be a dict, got {type(entry)}")
+        tools.append(ToolStats.from_dict(entry))
+
+    logger.info("Loaded statistics for %d tools", len(tools))
+    return tools
+
+
+def generate_report(tools: Sequence[ToolStats]) -> str:
+    """
+    Generate a plain‑text horizontal comparative report.
+
+    The report aligns columns for easy reading.
+
+    Args:
+        tools: Sequence of ToolStats.
+
+    Returns:
+        A formatted string containing the report.
+    """
+    header = f"{'Tool':<20} {'Issues':>7} {'PRs':>7} {'Releases':>9}"
+    separator = "-" * len(header)
+
+    lines: List[str] = [header, separator]
+    for tool in tools:
+        line = f"{tool.name:<20} {tool.issues:>7} {tool.prs:>7} {tool.releases:>9}"
+        lines.append(line)
+
+    return "\n".join(lines)
+
+
+def main(argv: Sequence[str] | None = None) -> None:
+    """
+    Entry point for the CLI.
+
+    Parses arguments, loads data, generates the report, and prints it.
+    """
+    parser = argparse.ArgumentParser(
+        description="Generate a comparative analysis report for AI CLI tools."
+    )
+    parser.add_argument(
+        "--data",
+        type=Path,
+        default=Path("/opt/PROD/config/ai_cli_tools.json"),
+        help="Path to the JSON data file (default: /opt/PROD/config/ai_cli_tools.json)",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        help="Optional path to write the report. If omitted, prints to stdout.",
+    )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Enable debug logging.",
+    )
+
+    args = parser.parse_args(argv)
+
+    if args.verbose:
+        logger.setLevel(logging.DEBUG)
+
+    try:
+        tools = load_tool_stats(args.data)
+    except Exception as exc:
+        logger.error("Failed to load data: %s", exc)
+        sys.exit(1)
+
+    report = generate_report(tools)
+
+    if args.output:
+        try:
+            args.output.write_text(report, encoding="utf-8")
+            logger.info("Report written to %s", args.output)
+        except OSError as exc:
+            logger.error("Failed to write report: %s", exc)
+            sys.exit(1)
+    else:
+        print(report)
+
+
+if __name__ == "__main__":
+    main()
