@@ -1,6 +1,15 @@
 {
-  "generated": "2026-11-12T06:47:07.013Z",
+  "generated": "2026-11-13T06:02:37.294Z",
   "dates": [
+    {
+      "date": "2026-11-13",
+      "reports": [
+        "ai-cli",
+        "ai-agents",
+        "ai-trending",
+        "ai-hn"
+      ]
+    },
     {
       "date": "2026-11-12",
       "reports": [
